@@ -1,688 +1,918 @@
-<nav
-  class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light scrolled"
-  id="ftco-navbar"
->
+<header class="row">
   <div class="container">
-    <a class="navbar-brand navbar-brand-black" href="index.html">Explorer</a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#ftco-nav"
-      aria-controls="ftco-nav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="oi oi-menu"></span> Menu
-    </button>
-    <div class="collapse navbar-collapse" id="ftco-nav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="dropdown04"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-            >Home</a
-          >
-          <div class="dropdown-menu" aria-labelledby="dropdown04">
-            <a class="dropdown-item" href="index.html">Home with slider</a>
-            <a class="dropdown-item" href="index2.html"
-              >Home with full slider</a
+    <div class="row">
+      <div class="logo col-sm-6">
+        <div class="row">
+          <a href="index.html"
+            ><img
+              src="assets/images/FettleForum_Logo.png"
+              height="80"
+              alt="FettleForum logo"
+          /></a>
+        </div>
+      </div>
+      <div class="social_nav col-sm-6">
+        <br />
+        <div class="row">
+          <ul class="list-inline fright">
+            <li>
+              <a href="#"><fa-icon [icon]="faFacebook"></fa-icon></a>
+            </li>
+            <li>
+              <a href="#"><fa-icon [icon]="faTwitter"></fa-icon></a>
+            </li>
+            <li>
+              <a href="#"><fa-icon [icon]="faGooglePlus"></fa-icon></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<nav class="navbar navbar-default navbar-static-top">
+  <div class="container-fluid container">
+    <div class="row m04m">
+      <div class="navbar-header">
+        <button
+          type="button"
+          class="navbar-toggle collapsed"
+          data-toggle="collapse"
+          data-target="#main_nav"
+        >
+          <span class="bars">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </span>
+          <span class="btn-text">Select Page</span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="main_nav">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="index.html">Home</a></li>
+          <li class="dropdown">
+            <a
+              href="#"
+              class="dropdown-toggle"
+              data-toggle="dropdown"
+              role="button"
+              aria-expanded="false"
+              >about</a
             >
-            <a class="dropdown-item" href="index3.html">Home with parallax</a>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="dropdown04"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-            >Post</a
-          >
-          <div class="dropdown-menu" aria-labelledby="dropdown04">
-            <a class="dropdown-item" href="post-right-sidebar.html"
-              >Post with right sidebar</a
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="about-us.html">About us</a></li>
+              <li><a href="about-us2.html">About us 2</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a
+              href="#"
+              class="dropdown-toggle"
+              data-toggle="dropdown"
+              role="button"
+              aria-expanded="false"
+              >projects</a
             >
-            <a class="dropdown-item" href="post-left-sidebar.html"
-              >Post with left sidebar</a
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="projects_full.html">Full Width Projects</a></li>
+              <li><a href="projects2.html">2 Collumn Projects</a></li>
+              <li><a href="projects3.html">3 Collumn Projects</a></li>
+            </ul>
+          </li>
+          <li><a href="services.html">services</a></li>
+          <li class="dropdown">
+            <a
+              href="#"
+              class="dropdown-toggle"
+              data-toggle="dropdown"
+              role="button"
+              aria-expanded="false"
+              >news</a
             >
-            <a class="dropdown-item" href="post-no-sidebar.html"
-              >Post no sidebar</a
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="blog2.html">Blog 2 Col</a></li>
+              <li><a href="blog3.html">Blog 3 Col</a></li>
+              <li><a href="single-post.html">Sinlge Post</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a
+              href="#"
+              class="dropdown-toggle"
+              data-toggle="dropdown"
+              role="button"
+              aria-expanded="false"
+              >contact</a
             >
-          </div>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="contact.html">Conact us</a></li>
+              <li><a href="contact2.html">Conact us 2</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+<section id="nr_slider" class="row">
+  <div class="mainSliderContainer">
+    <div class="mainSlider">
+      <ul>
+        <!-- SLIDE  -->
+        <li data-transition="boxslide" data-slotamount="3">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/buymedeal-aacd9.appspot.com/o/sliderImages%2F_1650653262302?alt=media&token=26523aef-cfdf-4c34-8628-da2323b0adfa"
+            alt="slidebg1"
+            data-bgfit="cover"
+            data-bgposition="left top"
+            data-bgrepeat="no-repeat"
+          />
         </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="dropdown04"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-            >Archives</a
-          >
-          <div class="dropdown-menu" aria-labelledby="dropdown04">
-            <a class="dropdown-item" href="destination.html">Destination</a>
-            <a class="dropdown-item" href="tag.html">Tag</a>
-            <a class="dropdown-item" href="author-post.html">Authors Post</a>
-          </div>
+        <!-- SLIDE 2 -->
+        <li data-transition="boxslide" data-slotamount="7">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/buymedeal-aacd9.appspot.com/o/sliderImages%2F_1650476565272?alt=media&token=01e697f0-a70f-4512-9d23-c97cef147349"
+            alt="slidebg2"
+            data-bgfit="cover"
+            data-bgposition="left top"
+            data-bgrepeat="no-repeat"
+          />
         </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="dropdown04"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-            >Pages</a
-          >
-          <div class="dropdown-menu" aria-labelledby="dropdown04">
-            <a class="dropdown-item" href="right-sidebar.html">Right Sidebar</a>
-            <a class="dropdown-item" href="left-sidebar.html">Left Sidebar</a>
-            <a class="dropdown-item" href="author.html">Authors Page</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a href="contact.html" class="nav-link">Contact</a>
+        <!-- SLIDE 3 -->
+        <li data-transition="boxslide" data-slotamount="7">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/buymedeal-aacd9.appspot.com/o/sliderImages%2F_1650460829814?alt=media&token=123ab736-ccc1-470f-b95b-82d3de3d02bd"
+            alt="slidebg3"
+            data-bgfit="cover"
+            data-bgposition="left top"
+            data-bgrepeat="no-repeat"
+          />
         </li>
       </ul>
     </div>
   </div>
-</nav>
-<section class="home-slider js-fullheight owl-carousel">
-  <div class="slider-item js-fullheight">
-    <div class="container-fluid">
-      <div
-        class="row js-fullheight slider-text justify-content-center align-items-center"
-        data-scrollax-parent="true"
-      >
-        <div class="col-md-6 text ">
-          <div class="author mb-4 d-flex align-items-center">
-            <a
-              href="#"
-              class="img"
-              style="background-image: url(/assets/images/person_1.jpg)"
-            ></a>
-            <div class="ml-3 info">
-              <span>Written by</span>
-              <h3><a href="#">Dave Lewis</a>, <span>October 04, 2018</span></h3>
-            </div>
-          </div>
-          <div class="text-2">
-            <span class="big">Europe</span>
-            <h1 class="mb-4">
-              <a href="#">Switzerland famous for chocolate making</a>
-            </h1>
-            <p class="mb-4">
-              A small river named Duden flows by their place and supplies it
-              with the necessary regelialia
-            </p>
-            <p>
-              <a href="#" class="btn btn-primary p-3 px-xl-4 py-xl-3"
-                >Continue Reading</a
-              >
-            </p>
-          </div>
-        </div>
-        <div
-          class="col-md-6 js-fullheight img"
-          style="background-image: url(/assets/images/bg_1.jpg)"
-        ></div>
-      </div>
-    </div>
-  </div>
-  <div class="slider-item js-fullheight">
-    <div class="container-fluid">
-      <div
-        class="row js-fullheight slider-text justify-content-center align-items-center"
-        data-scrollax-parent="true"
-      >
-        <div class="col-md-6 text ">
-          <div class="author mb-4 d-flex align-items-center">
-            <a
-              href="#"
-              class="img"
-              style="background-image: url(/assets/images/person_2.jpg)"
-            ></a>
-            <div class="ml-3 info">
-              <span>Written by</span>
-              <h3>
-                <a href="#">Steve Lewis</a>, <span>October 04, 2018</span>
-              </h3>
-            </div>
-          </div>
-          <div class="text-2">
-            <span class="big">USA</span>
-            <h1 class="mb-4">
-              <a href="#">Hawaii known as the Big Island</a>
-            </h1>
-            <p class="mb-4">
-              A small river named Duden flows by their place and supplies it
-              with the necessary regelialia
-            </p>
-            <p>
-              <a href="#" class="btn btn-primary p-3 px-xl-4 py-xl-3"
-                >Continue Reading</a
-              >
-            </p>
-          </div>
-        </div>
-        <div
-          class="col-md-6 js-fullheight img"
-          style="background-image: url(/assets/images/bg_2.jpg)"
-        ></div>
-      </div>
-    </div>
-  </div>
+
+  <div class="container sliderAfterTriangle"></div>
+  <!--Triangle After Slider-->
 </section>
-<section class="ftco-intro">
+<section id="nr_services" class="row">
   <div class="container">
-    <div class="row justify-content-start">
-      <div class="col-md-9">
-        <h1>
-          I'm <strong>Traveler</strong> &amp; <strong>Blogger</strong> from
-          Paris, Italy Who Loves Documenting Adventures &amp; Discoveries Around
-          the World
-        </h1>
+    <div class="row sectionTitles">
+      <h2 class="sectionTitle">Our Services</h2>
+      <div class="sectionSubTitle">what we offer</div>
+    </div>
+    <div class="row m0 text-center">
+      <div class="col-sm-3">
+        <div class="row m0 service">
+          <div class="row m0 innerRow">
+            <fa-icon [icon]="faLaptop"></fa-icon>
+            <div class="serviceName" data-hover="Architecture Plans">
+              Architecture Plans
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="row m0 service">
+          <div class="row m0 innerRow">
+            <fa-icon [icon]="faFilm"></fa-icon>
+            <div class="serviceName" data-hover="Construction Designs">
+              Construction Designs
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="row m0 service">
+          <div class="row m0 innerRow">
+            <fa-icon [icon]="faClock"></fa-icon>
+            <div class="serviceName" data-hover="Fast Building">
+              Fast Building
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="row m0 service">
+          <div class="row m0 innerRow">
+            <fa-icon [icon]="faBuilding"></fa-icon>
+            <div class="serviceName" data-hover="House Rebuilding">
+              House Rebuilding
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
-<section class="ftco-section">
+<!--Services-->
+
+<section id="projectsRow" class="row fullWidth">
+  <div class="row sectionTitles m0">
+    <h2 class="sectionTitle">Our Projects</h2>
+    <div class="sectionSubTitle">latest works</div>
+  </div>
+  <div class="row filtersRow m0">
+    <button
+      type="button"
+      class="collapsed project_filderButton visible-xs"
+      data-toggle="collapse"
+      data-target="#filters"
+    >
+      <span class="btn-text"
+        ><fa-icon [icon]="faFilter"></fa-icon> Project Filter</span
+      >
+    </button>
+    <ul
+      class="list-inline text-center collapse navbar-collapse filters"
+      id="filters"
+    >
+      <li class="active" data-filter="*">
+        <fa-icon [icon]="faTh"></fa-icon>&nbsp;&nbsp;Show All
+      </li>
+      <li data-filter=".catHospital">Hospitals</li>
+      <li data-filter=".catSchools">Schools</li>
+      <li data-filter=".catHouses">Houses</li>
+      <li data-filter=".catFlats">Flats</li>
+      <li data-filter=".catOffices">Offices</li>
+      <li data-filter=".catUniversities">Universities</li>
+    </ul>
+  </div>
+  <div class="row projects m0" id="container">
+    <div class="project catHouses">
+      <a
+        href="assets/images/projects/project1.png"
+        data-lightbox="project"
+        data-title="Central Hospital (building)"
+      >
+        <img
+          src="assets/images/projects/project1.png"
+          alt="Project 1"
+          class="projectImg"
+        />
+      </a>
+      <div class="projectDetails row m0">
+        <div class="fleft nameType">
+          <div class="row m0 projectName">Central Hospital</div>
+          <div class="row m0 projectType">building</div>
+        </div>
+        <div class="fright projectIcons btn-group" role="group">
+          <a
+            href="assets/images/projects/project1.png"
+            data-lightbox="project"
+            data-title="Central Hospital (building)"
+            class="btn btn-default"
+            ><fa-icon [icon]="faSearch"></fa-icon
+          ></a>
+          <a href="#" class="btn btn-default"
+            ><fa-icon [icon]="faFile"></fa-icon
+          ></a>
+        </div>
+      </div>
+    </div>
+    <div class="project catHospital">
+      <a
+        href="assets/images/projects/project2.png"
+        data-lightbox="project"
+        data-title="Construction CEO (ceo, architect)"
+      >
+        <img
+          src="assets/images/projects/project2.png"
+          alt="Project 1"
+          class="projectImg"
+        />
+      </a>
+      <div class="projectDetails row m0">
+        <div class="fleft nameType">
+          <div class="row m0 projectName">Construction CEO</div>
+          <div class="row m0 projectType">ceo, architect</div>
+        </div>
+        <div class="fright projectIcons btn-group" role="group">
+          <a
+            href="assets/images/projects/project2.png"
+            data-lightbox="project"
+            data-title="Construction CEO (ceo, architect)"
+            class="btn btn-default"
+            ><fa-icon [icon]="faSearch"></fa-icon
+          ></a>
+          <a href="#" class="btn btn-default"
+            ><fa-icon [icon]="faFile"></fa-icon
+          ></a>
+        </div>
+      </div>
+    </div>
+    <div class="project catFlats">
+      <a
+        href="assets/images/projects/project3.png"
+        data-lightbox="project"
+        data-title="Workder Accessories (tools, accessories)"
+      >
+        <img
+          src="assets/images/projects/project3.png"
+          alt="Project 1"
+          class="projectImg"
+        />
+      </a>
+      <div class="projectDetails row m0">
+        <div class="fleft nameType">
+          <div class="row m0 projectName">Workder Accessories</div>
+          <div class="row m0 projectType">tools, accessories</div>
+        </div>
+        <div class="fright projectIcons btn-group" role="group">
+          <a
+            href="assets/images/projects/project3.png"
+            data-lightbox="project"
+            data-title="Workder Accessories (tools, accessories)"
+            class="btn btn-default"
+            ><fa-icon [icon]="faSearch"></fa-icon
+          ></a>
+          <a href="#" class="btn btn-default"
+            ><fa-icon [icon]="faFile"></fa-icon
+          ></a>
+        </div>
+      </div>
+    </div>
+    <div class="project catSchools">
+      <a
+        href="assets/images/projects/project4.png"
+        data-lightbox="project"
+        data-title="Rebuilding an old University (university, building)"
+      >
+        <img
+          src="assets/images/projects/project4.png"
+          alt="Project 1"
+          class="projectImg"
+        />
+      </a>
+      <div class="projectDetails row m0">
+        <div class="fleft nameType">
+          <div class="row m0 projectName">Rebuilding an old University</div>
+          <div class="row m0 projectType">university, building</div>
+        </div>
+        <div class="fright projectIcons btn-group" role="group">
+          <a
+            href="assets/images/projects/project4.png"
+            data-lightbox="project"
+            data-title="Rebuilding an old University (university, building)"
+            class="btn btn-default"
+            ><fa-icon [icon]="faSearch"></fa-icon
+          ></a>
+          <a href="#" class="btn btn-default"
+            ><fa-icon [icon]="faFile"></fa-icon
+          ></a>
+        </div>
+      </div>
+    </div>
+    <div class="project catUniversities">
+      <a
+        href="assets/images/projects/project5.png"
+        data-lightbox="project"
+        data-title="Construction Tools (tools, assets)"
+      >
+        <img
+          src="assets/images/projects/project5.png"
+          alt="Project 1"
+          class="projectImg"
+        />
+      </a>
+      <div class="projectDetails row m0">
+        <div class="fleft nameType">
+          <div class="row m0 projectName">Construction Tools</div>
+          <div class="row m0 projectType">tools, assets</div>
+        </div>
+        <div class="fright projectIcons btn-group" role="group">
+          <a
+            href="assets/images/projects/project5.png"
+            data-lightbox="project"
+            data-title="Construction Tools (tools, assets)"
+            class="btn btn-default"
+            ><fa-icon [icon]="faSearch"></fa-icon
+          ></a>
+          <a href="#" class="btn btn-default"
+            ><fa-icon [icon]="faFile"></fa-icon
+          ></a>
+        </div>
+      </div>
+    </div>
+    <div class="project catOffices">
+      <a
+        href="assets/images/projects/project6.png"
+        data-lightbox="project"
+        data-title="Big Trucks on Action (cat, building)"
+      >
+        <img
+          src="assets/images/projects/project6.png"
+          alt="Project 1"
+          class="projectImg"
+        />
+      </a>
+      <div class="projectDetails row m0">
+        <div class="fleft nameType">
+          <div class="row m0 projectName">Big Trucks on Action</div>
+          <div class="row m0 projectType">cat, building</div>
+        </div>
+        <div class="fright projectIcons btn-group" role="group">
+          <a
+            href="assets/images/projects/project6.png"
+            data-lightbox="project"
+            data-title="Big Trucks on Action (cat, building)"
+            class="btn btn-default"
+            ><fa-icon [icon]="faSearch"></fa-icon
+          ></a>
+          <a href="#" class="btn btn-default"
+            ><fa-icon [icon]="faFile"></fa-icon
+          ></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Projects-->
+
+<section id="latestPosts" class="row">
+  <div class="container">
+    <div class="row sectionTitles">
+      <h2 class="sectionTitle">Latest Posts</h2>
+      <div class="sectionSubTitle">fresh news</div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4 blog latest-blog">
+        <div class="row m0 blogInner">
+          <div class="row m0 blogDateTime">
+            <fa-icon [icon]="faCalendar"></fa-icon> 18 November 2014, 11:50 AM
+          </div>
+          <div class="row m0 featureImg">
+            <a href="single-post.html">
+              <img
+                src="assets/images/blog/blog1.png"
+                alt="Faceted Search Has Landed"
+                class="img-responsive"
+              />
+            </a>
+          </div>
+          <div class="row m0 postExcerpts">
+            <div class="row m0 postExcerptInner">
+              <a href="single-post.html" class="postTitle row m0"
+                ><h4>Faceted Search Has Landed</h4></a
+              >
+              <p>
+                This year in our 2014 roadmap one of our goals was to improve
+                financial tooling for authors. A big part of that is the
+                withdrawal cycle.
+              </p>
+              <a href="single-post.html" class="readMore">read more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 blog latest-blog">
+        <div class="row m0 blogInner">
+          <div class="row m0 blogDateTime">
+            <fa-icon [icon]="faCalendar"></fa-icon> 16 November 2014, 12:20 AM
+          </div>
+          <div class="row m0 featureImg">
+            <a href="single-post.html">
+              <img
+                src="assets/images/blog/blog2.png"
+                alt="Faceted Search Has Landed"
+                class="img-responsive"
+              />
+            </a>
+          </div>
+          <div class="row m0 postExcerpts">
+            <div class="row m0 postExcerptInner">
+              <a href="single-post.html" class="postTitle row m0"
+                ><h4>Vat and Global Marketplace</h4></a
+              >
+              <p>
+                This year in our 2014 roadmap one of our goals was to improve
+                financial tooling for authors. A big part of that is the
+                withdrawal cycle.
+              </p>
+              <a href="single-post.html" class="readMore">read more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 blog latest-blog">
+        <div class="row m0 blogInner">
+          <div class="row m0 blogDateTime">
+            <fa-icon [icon]="faCalendar"></fa-icon> 14 November 2014, 10:50 AM
+          </div>
+          <div class="row m0 featureImg">
+            <a href="single-post.html">
+              <img
+                src="assets/images/blog/blog3.png"
+                alt="Faceted Search Has Landed"
+                class="img-responsive"
+              />
+            </a>
+          </div>
+          <div class="row m0 postExcerpts">
+            <div class="row m0 postExcerptInner">
+              <a href="single-post.html" class="postTitle row m0"
+                ><h4>Default withdrawal option</h4></a
+              >
+              <p>
+                This year in our 2014 roadmap one of our goals was to improve
+                financial tooling for authors. A big part of that is the
+                withdrawal cycle.
+              </p>
+              <a href="single-post.html" class="readMore">read more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Latest Blog-->
+
+<section id="testimonials" class="row">
+  <div class="container">
+    <div class="row sectionTitles">
+      <h2 class="sectionTitle whiteTC">Latest Posts</h2>
+      <div class="sectionSubTitle whiteTC">fresh news</div>
+    </div>
+    <div class="row">
+      <div class="owl-carousel testimonialSlider row m0">
+        <div class="item">
+          <div class="clientPhoto row m0">
+            <img src="assets/images/testimonial/photo.png" alt="" />
+          </div>
+          <div class="clientNameTitle row m0">John Smith, CEO at Evanto</div>
+          <div class="arrow row m0">
+            <img src="assets/images/testimonial/arrow.png" alt="arrow down" />
+          </div>
+          <div class="testimonial row m0">
+            This is Photoshop's version of Lorem Ipsum Proin gravida nibh vel
+            velit auctor aliquet. Aenean Sollicitudin, lorem quis bibendum
+            auctor, nisi elit consequat ipsum,
+          </div>
+        </div>
+        <div class="item">
+          <div class="clientPhoto row m0">
+            <img src="assets/images/testimonial/photo.png" alt="" />
+          </div>
+          <div class="clientNameTitle row m0">John Smith, CEO at Evanto</div>
+          <div class="arrow row m0">
+            <img src="assets/images/testimonial/arrow.png" alt="arrow down" />
+          </div>
+          <div class="testimonial row m0">
+            This is Photoshop's version of Lorem Ipsum Proin gravida nibh vel
+            velit auctor aliquet. Aenean Sollicitudin, lorem quis bibendum
+            auctor, nisi elit consequat ipsum,
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Testimonials-->
+
+<section id="elements" class="row">
+  <div class="row sectionTitles m0">
+    <h2 class="sectionTitle">Accordion &amp; Tabs</h2>
+    <div class="sectionSubTitle">elements</div>
+  </div>
   <div class="container">
     <div class="row">
-      <div class="col-lg-8">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="blog-entry ">
-              <a
-                href="#"
-                class="img"
-                style="background-image: url(/assets/images/image_1.jpg)"
-              ></a>
-              <div class="text pt-2 mt-5">
-                <span class="big">South America</span>
-                <h3 class="mb-4">
-                  <a href="#">Hawaii known as the Big Island</a>
-                </h3>
-                <p class="mb-4">
-                  Even the all-powerful Pointing has no control about the blind
-                  texts it is an almost unorthographic life One day however a
-                  small line of blind text by the name of Lorem Ipsum decided to
-                  leave for the far World of Grammar.
-                </p>
-                <div class="author mb-4 d-flex align-items-center">
-                  <a
-                    href="#"
-                    class="img"
-                    style="background-image: url(/assets/images/person_1.jpg)"
-                  ></a>
-                  <div class="ml-3 info">
-                    <span>Written by</span>
-                    <h3>
-                      <a href="#">Dave Lewis</a>,
-                      <span>October 04, 2018</span>
-                    </h3>
-                  </div>
+      <div class="col-sm-6">
+        <div
+          class="panel-group"
+          id="hAccordion"
+          role="tablist"
+          aria-multiselectable="true"
+        >
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+              <h4 class="panel-title">
+                <a
+                  data-toggle="collapse"
+                  data-parent="#hAccordion"
+                  href="#collapse1"
+                  aria-expanded="true"
+                  aria-controls="collapse1"
+                >
+                  <fa-icon [icon]="faQuestion"></fa-icon>Marketplace Basics
+                  <span class="sign fa"></span>
+                </a>
+              </h4>
+            </div>
+            <div
+              id="collapse1"
+              class="panel-collapse collapse in"
+              role="tabpanel"
+              aria-labelledby="headingOne"
+            >
+              <div class="panel-body">
+                <div class="fleft icon">
+                  <fa-icon [icon]="faLaptop"></fa-icon>
                 </div>
-                <div class="meta-wrap d-md-flex align-items-center">
-                  <div class="half order-md-last text-md-right">
-                    <p class="meta">
-                      <span><i class="icon-heart"></i>3</span>
-                      <span><i class="icon-eye"></i>100</span>
-                      <span><i class="icon-comment"></i>5</span>
-                    </p>
-                  </div>
-                  <div class="half">
-                    <p>
-                      <a href="#" class="btn btn-primary p-3 px-xl-4 py-xl-3"
-                        >Continue Reading</a
-                      >
-                    </p>
-                  </div>
+                <div class="fleft texts">
+                  Proin gravida nibh vel velit auctor aliquet. Aenean
+                  sollicitudin, lorem quis bibendum auctor, nisi elit consequat
+                  ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet
+                  nibh vulputate
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-md-12">
-            <div class="blog-entry ">
-              <a
-                href="#"
-                class="img"
-                style="background-image: url(/assets/images/image_2.jpg)"
-              ></a>
-              <div class="text pt-2 mt-5">
-                <span class="big">South America</span>
-                <h3 class="mb-4">
-                  <a href="#">Hawaii known as the Big Island</a>
-                </h3>
-                <p class="mb-4">
-                  Even the all-powerful Pointing has no control about the blind
-                  texts it is an almost unorthographic life One day however a
-                  small line of blind text by the name of Lorem Ipsum decided to
-                  leave for the far World of Grammar.
-                </p>
-                <div class="author mb-4 d-flex align-items-center">
-                  <a
-                    href="#"
-                    class="img"
-                    style="background-image: url(/assets/images/person_1.jpg)"
-                  ></a>
-                  <div class="ml-3 info">
-                    <span>Written by</span>
-                    <h3>
-                      <a href="#">Dave Lewis</a>,
-                      <span>October 04, 2018</span>
-                    </h3>
-                  </div>
+          <!--hAccordion No #1-->
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="heading2">
+              <h4 class="panel-title">
+                <a
+                  class="collapsed"
+                  data-toggle="collapse"
+                  data-parent="#hAccordion"
+                  href="#collapse2"
+                  aria-expanded="false"
+                  aria-controls="collapse2"
+                >
+                  <fa-icon [icon]="faQuestion"></fa-icon>Author Resources
+                  <span class="sign fa"></span>
+                </a>
+              </h4>
+            </div>
+            <div
+              id="collapse2"
+              class="panel-collapse collapse"
+              role="tabpanel"
+              aria-labelledby="heading2"
+            >
+              <div class="panel-body">
+                <div class="fleft icon">
+                  <fa-icon [icon]="faLaptop"></fa-icon>
                 </div>
-                <div class="meta-wrap d-md-flex align-items-center">
-                  <div class="half order-md-last text-md-right">
-                    <p class="meta">
-                      <span><i class="icon-heart"></i>3</span>
-                      <span><i class="icon-eye"></i>100</span>
-                      <span><i class="icon-comment"></i>5</span>
-                    </p>
-                  </div>
-                  <div class="half">
-                    <p>
-                      <a href="#" class="btn btn-primary p-3 px-xl-4 py-xl-3"
-                        >Continue Reading</a
-                      >
-                    </p>
-                  </div>
+                <div class="fleft texts">
+                  Proin gravida nibh vel velit auctor aliquet. Aenean
+                  sollicitudin, lorem quis bibendum auctor, nisi elit consequat
+                  ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet
+                  nibh vulputate
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-md-12">
-            <div class="blog-entry ">
-              <a
-                href="#"
-                class="img"
-                style="background-image: url(/assets/images/image_3.jpg)"
-              ></a>
-              <div class="text pt-2 mt-5">
-                <span class="big">South America</span>
-                <h3 class="mb-4">
-                  <a href="#">Hawaii known as the Big Island</a>
-                </h3>
-                <p class="mb-4">
-                  Even the all-powerful Pointing has no control about the blind
-                  texts it is an almost unorthographic life One day however a
-                  small line of blind text by the name of Lorem Ipsum decided to
-                  leave for the far World of Grammar.
-                </p>
-                <div class="author mb-4 d-flex align-items-center">
-                  <a
-                    href="#"
-                    class="img"
-                    style="background-image: url(/assets/images/person_1.jpg)"
-                  ></a>
-                  <div class="ml-3 info">
-                    <span>Written by</span>
-                    <h3>
-                      <a href="#">Dave Lewis</a>,
-                      <span>October 04, 2018</span>
-                    </h3>
-                  </div>
+          <!--hAccordion No #2-->
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="heading3">
+              <h4 class="panel-title">
+                <a
+                  class="collapsed"
+                  data-toggle="collapse"
+                  data-parent="#hAccordion"
+                  href="#collapse3"
+                  aria-expanded="false"
+                  aria-controls="collapse3"
+                >
+                  <fa-icon [icon]="faQuestion"></fa-icon>Authoring Rquirements
+                  <span class="sign fa"></span>
+                </a>
+              </h4>
+            </div>
+            <div
+              id="collapse3"
+              class="panel-collapse collapse"
+              role="tabpanel"
+              aria-labelledby="heading3"
+            >
+              <div class="panel-body">
+                <div class="fleft icon">
+                  <fa-icon [icon]="faLaptop"></fa-icon>
                 </div>
-                <div class="meta-wrap d-md-flex align-items-center">
-                  <div class="half order-md-last text-md-right">
-                    <p class="meta">
-                      <span><i class="icon-heart"></i>3</span>
-                      <span><i class="icon-eye"></i>100</span>
-                      <span><i class="icon-comment"></i>5</span>
-                    </p>
-                  </div>
-                  <div class="half">
-                    <p>
-                      <a href="#" class="btn btn-primary p-3 px-xl-4 py-xl-3"
-                        >Continue Reading</a
-                      >
-                    </p>
-                  </div>
+                <div class="fleft texts">
+                  Proin gravida nibh vel velit auctor aliquet. Aenean
+                  sollicitudin, lorem quis bibendum auctor, nisi elit consequat
+                  ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet
+                  nibh vulputate
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-md-12">
-            <div class="blog-entry ">
-              <a
-                href="#"
-                class="img"
-                style="background-image: url(/assets/images/image_4.jpg)"
-              ></a>
-              <div class="text pt-2 mt-5">
-                <span class="big">South America</span>
-                <h3 class="mb-4">
-                  <a href="#">Hawaii known as the Big Island</a>
-                </h3>
-                <p class="mb-4">
-                  Even the all-powerful Pointing has no control about the blind
-                  texts it is an almost unorthographic life One day however a
-                  small line of blind text by the name of Lorem Ipsum decided to
-                  leave for the far World of Grammar.
-                </p>
-                <div class="author mb-4 d-flex align-items-center">
-                  <a
-                    href="#"
-                    class="img"
-                    style="background-image: url(/assets/images/person_1.jpg)"
-                  ></a>
-                  <div class="ml-3 info">
-                    <span>Written by</span>
-                    <h3>
-                      <a href="#">Dave Lewis</a>,
-                      <span>October 04, 2018</span>
-                    </h3>
-                  </div>
+          <!--hAccordion No #3-->
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="heading4">
+              <h4 class="panel-title">
+                <a
+                  class="collapsed"
+                  data-toggle="collapse"
+                  data-parent="#hAccordion"
+                  href="#collapse4"
+                  aria-expanded="false"
+                  aria-controls="collapse4"
+                >
+                  <fa-icon [icon]="faQuestion"></fa-icon>Copyright &amp; Legal
+                  <span class="sign fa"></span>
+                </a>
+              </h4>
+            </div>
+            <div
+              id="collapse4"
+              class="panel-collapse collapse"
+              role="tabpanel"
+              aria-labelledby="heading4"
+            >
+              <div class="panel-body">
+                <div class="fleft icon">
+                  <fa-icon [icon]="faLaptop"></fa-icon>
                 </div>
-                <div class="meta-wrap d-md-flex align-items-center">
-                  <div class="half order-md-last text-md-right">
-                    <p class="meta">
-                      <span><i class="icon-heart"></i>3</span>
-                      <span><i class="icon-eye"></i>100</span>
-                      <span><i class="icon-comment"></i>5</span>
-                    </p>
-                  </div>
-                  <div class="half">
-                    <p>
-                      <a href="#" class="btn btn-primary p-3 px-xl-4 py-xl-3"
-                        >Continue Reading</a
-                      >
-                    </p>
-                  </div>
+                <div class="fleft texts">
+                  Proin gravida nibh vel velit auctor aliquet. Aenean
+                  sollicitudin, lorem quis bibendum auctor, nisi elit consequat
+                  ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet
+                  nibh vulputate
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-md-12">
-            <div class="blog-entry ">
-              <a
-                href="#"
-                class="img"
-                style="background-image: url(/assets/images/image_5.jpg)"
-              ></a>
-              <div class="text pt-2 mt-5">
-                <span class="big">South America</span>
-                <h3 class="mb-4">
-                  <a href="#">Hawaii known as the Big Island</a>
-                </h3>
-                <p class="mb-4">
-                  Even the all-powerful Pointing has no control about the blind
-                  texts it is an almost unorthographic life One day however a
-                  small line of blind text by the name of Lorem Ipsum decided to
-                  leave for the far World of Grammar.
-                </p>
-                <div class="author mb-4 d-flex align-items-center">
-                  <a
-                    href="#"
-                    class="img"
-                    style="background-image: url(/assets/images/person_1.jpg)"
-                  ></a>
-                  <div class="ml-3 info">
-                    <span>Written by</span>
-                    <h3>
-                      <a href="#">Dave Lewis</a>,
-                      <span>October 04, 2018</span>
-                    </h3>
-                  </div>
+          <!--hAccordion No #4-->
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="heading5">
+              <h4 class="panel-title">
+                <a
+                  class="collapsed"
+                  data-toggle="collapse"
+                  data-parent="#hAccordion"
+                  href="#collapse5"
+                  aria-expanded="false"
+                  aria-controls="collapse5"
+                >
+                  <fa-icon [icon]="faQuestion"></fa-icon>Affiliate Program
+                  <span class="sign fa"></span>
+                </a>
+              </h4>
+            </div>
+            <div
+              id="collapse5"
+              class="panel-collapse collapse"
+              role="tabpanel"
+              aria-labelledby="heading5"
+            >
+              <div class="panel-body">
+                <div class="fleft icon">
+                  <fa-icon [icon]="faLaptop"></fa-icon>
                 </div>
-                <div class="meta-wrap d-md-flex align-items-center">
-                  <div class="half order-md-last text-md-right">
-                    <p class="meta">
-                      <span><i class="icon-heart"></i>3</span>
-                      <span><i class="icon-eye"></i>100</span>
-                      <span><i class="icon-comment"></i>5</span>
-                    </p>
-                  </div>
-                  <div class="half">
-                    <p>
-                      <a href="#" class="btn btn-primary p-3 px-xl-4 py-xl-3"
-                        >Continue Reading</a
-                      >
-                    </p>
-                  </div>
+                <div class="fleft texts">
+                  Proin gravida nibh vel velit auctor aliquet. Aenean
+                  sollicitudin, lorem quis bibendum auctor, nisi elit consequat
+                  ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet
+                  nibh vulputate
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="row mt-5">
-          <div class="col text-center">
-            <div class="block-27">
-              <ul>
-                <li><a href="#">&lt;</a></li>
-                <li class="active"><span>1</span></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">&gt;</a></li>
-              </ul>
-            </div>
-          </div>
+          <!--hAccordion No #5-->
         </div>
       </div>
-      <div class="col-lg-4 sidebar ">
-        <div class="sidebar-box">
-          <form action="#" class="search-form">
-            <div class="form-group">
-              <span class="icon icon-search"></span>
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Type a keyword and hit enter"
-              />
-            </div>
-          </form>
-        </div>
-        <div class="sidebar-box ">
-          <h3>Destination</h3>
-          <ul class="categories">
-            <li>
-              <a href="#">Africa <span>(6)</span></a>
+      <div class="col-sm-6">
+        <div class="row m0 leftAlignedTap">
+          <ul class="nav nav-tabs" role="tablist" id="myTab">
+            <li role="presentation" class="active">
+              <a
+                href="#h_tab1"
+                aria-controls="h_tab1"
+                role="tab"
+                data-toggle="tab"
+              >
+                <fa-icon [icon]="faLaptop"></fa-icon> Responsive Layout
+              </a>
             </li>
-            <li>
-              <a href="#">Asia <span>(8)</span></a>
+            <li role="presentation">
+              <a
+                href="#h_tab2"
+                aria-controls="h_tab2"
+                role="tab"
+                data-toggle="tab"
+              >
+                <fa-icon [icon]="faBriefcase"></fa-icon> Multiple Portfolios
+              </a>
             </li>
-            <li>
-              <a href="#">Australia <span>(2)</span></a>
-            </li>
-            <li>
-              <a href="#">Europe <span>(2)</span></a>
-            </li>
-            <li>
-              <a href="#">North America <span>(7)</span></a>
-            </li>
-            <li>
-              <a href="#">South America <span>(5)</span></a>
-            </li>
-          </ul>
-        </div>
-        <div class="sidebar-box ">
-          <h3>Popular Articles</h3>
-          <div class="block-21 mb-4 d-flex">
-            <a
-              class="blog-img mr-4"
-              style="background-image: url(/assets/images/image_1.jpg)"
-            ></a>
-            <div class="text">
-              <h3 class="heading">
-                <a href="#"
-                  >Even the all-powerful Pointing has no control about the blind
-                  texts</a
-                >
-              </h3>
-              <div class="meta">
-                <div>
-                  <a href="#"
-                    ><span class="icon-calendar"></span> Oct. 04, 2018</a
-                  >
-                </div>
-                <div>
-                  <a href="#"><span class="icon-person"></span> Dave Lewis</a>
-                </div>
-                <div>
-                  <a href="#"><span class="icon-chat"></span> 19</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="block-21 mb-4 d-flex">
-            <a
-              class="blog-img mr-4"
-              style="background-image: url(/assets/images/image_2.jpg)"
-            ></a>
-            <div class="text">
-              <h3 class="heading">
-                <a href="#"
-                  >Even the all-powerful Pointing has no control about the blind
-                  texts</a
-                >
-              </h3>
-              <div class="meta">
-                <div>
-                  <a href="#"
-                    ><span class="icon-calendar"></span> Oct. 04, 2018</a
-                  >
-                </div>
-                <div>
-                  <a href="#"><span class="icon-person"></span> Dave Lewis</a>
-                </div>
-                <div>
-                  <a href="#"><span class="icon-chat"></span> 19</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="block-21 mb-4 d-flex">
-            <a
-              class="blog-img mr-4"
-              style="background-image: url(/assets/images/image_3.jpg)"
-            ></a>
-            <div class="text">
-              <h3 class="heading">
-                <a href="#"
-                  >Even the all-powerful Pointing has no control about the blind
-                  texts</a
-                >
-              </h3>
-              <div class="meta">
-                <div>
-                  <a href="#"
-                    ><span class="icon-calendar"></span> Oct. 04, 2018</a
-                  >
-                </div>
-                <div>
-                  <a href="#"><span class="icon-person"></span> Dave Lewis</a>
-                </div>
-                <div>
-                  <a href="#"><span class="icon-chat"></span> 19</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="sidebar-box ">
-          <h3>Tag Cloud</h3>
-          <ul class="tagcloud">
-            <a href="#" class="tag-cloud-link">dish</a>
-            <a href="#" class="tag-cloud-link">menu</a>
-            <a href="#" class="tag-cloud-link">food</a>
-            <a href="#" class="tag-cloud-link">sweet</a>
-            <a href="#" class="tag-cloud-link">tasty</a>
-            <a href="#" class="tag-cloud-link">delicious</a>
-            <a href="#" class="tag-cloud-link">desserts</a>
-            <a href="#" class="tag-cloud-link">drinks</a>
-          </ul>
-        </div>
-        <div class="sidebar-box subs-wrap">
-          <h3>Subcribe to our Newsletter</h3>
-          <p>
-            Far far away, behind the word mountains, far from the countries
-            Vokalia
-          </p>
-          <form action="#" class="subscribe-form">
-            <div class="form-group">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Email Address"
-              />
-              <input
-                type="submit"
-                value="Subscribe"
-                class="mt-2 btn btn-white submit"
-              />
-            </div>
-          </form>
-        </div>
-        <div class="sidebar-box ">
-          <h3>Archives</h3>
-          <ul class="categories">
-            <li>
-              <a href="#">September 2018 <span>(6)</span></a>
-            </li>
-            <li>
-              <a href="#">August 2018 <span>(8)</span></a>
-            </li>
-            <li>
-              <a href="#">July 2018 <span>(2)</span></a>
-            </li>
-            <li>
-              <a href="#">June 2018 <span>(7)</span></a>
-            </li>
-            <li>
-              <a href="#">May 2018 <span>(5)</span></a>
-            </li>
-            <li>
-              <a href="#">April 2018 <span>(3)</span></a>
+            <li role="presentation">
+              <a
+                href="#h_tab3"
+                aria-controls="h_tab3"
+                role="tab"
+                data-toggle="tab"
+              >
+                <fa-icon [icon]="faYoutubeSquare"></fa-icon> Video Support
+              </a>
             </li>
           </ul>
-        </div>
-        <div class="sidebar-box ">
-          <h3>Paragraph</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus
-            itaque, autem necessitatibus voluptate quod mollitia delectus aut,
-            sunt placeat nam vero culpa sapiente consectetur similique,
-            inventore eos fugit cupiditate numquam!
-          </p>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="h_tab1">
+              Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin,
+              lorem quis bibendum auctor, nisi elit consequat ipsum, nec
+              sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate
+              cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec
+              tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae
+              erat consequat auctor eu in elit.
+            </div>
+            <div role="tabpanel" class="tab-pane" id="h_tab2">
+              Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
+              Morbi accumsan ipsum velit. Proin gravida nibh vel velit auctor
+              aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi
+              elit consequat ipsum, nec sagittis sem nibh id elit. Nam nec
+              tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae
+              erat consequat auctor eu in elit.
+            </div>
+            <div role="tabpanel" class="tab-pane" id="h_tab3">
+              Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non
+              mauris vitae erat consequat auctor eu in elit. Proin gravida nibh
+              vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum
+              auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.
+              Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
+              Morbi accumsan ipsum velit.
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+<footer id="nr_footer" class="row">
+  <div class="container">
+    <div class="row goTop">
+      <a href="#top"><fa-icon [icon]="faAngleUp"></fa-icon></a>
+    </div>
+    <div class="footerWidget row">
+      <div class="col-sm-6 widget">
+        <div class="getInTouch_widget row">
+          <div class="widgetHeader row m0">
+            <img src="assets/images/whiteSquare.png" alt="" />Get in touch
+          </div>
+          <div class="row getInTouch_tab m0">
+            <ul
+              class="nav nav-tabs nav-justified"
+              role="tablist"
+              id="getInTouch_tab"
+            >
+              <li role="presentation" class="active">
+                <a
+                  href="#contactPhone"
+                  aria-controls="contactPhone"
+                  role="tab"
+                  data-toggle="tab"
+                  ><fa-icon [icon]="faPhone"></fa-icon
+                ></a>
+              </li>
+              <li role="presentation">
+                <a
+                  href="#contactEmail"
+                  aria-controls="contactEmail"
+                  role="tab"
+                  data-toggle="tab"
+                  ><fa-icon [icon]="faEnvelope"></fa-icon
+                ></a>
+              </li>
+              <li role="presentation">
+                <a
+                  href="#contactHome"
+                  aria-controls="contactHome"
+                  role="tab"
+                  data-toggle="tab"
+                  ><fa-icon [icon]="faHome"></fa-icon
+                ></a>
+              </li>
+            </ul>
 
-<div id="ftco-loader" class="show fullscreen">
-  <svg class="circular" width="48px" height="48px">
-    <circle
-      class="path-bg"
-      cx="24"
-      cy="24"
-      r="22"
-      fill="none"
-      stroke-width="4"
-      stroke="#eeeeee"
-    />
-    <circle
-      class="path"
-      cx="24"
-      cy="24"
-      r="22"
-      fill="none"
-      stroke-width="4"
-      stroke-miterlimit="10"
-      stroke="#F96D00"
-    />
-  </svg>
-</div>
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane active" id="contactPhone">
+                <fa-icon [icon]="faPhone"></fa-icon> call us at: +399 (500) 321
+                9548
+              </div>
+              <div role="tabpanel" class="tab-pane" id="contactEmail">
+                <fa-icon [icon]="faEnvelope"></fa-icon>email us at:
+                support@construction.com
+              </div>
+              <div role="tabpanel" class="tab-pane" id="contactHome">
+                <fa-icon [icon]="faHome"></fa-icon>Pawsar, Bicrompur,
+                Munshigonj.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 widget">
+        <div class="row flickrSlider">
+          <div class="widgetHeader row m0">
+            <img src="assets/images/whiteSquare.png" alt="" />Flickr Gallery
+          </div>
+          <div class="row flickrSliderRow m0">
+            <div
+              data-toggle="jsfg"
+              data-tags="dogs"
+              data-per-page="5"
+              data-set-id="72157650377967655"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row copyrightRow">
+      &copy; 2023 <a href="#">FettleForum</a>, All Rights Reserved
+    </div>
+  </div>
+</footer>

@@ -1,62 +1,47 @@
+//    google map start
+    (function($) {
+        "use strict";
 
-var google;
+        google.maps.event.addDomListener(window, 'load', init);
 
-function init() {
-    // Basic options for a simple Google Map
-    // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
-    // var myLatlng = new google.maps.LatLng(40.71751, -73.990922);
-    var myLatlng = new google.maps.LatLng(40.69847032728747, -73.9514422416687);
-    // 39.399872
-    // -8.224454
-    
-    var mapOptions = {
-        // How zoomed in you want the map to start at (always required)
-        zoom: 7,
+        var map;
 
-        // The latitude and longitude to center the map (always required)
-        center: myLatlng,
-
-        // How you would like to style the map. 
-        scrollwheel: false,
-        styles: [
-            {
-                "featureType": "administrative.country",
-                "elementType": "geometry",
-                "stylers": [
-                    {
-                        "visibility": "simplified"
-                    },
-                    {
-                        "hue": "#ff0000"
-                    }
+        function init() {
+            var mapOptions = {
+                center: new google.maps.LatLng(23.825527, 90.429862),
+                zoom: 15,
+                zoomControl: false,
+                zoomControlOptions: {
+                    style: google.maps.ZoomControlStyle.DEFAULT,
+                },
+                disableDoubleClickZoom: false,
+                mapTypeControl: false,
+                mapTypeControlOptions: {
+                    style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+                },
+                scaleControl: true,
+                scrollwheel: false,
+                streetViewControl: false,
+                draggable : true,
+                overviewMapControl: false,
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                styles: [ 
+                    { featureType: "administrative", elementType: "all", stylers: [ { visibility: "on" }, { saturation: -100 }, { lightness: 20 } ] },
+                    { featureType: "road", elementType: "all", stylers: [ { visibility: "on" }, { saturation: -100 }, { lightness: 40 } ] },
+                    { featureType: "water", elementType: "all", stylers: [ { visibility: "on" }, { saturation: -10 }, { lightness: 30 } ] },
+                    { featureType: "landscape.man_made", elementType: "all", stylers: [ { visibility: "simplified" }, { saturation: -60 }, { lightness: 10 } ] },
+                    { featureType: "landscape.natural", elementType: "all", stylers: [ { visibility: "simplified" }, { saturation: -60 }, { lightness: 60 } ] },
+                    { featureType: "poi", elementType: "all", stylers: [ { visibility: "off" }, { saturation: -100 }, { lightness: 60 } ] }, 
+                    { featureType: "transit", elementType: "all", stylers: [ { visibility: "off" }, { saturation: -100 }, { lightness: 60 } ] }
                 ]
+
             }
-        ]
-    };
 
-    
-
-    // Get the HTML DOM element that will contain your map 
-    // We are using a div with id="map" seen below in the <body>
-    var mapElement = document.getElementById('map');
-
-    // Create the Google Map using out element and options defined above
-    var map = new google.maps.Map(mapElement, mapOptions);
-    
-    var addresses = ['New York'];
-
-    for (var x = 0; x < addresses.length; x++) {
-        $.getJSON('http://maps.googleapis.com/maps/api/geocode/json?address='+addresses[x]+'&sensor=false', null, function (data) {
-            var p = data.results[0].geometry.location
-            var latlng = new google.maps.LatLng(p.lat, p.lng);
-            new google.maps.Marker({
-                position: latlng,
-                map: map,
-                icon: 'images/loc.png'
-            });
-
-        });
-    }
-    
-}
-google.maps.event.addDomListener(window, 'load', init);
+            var mapElement = document.getElementById('mapBox');
+            var map = new google.maps.Map(mapElement, mapOptions);
+            var locations = [
+                ['', 23.825527, 90.429862]
+            ]
+        }    
+    })(jQuery);
+//    google map end
