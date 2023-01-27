@@ -1,0 +1,468 @@
+<swiper
+  [config]="config"
+  class="mySwiper swiper-h"
+  (swiper)="onSwiper($event)"
+  (slideChange)="onSlideChange()"
+  #newSwiper
+>
+  <ng-template swiperSlide
+    ><img
+      src="https://firebasestorage.googleapis.com/v0/b/buymedeal-aacd9.appspot.com/o/sliderImages%2F_1650653262302?alt=media&token=26523aef-cfdf-4c34-8628-da2323b0adfa"
+      alt="slidebg1"
+  /></ng-template>
+  <ng-template swiperSlide
+    ><img
+      src="https://firebasestorage.googleapis.com/v0/b/buymedeal-aacd9.appspot.com/o/sliderImages%2F_1650476565272?alt=media&token=01e697f0-a70f-4512-9d23-c97cef147349"
+      alt="slidebg2"
+  /></ng-template>
+  <ng-template swiperSlide
+    ><img
+      src="https://firebasestorage.googleapis.com/v0/b/buymedeal-aacd9.appspot.com/o/sliderImages%2F_1650460829814?alt=media&token=123ab736-ccc1-470f-b95b-82d3de3d02bd"
+      alt="slidebg3"
+  /></ng-template>
+</swiper>
+<section id="nr_services" class="row">
+  <div class="container" style="width: 90% !important">
+    <div class="row sectionTitles">
+      <h2 class="sectionTitle">Stores</h2>
+      <div class="sectionSubTitle">Browse Stores for exciting Deals</div>
+    </div>
+    <div class="row m0 text-center justify-content-md-around">
+      <div
+        class="col-sm-12 col-md-2"
+        *ngFor="let store of storeArray | keyvalue"
+      >
+        <div class="row m0 service">
+          <div class="row m0 innerRow">
+            <img [src]="store.value.img" alt="Store Image" />
+          </div>
+          <div class="serviceName" data-hover="House Rebuilding">
+            {{ store.value.name }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Services-->
+<br />
+<section id="projectsRow" class="row fullWidth">
+  <div class="row sectionTitles m0">
+    <h2 class="sectionTitle">Featured Blogs</h2>
+    <div class="sectionSubTitle">Choose That Fits Your Need</div>
+  </div>
+  <div class="row filtersRow m0">
+    <button
+      type="button"
+      class="collapsed project_filderButton visible-xs"
+      data-toggle="collapse"
+      data-target="#filters"
+    >
+      <span class="btn-text"
+        ><fa-icon [icon]="faFilter"></fa-icon> Project Filter</span
+      >
+    </button>
+    <ul
+      class="list-inline text-center collapse navbar-collapse filters"
+      id="filters"
+    >
+      <li class="active" data-filter="*">
+        <fa-icon [icon]="faTh"></fa-icon>&nbsp;&nbsp;Show All
+      </li>
+      <li data-filter=".catHospital">Hospitals</li>
+      <li data-filter=".catSchools">Schools</li>
+      <li data-filter=".catHouses">Houses</li>
+      <li data-filter=".catFlats">Flats</li>
+      <li data-filter=".catOffices">Offices</li>
+      <li data-filter=".catUniversities">Universities</li>
+    </ul>
+  </div>
+  <div class="row projects m0" id="container">
+    <div
+      class="project"
+      *ngFor="let blog of blogArray | keyvalue"
+      [routerLink]="['/blog', blog.value.blogURL]"
+    >
+      <a href="">
+        <img [src]="blog.value.img" class="blogImg" class="projectImg" />
+      </a>
+      <div class="projectDetails row m0">
+        <div class="fleft nameType" style="max-width: 80%">
+          <div class="row m0 projectName">
+            {{ blog.value.title | slice : 0 : 28 }}
+          </div>
+          <div class="row m0 projectType">
+            {{ getInnerText(whatsNew) | slice : 0 : 90 }}
+          </div>
+          <p hidden [innerHTML]="blog.value.shortDes" #whatsNew></p>
+        </div>
+        <div class="fright projectIcons btn-group" role="group">
+          <a
+            href=""
+            class="btn btn-default"
+            [routerLink]="['/blog', blog.value.blogURL]"
+            ><fa-icon [icon]="faArrowRight"></fa-icon
+          ></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Projects-->
+
+<section id="latestPosts" class="row">
+  <div class="container">
+    <div class="row sectionTitles">
+      <h2 class="sectionTitle">Latest Blogs</h2>
+      <div class="sectionSubTitle">fresh news</div>
+    </div>
+    <div class="row">
+      <div
+        class="col-sm-4 blog latest-blog"
+        *ngFor="let blog of blogArray | slice : 0 : 3 | keyvalue"
+        [routerLink]="['/blog', blog.value.blogURL]"
+      >
+        <div class="row m0 blogInner">
+          <div class="row m0 blogDateTime">
+            <fa-icon [icon]="faCalendar"></fa-icon>
+            <span class="authorName">{{ blog.value.author }}</span> wrote on
+            {{ blog.value.CreatedAt | date }}
+          </div>
+          <div class="row m0 featureImg">
+            <a href="">
+              <img
+                [src]="blog.value.img"
+                class="blogImg"
+                class="img-responsive"
+              />
+            </a>
+          </div>
+          <div class="row m0 postExcerpts">
+            <div class="row m0 postExcerptInner">
+              <a
+                href=""
+                class="postTitle row m0"
+                [routerLink]="['/blog', blog.value.blogURL]"
+                ><h4>{{ blog.value.title | slice : 0 : 25 }}</h4></a
+              >
+              <p>
+                {{ (getInnerText(whatsNew2) | slice : 0 : 220) + "..." }}
+              </p>
+              <p hidden [innerHTML]="blog.value.shortDes" #whatsNew2></p>
+              <a
+                href=""
+                class="readMore"
+                [routerLink]="['/blog', blog.value.blogURL]"
+                >Read more</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Latest Blog-->
+
+<!-- <section id="testimonials" class="row">
+  <div class="container">
+    <div class="row sectionTitles">
+      <h2 class="sectionTitle whiteTC">Latest Posts</h2>
+      <div class="sectionSubTitle whiteTC">fresh news</div>
+    </div>
+    <div class="row">
+      <div class="owl-carousel testimonialSlider row m0">
+        <div class="item">
+          <div class="clientPhoto row m0">
+            <img src="assets/images/testimonial/photo.png" >
+          </div>
+          <div class="clientNameTitle row m0">John Smith, CEO at Evanto</div>
+          <div class="arrow row m0">
+            <img src="assets/images/testimonial/arrow.png" alt="arrow down" />
+          </div>
+          <div class="testimonial row m0">
+            This is Photoshop's version of Lorem Ipsum Proin gravida nibh vel
+            velit auctor aliquet. Aenean Sollicitudin, lorem quis bibendum
+            auctor, nisi elit consequat ipsum,
+          </div>
+        </div>
+        <div class="item">
+          <div class="clientPhoto row m0">
+            <img src="assets/images/testimonial/photo.png" >
+          </div>
+          <div class="clientNameTitle row m0">John Smith, CEO at Evanto</div>
+          <div class="arrow row m0">
+            <img src="assets/images/testimonial/arrow.png" alt="arrow down" />
+          </div>
+          <div class="testimonial row m0">
+            This is Photoshop's version of Lorem Ipsum Proin gravida nibh vel
+            velit auctor aliquet. Aenean Sollicitudin, lorem quis bibendum
+            auctor, nisi elit consequat ipsum,
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!--Testimonials-->
+
+<section id="elements" class="row">
+  <div class="row sectionTitles m0">
+    <h2 class="sectionTitle">Accordion &amp; Tabs</h2>
+    <div class="sectionSubTitle">elements</div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <div
+          class="panel-group"
+          id="hAccordion"
+          role="tablist"
+          aria-multiselectable="true"
+        >
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+              <h4 class="panel-title">
+                <a
+                  data-toggle="collapse"
+                  data-parent="#hAccordion"
+                  href="#collapse1"
+                  aria-expanded="true"
+                  aria-controls="collapse1"
+                >
+                  <fa-icon [icon]="faQuestion"></fa-icon>Marketplace Basics
+                  <span class="sign fa"></span>
+                </a>
+              </h4>
+            </div>
+            <div
+              id="collapse1"
+              class="panel-collapse collapse in"
+              role="tabpanel"
+              aria-labelledby="headingOne"
+            >
+              <div class="panel-body">
+                <div class="fleft icon">
+                  <fa-icon [icon]="faLaptop"></fa-icon>
+                </div>
+                <div class="fleft texts">
+                  Proin gravida nibh vel velit auctor aliquet. Aenean
+                  sollicitudin, lorem quis bibendum auctor, nisi elit consequat
+                  ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet
+                  nibh vulputate
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--hAccordion No #1-->
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="heading2">
+              <h4 class="panel-title">
+                <a
+                  class="collapsed"
+                  data-toggle="collapse"
+                  data-parent="#hAccordion"
+                  href="#collapse2"
+                  aria-expanded="false"
+                  aria-controls="collapse2"
+                >
+                  <fa-icon [icon]="faQuestion"></fa-icon>Author Resources
+                  <span class="sign fa"></span>
+                </a>
+              </h4>
+            </div>
+            <div
+              id="collapse2"
+              class="panel-collapse collapse"
+              role="tabpanel"
+              aria-labelledby="heading2"
+            >
+              <div class="panel-body">
+                <div class="fleft icon">
+                  <fa-icon [icon]="faLaptop"></fa-icon>
+                </div>
+                <div class="fleft texts">
+                  Proin gravida nibh vel velit auctor aliquet. Aenean
+                  sollicitudin, lorem quis bibendum auctor, nisi elit consequat
+                  ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet
+                  nibh vulputate
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--hAccordion No #2-->
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="heading3">
+              <h4 class="panel-title">
+                <a
+                  class="collapsed"
+                  data-toggle="collapse"
+                  data-parent="#hAccordion"
+                  href="#collapse3"
+                  aria-expanded="false"
+                  aria-controls="collapse3"
+                >
+                  <fa-icon [icon]="faQuestion"></fa-icon>Authoring Rquirements
+                  <span class="sign fa"></span>
+                </a>
+              </h4>
+            </div>
+            <div
+              id="collapse3"
+              class="panel-collapse collapse"
+              role="tabpanel"
+              aria-labelledby="heading3"
+            >
+              <div class="panel-body">
+                <div class="fleft icon">
+                  <fa-icon [icon]="faLaptop"></fa-icon>
+                </div>
+                <div class="fleft texts">
+                  Proin gravida nibh vel velit auctor aliquet. Aenean
+                  sollicitudin, lorem quis bibendum auctor, nisi elit consequat
+                  ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet
+                  nibh vulputate
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--hAccordion No #3-->
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="heading4">
+              <h4 class="panel-title">
+                <a
+                  class="collapsed"
+                  data-toggle="collapse"
+                  data-parent="#hAccordion"
+                  href="#collapse4"
+                  aria-expanded="false"
+                  aria-controls="collapse4"
+                >
+                  <fa-icon [icon]="faQuestion"></fa-icon>Copyright &amp; Legal
+                  <span class="sign fa"></span>
+                </a>
+              </h4>
+            </div>
+            <div
+              id="collapse4"
+              class="panel-collapse collapse"
+              role="tabpanel"
+              aria-labelledby="heading4"
+            >
+              <div class="panel-body">
+                <div class="fleft icon">
+                  <fa-icon [icon]="faLaptop"></fa-icon>
+                </div>
+                <div class="fleft texts">
+                  Proin gravida nibh vel velit auctor aliquet. Aenean
+                  sollicitudin, lorem quis bibendum auctor, nisi elit consequat
+                  ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet
+                  nibh vulputate
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--hAccordion No #4-->
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="heading5">
+              <h4 class="panel-title">
+                <a
+                  class="collapsed"
+                  data-toggle="collapse"
+                  data-parent="#hAccordion"
+                  href="#collapse5"
+                  aria-expanded="false"
+                  aria-controls="collapse5"
+                >
+                  <fa-icon [icon]="faQuestion"></fa-icon>Affiliate Program
+                  <span class="sign fa"></span>
+                </a>
+              </h4>
+            </div>
+            <div
+              id="collapse5"
+              class="panel-collapse collapse"
+              role="tabpanel"
+              aria-labelledby="heading5"
+            >
+              <div class="panel-body">
+                <div class="fleft icon">
+                  <fa-icon [icon]="faLaptop"></fa-icon>
+                </div>
+                <div class="fleft texts">
+                  Proin gravida nibh vel velit auctor aliquet. Aenean
+                  sollicitudin, lorem quis bibendum auctor, nisi elit consequat
+                  ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet
+                  nibh vulputate
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--hAccordion No #5-->
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="row m0 leftAlignedTap">
+          <ul class="nav nav-tabs" role="tablist" id="myTab">
+            <li role="presentation" class="active">
+              <a
+                href="#h_tab1"
+                aria-controls="h_tab1"
+                role="tab"
+                data-toggle="tab"
+              >
+                <fa-icon [icon]="faLaptop"></fa-icon> Responsive Layout
+              </a>
+            </li>
+            <li role="presentation">
+              <a
+                href="#h_tab2"
+                aria-controls="h_tab2"
+                role="tab"
+                data-toggle="tab"
+              >
+                <fa-icon [icon]="faBriefcase"></fa-icon> Multiple Portfolios
+              </a>
+            </li>
+            <li role="presentation">
+              <a
+                href="#h_tab3"
+                aria-controls="h_tab3"
+                role="tab"
+                data-toggle="tab"
+              >
+                <fa-icon [icon]="faYoutubeSquare"></fa-icon> Video Support
+              </a>
+            </li>
+          </ul>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="h_tab1">
+              Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin,
+              lorem quis bibendum auctor, nisi elit consequat ipsum, nec
+              sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate
+              cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec
+              tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae
+              erat consequat auctor eu in elit.
+            </div>
+            <div role="tabpanel" class="tab-pane" id="h_tab2">
+              Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
+              Morbi accumsan ipsum velit. Proin gravida nibh vel velit auctor
+              aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi
+              elit consequat ipsum, nec sagittis sem nibh id elit. Nam nec
+              tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae
+              erat consequat auctor eu in elit.
+            </div>
+            <div role="tabpanel" class="tab-pane" id="h_tab3">
+              Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non
+              mauris vitae erat consequat auctor eu in elit. Proin gravida nibh
+              vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum
+              auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.
+              Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
+              Morbi accumsan ipsum velit.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,72 @@
+<br />
+<div class="container px-4">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a>Home</a></li>
+      <li class="breadcrumb-item active"><a>Blogs</a></li>
+    </ol>
+  </nav>
+
+  <br />
+
+  <section id="blogs" class="row">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-12">
+          <div class="row" *ngIf="blogsArr">
+            <div
+              class="row m0 blog"
+              *ngFor="let blog of blogsArr | keyvalue"
+              [routerLink]="['/blog/', blog.value.blogURL]"
+            >
+              <div class="row m0 blogInner">
+                <div class="col-sm-6 p0">
+                  <div class="row m0 blogDateTime">
+                    <fa-icon [icon]="faCalendar"></fa-icon>
+                    <span class="authorName">{{ blog.value.author }}</span>
+                    wrote on
+                    {{ blog.value.CreatedAt | date }}
+                  </div>
+                  <p hidden [innerHTML]="blog.value.shortDes" #whatsNew2></p>
+                  <div class="row m0 featureImg">
+                    <a>
+                      <img
+                        [src]="blog.value.img"
+                        alt="blogImg"
+                        class="img-responsive"
+                      />
+                    </a>
+                  </div>
+                </div>
+                <div class="col-sm-6 p0">
+                  <div class="row m0 postExcerpts">
+                    <div class="row m0 postExcerptInner">
+                      <a class="postTitle row m0"
+                        ><h4>{{ blog.value.title | slice : 0 : 40 }}</h4></a
+                      >
+                      <p>{{ getInnerText(whatsNew2) | slice : 0 : 500 }}</p>
+                      <a
+                      
+                        class="readMore"
+                        [routerLink]="['/blog', blog.value.blogURL]"
+                        >Read more</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row paginationRow m0">
+            <div class="paginationInner m0 row">
+              <ul class="pagination fleft">
+                <li class="active"><a>Previous</a></li>
+                <li><a>Next</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

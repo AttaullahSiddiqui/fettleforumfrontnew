@@ -1,0 +1,10 @@
+ul > li.termsListItem {
+  font-size: 1.6em;
+  font-family: futura;
+  color: #2a2929;
+  display: list-item !important;
+  list-style: disc !important;
+}
+ul {
+  max-width: 90%;
+}

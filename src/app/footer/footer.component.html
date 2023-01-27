@@ -1,0 +1,86 @@
+<footer id="nr_footer" class="row">
+  <div class="container">
+    <div class="row goTop">
+      <a (click)="scrollToTop()" class="scrollTop"
+        ><fa-icon [icon]="faAngleUp"></fa-icon
+      ></a>
+    </div>
+    <div class="footerWidget row">
+      <div class="col-sm-6 widget">
+        <div class="getInTouch_widget row">
+          <div class="widgetHeader row m0">
+            <img src="assets/images/whiteSquare.png" alt="" />Get in touch
+          </div>
+          <div class="row getInTouch_tab m0">
+            <ul
+              class="nav nav-tabs nav-justified"
+              role="tablist"
+              id="getInTouch_tab"
+            >
+              <li role="presentation" class="active">
+                <a
+                  href="#contactPhone"
+                  aria-controls="contactPhone"
+                  role="tab"
+                  data-toggle="tab"
+                  ><fa-icon [icon]="faPhone"></fa-icon
+                ></a>
+              </li>
+              <li role="presentation">
+                <a
+                  href="#contactEmail"
+                  aria-controls="contactEmail"
+                  role="tab"
+                  data-toggle="tab"
+                  ><fa-icon [icon]="faEnvelope"></fa-icon
+                ></a>
+              </li>
+              <li role="presentation">
+                <a
+                  href="#contactHome"
+                  aria-controls="contactHome"
+                  role="tab"
+                  data-toggle="tab"
+                  ><fa-icon [icon]="faHome"></fa-icon
+                ></a>
+              </li>
+            </ul>
+
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane active" id="contactPhone">
+                <fa-icon [icon]="faPhone"></fa-icon> call us at: +399 (500) 321
+                9548
+              </div>
+              <div role="tabpanel" class="tab-pane" id="contactEmail">
+                <fa-icon [icon]="faEnvelope"></fa-icon>email us at:
+                support@construction.com
+              </div>
+              <div role="tabpanel" class="tab-pane" id="contactHome">
+                <fa-icon [icon]="faHome"></fa-icon>Pawsar, Bicrompur,
+                Munshigonj.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 widget">
+        <div class="row flickrSlider">
+          <div class="widgetHeader row m0">
+            <img src="assets/images/whiteSquare.png" alt="" />Flickr Gallery
+          </div>
+          <div class="row flickrSliderRow m0">
+            <div
+              data-toggle="jsfg"
+              data-tags="dogs"
+              data-per-page="5"
+              data-set-id="72157650377967655"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row copyrightRow">
+      &copy; 2023 <a href="#">FettleForum</a>, All Rights Reserved
+    </div>
+  </div>
+</footer>
