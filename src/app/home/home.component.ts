@@ -20,7 +20,8 @@ import {
   faEnvelope,
   faHome,
   faPhoneAlt,
-  faSlidersH,faArrowRight
+  faSlidersH,
+  faArrowRight,
 } from '@fortawesome/free-solid-svg-icons';
 import { faFile, faCalendar } from '@fortawesome/free-regular-svg-icons';
 import {
@@ -57,6 +58,7 @@ export class HomeComponent implements OnInit {
   faBriefcase = faBriefcase;
   faYoutubeSquare = faYoutubeSquare;
   faAngleUp = faAngleUp;
+  web: boolean = false;
   config: SwiperOptions = {
     slidesPerView: 1,
     autoplay: {
@@ -87,6 +89,7 @@ export class HomeComponent implements OnInit {
   constructor(private _dataService: DataService) {}
 
   ngOnInit(): void {
+    if (window.screen.width > 450) this.web = true;
     this._dataService
       .fetchOnlyLimit('/userDisplay/fetchTopStores', 18)
       .subscribe((res) => {

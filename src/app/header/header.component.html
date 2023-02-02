@@ -3,10 +3,10 @@
     <div class="row">
       <div class="logo col-sm-6">
         <div class="row">
-          <a href="index.html"
+          <a [routerLink]="['']"
             ><img
               src="assets/images/FettleForum_Logo.png"
-              height="80"
+              height="75"
               alt="FettleForum logo"
           /></a>
         </div>
@@ -16,13 +16,13 @@
         <div class="row">
           <ul class="list-inline fright">
             <li>
-              <a href="#"><fa-icon [icon]="faFacebook"></fa-icon></a>
+              <a><fa-icon [icon]="faFacebook"></fa-icon></a>
             </li>
             <li>
-              <a href="#"><fa-icon [icon]="faTwitter"></fa-icon></a>
+              <a><fa-icon [icon]="faTwitter"></fa-icon></a>
             </li>
             <li>
-              <a href="#"><fa-icon [icon]="faGooglePlus"></fa-icon></a>
+              <a><fa-icon [icon]="faGooglePlus"></fa-icon></a>
             </li>
           </ul>
         </div>
@@ -50,21 +50,32 @@
       </div>
       <div class="collapse navbar-collapse" id="main_nav">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="index.html">Home</a></li>
-          <!-- <li class="dropdown">
+          <li
+            [routerLink]="['']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <a>Home</a>
+          </li>
+          <li class="dropdown" *ngIf="categoryArr">
             <a
-              href="#"
               class="dropdown-toggle"
               data-toggle="dropdown"
               role="button"
               aria-expanded="false"
-              >about</a
+              [routerLink]="['/categories']"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >Categories</a
             >
             <ul class="dropdown-menu" role="menu">
-              <li><a href="about-us.html">About us</a></li>
-              <li><a href="about-us2.html">About us 2</a></li>
+              <li *ngFor="let cat of categoryArr | keyvalue">
+                <a [routerLink]="['/category', cat.value.categoryURL]">{{
+                  cat.value.name
+                }}</a>
+              </li>
             </ul>
-          </li> -->
+          </li>
           <!-- <li class="dropdown">
             <a
               href="#"
@@ -80,10 +91,34 @@
               <li><a href="projects3.html">3 Collumn Projects</a></li>
             </ul>
           </li> -->
-          <li><a [routerLink]="['/blogs']">Blogs</a></li>
-          <li><a [routerLink]="['/about']">About</a></li>
-          <li><a [routerLink]="['/privacy']">Privacy</a></li>
-          <li><a [routerLink]="['/termsandconditions']">Terms</a></li>
+          <li
+            [routerLink]="['/blogs']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <a>Blogs</a>
+          </li>
+          <li
+            [routerLink]="['/about']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <a>About</a>
+          </li>
+          <li
+            [routerLink]="['/privacy']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <a>Privacy</a>
+          </li>
+          <li
+            [routerLink]="['/termsandconditions']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <a>Terms</a>
+          </li>
           <!-- <li class="dropdown">
             <a
               href="#"

@@ -17,6 +17,8 @@ import { PrivacyComponent } from './privacy/privacy.component';
 import { BlogComponent } from './blog/blog.component';
 import { BlogsComponent } from './blogs/blogs.component';
 import { SanitizeHtmlPipe } from './sanitize-html.pipe';
+import { CategoriesComponent } from './categories/categories.component';
+import { CategoryComponent } from './category/category.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { SanitizeHtmlPipe } from './sanitize-html.pipe';
     BlogComponent,
     BlogsComponent,
     SanitizeHtmlPipe,
+    CategoriesComponent,
+    CategoryComponent,
   ],
   imports: [
     BrowserModule,

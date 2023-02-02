@@ -47,6 +47,7 @@ module.exports = {
   fetchReviews: fetchReviews,
   addEmailToDB: addEmailToDB,
   submitReview: submitReview,
+  fetchFeaturedCategories: fetchFeaturedCategories,
 };
 
 function fetchSlides(req, res) {
@@ -245,6 +246,30 @@ function fetchStoreProducts(req, res) {
           )
         );
     });
+}
+function fetchFeaturedCategories(req, res) {
+  Category.find(
+    { featuredForHome: true },
+    "name categoryURL",
+    function (err, categories) {
+      if (err) res.json(resHandler.respondError(err[0], err[1] || -1));
+      else if (!categories)
+        res.json(
+          resHandler.respondError(
+            "Unable to fetch categories at the moment",
+            -3
+          )
+        );
+      else
+        res.json(
+          resHandler.respondSuccess(
+            categories,
+            "Categories fetched successfully",
+            2
+          )
+        );
+    }
+  );
 }
 function fetchCategories(req, res) {
   Category.find({}, "name categoryURL", function (err, categories) {

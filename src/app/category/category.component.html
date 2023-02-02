@@ -1,0 +1,44 @@
+<br />
+<div class="container px-4">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="">Home</a></li>
+      <li class="breadcrumb-item"><a href="">Categories</a></li>
+      <li class="breadcrumb-item active">
+        <a href="">{{ activeNode }}</a>
+      </li>
+    </ol>
+  </nav>
+  <br>
+  <div class="container" *ngIf="categoryArr">
+    <div class="row">
+      <div class="col-sm-10">
+        <div class="row m0 leftAlignedTap">
+          <ul class="nav nav-tabs" role="tablist" id="myTab">
+            <li
+              role="presentation"
+              (click)="switchTab(cat.value)"
+              [ngClass]="{ active: activeNode == cat.value.name }"
+              *ngFor="let cat of categoryArr | keyvalue"
+            >
+              <a aria-controls="h_tab1" role="tab" data-toggle="tab">
+                {{ cat.value.name }}
+              </a>
+            </li>
+          </ul>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="h_tab1">
+              Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin,
+              lorem quis bibendum auctor, nisi elit consequat ipsum, nec
+              sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate
+              cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec
+              tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae
+              erat consequat auctor eu in elit.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br><br>

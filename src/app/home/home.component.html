@@ -21,35 +21,11 @@
       alt="slidebg3"
   /></ng-template>
 </swiper>
-<section id="nr_services" class="row">
-  <div class="container" style="width: 90% !important">
-    <div class="row sectionTitles">
-      <h2 class="sectionTitle">Stores</h2>
-      <div class="sectionSubTitle">Browse Stores for exciting Deals</div>
-    </div>
-    <div class="row m0 text-center justify-content-md-around">
-      <div
-        class="col-sm-12 col-md-2"
-        *ngFor="let store of storeArray | keyvalue"
-      >
-        <div class="row m0 service">
-          <div class="row m0 innerRow">
-            <img [src]="store.value.img" alt="Store Image" />
-          </div>
-          <div class="serviceName" data-hover="House Rebuilding">
-            {{ store.value.name }}
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!--Services-->
-<br />
-<section id="projectsRow" class="row fullWidth">
+
+<section id="projectsRow" class="row" [ngClass]="{ fullWidth: !web }">
   <div class="row sectionTitles m0">
     <h2 class="sectionTitle">Featured Blogs</h2>
-    <div class="sectionSubTitle">Choose That Fits Your Need</div>
+    <div class="sectionSubTitle" *ngIf="web">Choose That Fits Your Need</div>
   </div>
   <div class="row filtersRow m0">
     <button
@@ -109,6 +85,34 @@
   </div>
 </section>
 <!--Projects-->
+<br />
+<section id="nr_services" class="row">
+  <div class="container" style="width: 90% !important">
+    <div class="row sectionTitles">
+      <h2 class="sectionTitle">Stores</h2>
+      <div class="sectionSubTitle" *ngIf="web">
+        Browse Stores for exciting Deals
+      </div>
+    </div>
+    <div class="row m0 text-center justify-content-md-around">
+      <div
+        class="col-sm-12 col-md-2"
+        *ngFor="let store of storeArray | keyvalue"
+      >
+        <div class="row m0 service">
+          <div class="row m0 innerRow">
+            <img [src]="store.value.img" alt="Store Image" />
+          </div>
+          <div class="serviceName" data-hover="House Rebuilding">
+            {{ store.value.name }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Services-->
+<br />
 
 <section id="latestPosts" class="row">
   <div class="container">
@@ -162,6 +166,48 @@
     </div>
   </div>
 </section>
+<h2 class="centeredHeading">Affiliated With</h2>
+<marquee
+  width="100%"
+  direction="left"
+  behavior="scroll"
+  scrollamount="16"
+  style="margin-bottom: 35px; margin-top: 30px"
+>
+  <img
+    src="assets/images/partners/admitad.png"
+    [ngClass]="{ partnerImg2: web, partnerImgMobile: !web }"
+  />
+  <img
+    src="assets/images/partners/adtraction.png"
+    [ngClass]="{ partnerImg2: web, partnerImgMobile: !web }"
+  />
+  <img
+    src="assets/images/partners/avantlink.png"
+    [ngClass]="{ partnerImg2: web, partnerImgMobile: !web }"
+  />
+  <img
+    src="assets/images/partners/brandreward.png"
+    [ngClass]="{ partnerImg2: web, partnerImgMobile: !web }"
+  />
+  <img
+    src="assets/images/partners/indoleads.png"
+    [ngClass]="{ partnerImg2: web, partnerImgMobile: !web }"
+  />
+  <img
+    src="assets/images/partners/linkbux.png"
+    [ngClass]="{ partnerImg2: web, partnerImgMobile: !web }"
+  />
+  <img
+    src="assets/images/partners/partnerize.png"
+    [ngClass]="{ partnerImg2: web, partnerImgMobile: !web }"
+  />
+  <img
+    src="assets/images/partners/pepperjam.png"
+    [ngClass]="{ partnerImg2: web, partnerImgMobile: !web }"
+  />
+</marquee>
+<br>
 <!--Latest Blog-->
 
 <!-- <section id="testimonials" class="row">
@@ -206,7 +252,7 @@
 </section> -->
 <!--Testimonials-->
 
-<section id="elements" class="row">
+<!-- <section id="elements" class="row">
   <div class="row sectionTitles m0">
     <h2 class="sectionTitle">Accordion &amp; Tabs</h2>
     <div class="sectionSubTitle">elements</div>
@@ -254,7 +300,6 @@
               </div>
             </div>
           </div>
-          <!--hAccordion No #1-->
           <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="heading2">
               <h4 class="panel-title">
@@ -290,7 +335,6 @@
               </div>
             </div>
           </div>
-          <!--hAccordion No #2-->
           <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="heading3">
               <h4 class="panel-title">
@@ -326,7 +370,6 @@
               </div>
             </div>
           </div>
-          <!--hAccordion No #3-->
           <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="heading4">
               <h4 class="panel-title">
@@ -362,7 +405,6 @@
               </div>
             </div>
           </div>
-          <!--hAccordion No #4-->
           <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="heading5">
               <h4 class="panel-title">
@@ -398,7 +440,6 @@
               </div>
             </div>
           </div>
-          <!--hAccordion No #5-->
         </div>
       </div>
       <div class="col-sm-6">
@@ -465,4 +506,4 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->

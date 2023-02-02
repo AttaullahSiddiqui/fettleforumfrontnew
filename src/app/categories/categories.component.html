@@ -1,0 +1,41 @@
+<br />
+<div class="container px-4">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="">Home</a></li>
+      <li class="breadcrumb-item active"><a href="">Categories</a></li>
+    </ol>
+  </nav>
+  <section id="services" class="row">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-9">
+          <div class="row">
+            <div class="row m0">
+              <div class="col-sm-12">
+                <div class="row m0 serviceFeature">
+                  <div
+                    class="col-sm-12 col-md-4"
+                    *ngFor="let cat of categoryArr | keyvalue"
+                  >
+                    <div
+                      class="media"
+                      [routerLink]="['/category', cat.value.categoryURL]"
+                    >
+                      <div class="media-left">
+                        <fa-icon [icon]="faList"></fa-icon>
+                      </div>
+                      <div class="media-body">
+                        <h5>{{ cat.value.name }}</h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

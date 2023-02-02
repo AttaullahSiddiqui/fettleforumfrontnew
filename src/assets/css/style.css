@@ -353,10 +353,10 @@ header .social_nav ul li:last-child {
 }
 .navbar-static-top .navbar-collapse ul li a {
   padding: 0;
-  line-height: 84px;
+  line-height: 50px;
   text-transform: uppercase;
   width: 100%;
-  font-size: 20px;
+  font-size: 18px;
   position: relative;
   color: #333d40;
 }
@@ -521,10 +521,10 @@ header .social_nav ul li:last-child {
     width: 100%;
   }
   .navbar-static-top .navbar-collapse ul li {
-    width: 140px;
+    width: 120px;
   }
   .navbar-static-top .navbar-collapse ul li a {
-    line-height: 60px;
+    line-height: 50px;
   }
   .navbar-static-top .navbar-collapse ul li.active a:after {
     border-left: 70px solid transparent;
@@ -1274,19 +1274,28 @@ header .social_nav ul li:last-child {
 #services .serviceFeature .media .media-left {
   padding-right: 20px;
 }
-#services .serviceFeature .media .media-left i {
+#services .serviceFeature .media .media-left fa-icon {
   width: 65px;
   line-height: 65px;
   text-align: center;
-  background: rgba(51, 61, 64, 0.3);
+  background: #bd4342;
   font-size: 22px;
   color: #fff;
-  border-radius: 100%;
+  /* border-radius: 50%; */
+  padding: 18px;
+  border: 2px solid #bd4342;
+}
+#services .serviceFeature .media .media-left fa-icon:hover {
+  background: white;
+  color: #bd4342;
+  cursor: pointer;
 }
 #services .serviceFeature .media .media-body h5 {
-  font-size: 16px;
+  font-size: 18px;
   color: #000;
   margin-top: 5px;
+  line-height: 50px;
+  cursor: pointer;
 }
 #services .serviceFeature .media .media-body p {
   font-size: 13px;
@@ -1368,7 +1377,7 @@ header .social_nav ul li:last-child {
   transition: all 300ms ease-in-out;
 }
 #projectsRow .project .projectDetails .nameType .projectName {
-  font-size: 22px;
+  font-size: 21px;
 }
 #projectsRow .project .projectDetails .nameType .projectType {
   color: rgba(255, 255, 255, 0.4);
@@ -1398,14 +1407,12 @@ header .social_nav ul li:last-child {
 #projectsRow .project:hover .projectDetails .projectIcons a {
   background: #bd4342;
 }
-#projectsRow.fullWidth .project,
-#projectsRow.col3 .project {
+.fullWidth .project {
+  width: 100% !important;
+}
+#projectsRow .project {
   width: -webkit-calc(100% / 3);
   width: calc(100% / 3);
-}
-#projectsRow.col2 .project {
-  width: -webkit-calc(100% / 2);
-  width: calc(100% / 2);
 }
 #projectsRow.col2 .projects,
 #projectsRow.col3 .projects {
@@ -1978,15 +1985,16 @@ header .social_nav ul li:last-child {
 .leftAlignedTap ul.nav-tabs li a {
   color: rgba(156, 156, 156, 0.9);
   font-family: "Raleway", sans-serif;
-  font-size: 15px;
+  font-size: 18px;
   text-align: center;
-  line-height: 120px;
-  height: 120px;
+  line-height: 90px;
+  height: 90px;
   padding: 0;
   border-radius: 0;
   border: 0;
   margin: 0;
   border-bottom: 1px solid rgba(156, 156, 156, 0.3);
+  cursor: pointer;
 }
 .leftAlignedTap ul.nav-tabs li a fa-icon {
   font-size: 24px;
@@ -2189,13 +2197,18 @@ header .social_nav ul li:last-child {
 }
 #nr_footer .container .copyrightRow {
   text-align: center;
-  line-height: 122px;
   border-top: 1px solid #293133;
   color: #fff;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.2em;
 }
 #nr_footer .container .copyrightRow a {
-  color: #fff;
+  color: #bd4342;
   text-decoration: none;
+  font-size: 1.24em;
 }
 .twitterSlide {
   background: #293133;
@@ -2999,8 +3012,10 @@ header .social_nav ul li:last-child {
   line-height: 28px;
   border: 1px solid #bd4342;
   color: #bd4342;
-  border-radius: 100%;
+  border-radius: 50%;
   text-align: center;
+  font-size: 1.4em;
+  padding: 10px;
 }
 .commentForm form .input-group input {
   border-color: rgba(156, 156, 156, 0.3);
@@ -3119,7 +3134,7 @@ header .social_nav ul li:last-child {
   color: #c0392b;
 }
 #contactForm {
-  padding-top: 45px;
+  /* padding-top: 20px; */
 }
 #mapBox {
   width: 100%;

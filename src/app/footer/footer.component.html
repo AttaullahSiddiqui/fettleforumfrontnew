@@ -66,21 +66,57 @@
       <div class="col-sm-6 widget">
         <div class="row flickrSlider">
           <div class="widgetHeader row m0">
-            <img src="assets/images/whiteSquare.png" alt="" />Flickr Gallery
+            <img src="assets/images/whiteSquare.png" alt="" />Subscription
+            Gallery
           </div>
-          <div class="row flickrSliderRow m0">
-            <div
-              data-toggle="jsfg"
-              data-tags="dogs"
-              data-per-page="5"
-              data-set-id="72157650377967655"
-            ></div>
+          <div class="row m0 commentForm">
+            <form
+              class="row m0"
+              id="contactForm"
+              method="post"
+              name="contact"
+              action="contact_process.php"
+            >
+              <div class="col-sm-10 p0 commenterInfoInputs">
+                <div class="row m0">
+                  <div class="input-group">
+                    <span class="input-group-addon"
+                      ><fa-icon [icon]="faUser"></fa-icon
+                    ></span>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="name"
+                      id="name"
+                      placeholder="Name"
+                    />
+                  </div>
+                  <div class="input-group">
+                    <span class="input-group-addon"
+                      ><fa-icon [icon]="faEnvelope"></fa-icon
+                    ></span>
+                    <input
+                      type="email"
+                      class="form-control"
+                      name="email"
+                      id="email"
+                      placeholder="e-mail"
+                    />
+                  </div>
+                  <button class="btn btn-default" type="submit">
+                    send message
+                  </button>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>
     </div>
     <div class="row copyrightRow">
-      &copy; 2023 <a href="#">FettleForum</a>, All Rights Reserved
+      &copy; 2023 <a href="#">FettleForum</a>, All Rights Reserved <br />
+      We may earn a commission when you use one of our coupons/links to make a
+      purchase
     </div>
   </div>
 </footer>

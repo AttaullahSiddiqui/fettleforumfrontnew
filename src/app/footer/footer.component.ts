@@ -3,7 +3,7 @@ import {
   faAngleUp,
   faEnvelope,
   faHome,
-  faPhoneAlt,
+  faPhoneAlt,faUser
 } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -16,11 +16,12 @@ export class FooterComponent implements OnInit {
   faHome = faHome;
   faAngleUp = faAngleUp;
   faPhone = faPhoneAlt;
+  faUser = faUser;
   constructor() {}
 
   ngOnInit(): void {}
 
-  scrollToTop(){
-    window.scrollTo(0,0)
+  scrollToTop() {
+    window.scrollTo(0, 0);
   }
 }
