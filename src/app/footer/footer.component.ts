@@ -22,7 +22,9 @@ export class FooterComponent implements OnInit {
   isBusy: Boolean = false;
   contactEmail: string = '';
   contactName: string = '';
-  constructor(private _dataService: DataService) {}
+  constructor(
+    private _dataService: DataService
+  ) {}
 
   ngOnInit(): void {}
 
@@ -32,7 +34,7 @@ export class FooterComponent implements OnInit {
   addEmailToDB(emailId: any, name: any) {
     if (this.isBusy) return;
     if (!emailId || !name) {
-      // this.toastr.error(res.message, 'Error');
+      // this.toastr.error('Please fill out both fields', 'Error');
       return;
     }
     this.isBusy = true;
@@ -41,8 +43,12 @@ export class FooterComponent implements OnInit {
       .subscribe((res) => {
         if (res.data) {
           this.contactEmail = '';
+          this.contactName = '';
           this.isBusy = false;
-          // this.toastr.success('We received your Email', 'Success');
+          // this.toastr.success(
+          //   'Successfully subscribed to our newsletter',
+          //   'Success'
+          // );
         } else {
           this.isBusy = false;
           // this.toastr.error(res.message, 'Error');
