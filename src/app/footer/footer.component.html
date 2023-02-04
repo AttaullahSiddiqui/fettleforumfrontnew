@@ -73,9 +73,7 @@
             <form
               class="row m0"
               id="contactForm"
-              method="post"
-              name="contact"
-              action="contact_process.php"
+              (ngSubmit)="addEmailToDB(contactEmail, contactName)"
             >
               <div class="col-sm-10 p0 commenterInfoInputs">
                 <div class="row m0">
@@ -87,8 +85,9 @@
                       type="text"
                       class="form-control"
                       name="name"
-                      id="name"
-                      placeholder="Name"
+                      required
+                      [(ngModel)]="contactName"
+                      placeholder="Enter your name"
                     />
                   </div>
                   <div class="input-group">
@@ -99,8 +98,9 @@
                       type="email"
                       class="form-control"
                       name="email"
-                      id="email"
-                      placeholder="e-mail"
+                      required
+                      [(ngModel)]="contactEmail"
+                      placeholder="Enter your email"
                     />
                   </div>
                   <button class="btn btn-default" type="submit">

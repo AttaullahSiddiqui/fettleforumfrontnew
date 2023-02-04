@@ -9,12 +9,17 @@
       </li>
     </ol>
   </nav>
-  <br>
+  <br />
   <div class="container" *ngIf="categoryArr">
     <div class="row">
-      <div class="col-sm-10">
-        <div class="row m0 leftAlignedTap">
-          <ul class="nav nav-tabs" role="tablist" id="myTab">
+      <div class="col-sm-12">
+        <div class="row m0 leftAlignedTap" style="border:none">
+          <ul
+            class="nav nav-tabs"
+            role="tablist"
+            id="myTab"
+            style="width: 20%; border: 1px solid black"
+          >
             <li
               role="presentation"
               (click)="switchTab(cat.value)"
@@ -26,14 +31,39 @@
               </a>
             </li>
           </ul>
-          <div class="tab-content">
+          <div class="tab-content" style="width: 80%">
             <div role="tabpanel" class="tab-pane active" id="h_tab1">
-              Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin,
-              lorem quis bibendum auctor, nisi elit consequat ipsum, nec
-              sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate
-              cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec
-              tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae
-              erat consequat auctor eu in elit.
+              <section
+                id="nr_services"
+                class="row"
+                *ngIf="!isLoading"
+                style="padding-top: 0 !important"
+              >
+                <h2 *ngIf="!storeArr.length" style="text-align: center">
+                  No store in this Category
+                </h2>
+                <div
+                  class="container"
+                  *ngIf="storeArr.length"
+                  style="width: 100%"
+                >
+                  <div class="row m0 text-center justify-content-md-around">
+                    <div
+                      class="col-sm-12 col-md-2"
+                      *ngFor="let store of storeArr | keyvalue"
+                    >
+                      <div class="row m0 service">
+                        <div class="row m0 innerRow">
+                          <img [src]="store.value.img" alt="Store Image" />
+                        </div>
+                        <div class="serviceName" data-hover="House Rebuilding">
+                          {{ store.value.name }}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
             </div>
           </div>
         </div>
@@ -41,4 +71,4 @@
     </div>
   </div>
 </div>
-<br><br>
+<br /><br />

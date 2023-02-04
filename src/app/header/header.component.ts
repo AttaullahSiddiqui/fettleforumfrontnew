@@ -14,7 +14,9 @@ export class HeaderComponent implements OnInit {
   faFacebook = faFacebook;
   faTwitter = faTwitter;
   faGooglePlus = faGooglePlus;
-  categoryArr=null
+  categoryArr = null;
+  isBusy: Boolean = false;
+  contactEmail: string = '';
   constructor(private _dataService: DataService) {}
 
   ngOnInit(): void {
