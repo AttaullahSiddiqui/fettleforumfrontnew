@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { finalize, skip } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import Swal from 'sweetalert2';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -56,5 +58,23 @@ export class DataService {
     return this._http
       .post(url, updatedArray)
       .pipe(map((res) => JSON.parse(JSON.stringify(res))));
+  }
+  successToast(msg: string) {
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: msg,
+      showConfirmButton: false,
+      timer: 2200,
+    });
+  }
+  errorToast(msg: string) {
+    Swal.fire({
+      position: 'top-end',
+      icon: 'error',
+      title: msg,
+      showConfirmButton: false,
+      timer: 2200,
+    });
   }
 }

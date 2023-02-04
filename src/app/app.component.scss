@@ -2632,6 +2632,12 @@ textarea.form-control {
   -webkit-animation: loader-dash 1.5s ease-in-out infinite;
   animation: loader-dash 1.5s ease-in-out infinite;
   stroke-linecap: round; }
+  .loaderImg{
+    position: relative;
+    left: 43%;
+    // top: 37vh;
+    margin: 80px 0;
+}
 
 @keyframes loader-rotate {
   100% {
@@ -2648,3 +2654,4 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+

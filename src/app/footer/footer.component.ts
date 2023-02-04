@@ -34,7 +34,7 @@ export class FooterComponent implements OnInit {
   addEmailToDB(emailId: any, name: any) {
     if (this.isBusy) return;
     if (!emailId || !name) {
-      // this.toastr.error('Please fill out both fields', 'Error');
+      this._dataService.errorToast('Please fill out both fields');
       return;
     }
     this.isBusy = true;
@@ -45,13 +45,12 @@ export class FooterComponent implements OnInit {
           this.contactEmail = '';
           this.contactName = '';
           this.isBusy = false;
-          // this.toastr.success(
-          //   'Successfully subscribed to our newsletter',
-          //   'Success'
-          // );
+          this._dataService.successToast(
+            'Successfully subscribed to our newsletter'
+          );
         } else {
           this.isBusy = false;
-          // this.toastr.error(res.message, 'Error');
+          this._dataService.errorToast(res.message);
         }
       });
   }

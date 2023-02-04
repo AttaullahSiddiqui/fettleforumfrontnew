@@ -82,7 +82,7 @@ export class BlogComponent implements OnInit {
   }
   errorHandler(err: any) {
     this.isFetching = false;
-    this.responseError = err;
+    this._dataService.errorToast(err)
     window.scrollTo(0, 0);
   }
   openLink(link: any) {

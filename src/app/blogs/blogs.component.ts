@@ -32,7 +32,7 @@ export class BlogsComponent implements OnInit {
           this.isFetching = false;
           window.scrollTo(0, 0);
         } else {
-          // this.errorHandler(res.message);
+          this._dataService.errorToast(res.message);
           this.isFetching = false;
           if (this.skipNo) this.skipNo -= 6;
         }
@@ -48,7 +48,7 @@ export class BlogsComponent implements OnInit {
   }
   loadPrev() {
     if (!this.skipNo) {
-      // this.errorHandler('No more previous data exist');
+      this._dataService.errorToast('No more previous data exist');
       return;
     }
     if (this.isFetching) return;

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {
   faFacebook,
   faTwitter,
-  faGooglePlus,
+  faInstagram,faPinterest
 } from '@fortawesome/free-brands-svg-icons';
 import { DataService } from '../data.service';
 @Component({
@@ -13,7 +13,8 @@ import { DataService } from '../data.service';
 export class HeaderComponent implements OnInit {
   faFacebook = faFacebook;
   faTwitter = faTwitter;
-  faGooglePlus = faGooglePlus;
+  faInstagram = faInstagram;
+  faPinterest = faPinterest;
   categoryArr = null;
   isBusy: Boolean = false;
   contactEmail: string = '';

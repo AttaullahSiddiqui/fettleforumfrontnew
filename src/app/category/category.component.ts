@@ -10,7 +10,7 @@ import { DataService } from '../data.service';
 })
 export class CategoryComponent implements OnInit {
   categoryArr = null;
-  storeArr:Array<any> = [];
+  storeArr: Array<any> = [];
   isLoading = false;
   activeNode: string = '';
   constructor(
@@ -36,7 +36,6 @@ export class CategoryComponent implements OnInit {
               }
             });
             this.activeNode = targetCategoryName || res.data[0].name;
-            console.log(this.activeNode);
           }
         });
     });
@@ -63,10 +62,8 @@ export class CategoryComponent implements OnInit {
       .subscribe((res) => {
         if (res.data) {
           this.storeArr = res.data;
-          console.log(this.storeArr)
           this.isLoading = false;
-        }
-        // else this.errorHandler(res.message);
+        } else this._dataService.errorToast(res.message);
       });
   }
 }

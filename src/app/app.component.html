@@ -1,3 +1,8 @@
 <app-header></app-header>
-  <router-outlet></router-outlet>
+<img
+  src="assets/images/Eclipse-1s-200px.gif"
+  *ngIf="showLoader"
+  class="loaderImg"
+/>
+<router-outlet *ngIf="!showLoader"></router-outlet>
 <app-footer></app-footer>
