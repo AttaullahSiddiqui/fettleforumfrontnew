@@ -130,7 +130,13 @@ a:hover {
 .widgetS h4 {
   color: #40434c;
   font-weight: bold;
-  margin: 0 0 18px;
+  margin: 0 0 5px;
+}
+.widgetS h3 {
+  color: #bd4342;
+  font-weight: bold;
+  margin: 0 0 5px;
+  text-align: center;
 }
 @media (max-width: 1024px) {
   .widgetS h4 {
@@ -176,6 +182,7 @@ a:hover {
   padding: 20px 0;
   margin: 0;
   border-bottom: 1px solid rgba(156, 156, 156, 0.3);
+  cursor: pointer;
 }
 .recentPostWidget .recentblogs .recentblog:first-child {
   padding-top: 0;
@@ -185,17 +192,24 @@ a:hover {
   padding-bottom: 0;
 }
 .recentPostWidget .recentblogs .recentblog .media-left a {
-  width: 50px;
-  height: 50px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  overflow: hidden;
   padding: 0;
   display: block;
+  margin-right: 10px;
 }
 .recentPostWidget .recentblogs .recentblog .media-left a img {
   width: 100%;
 }
 .recentPostWidget .recentblogs .recentblog .media-body a h5 {
   color: #9c9c9c;
-  line-height: 22px;
+  line-height: 40px;
+  font-size: 17px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  overflow-wrap: anywhere;
 }
 @media (max-width: 1024px) {
   .recentPostWidget .recentblogs .recentblog .media-left a {
@@ -203,7 +217,7 @@ a:hover {
     height: 40px;
   }
   .recentPostWidget .recentblogs .recentblog .media-body a h5 {
-    font-size: 13px;
+    font-size: 14px;
     line-height: 18px;
   }
 }
@@ -312,6 +326,18 @@ header .social_nav ul li:last-child {
     text-align: center;
     margin: 15px 0 0;
   }
+}
+header .social_nav ul li a.navBttn {
+  width: auto;
+  line-height: 43px;
+  background: #bd4342;
+  color: #fff;
+  display: block;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 0;
+  font-weight: 400;
+  padding: 2px 25px;
 }
 /*Navbar*/
 .navbar-static-top {
@@ -2302,7 +2328,7 @@ header .social_nav ul li:last-child {
   width: 62px;
   line-height: 60px;
   border-radius: 100%;
-  padding: 16px;
+  padding: 16px 18px;
   border: 1px solid rgba(255, 255, 255, 0.8);
   font-size: 24px;
 }
@@ -2329,12 +2355,16 @@ header .social_nav ul li:last-child {
 }
 .footerWidget .getInTouch_widget .tab-content .tab-pane {
   background: #fff;
-  padding: 24px 15px 20px 20px;
+  padding: 17px 15px 12px 20px;
+}
+.footerWidget .getInTouch_widget .tab-content .tab-pane {
+  font-size: 16px;
 }
 .footerWidget .getInTouch_widget .tab-content .tab-pane fa-icon {
   color: #bd4342;
-  font-size: 16px;
-  margin-right: 10px;
+  font-size: 30px;
+  margin-right: 8px;
+  vertical-align: middle;
 }
 .footerWidget .flickrSlider {
   padding-left: 15px;
@@ -2682,16 +2712,15 @@ header .social_nav ul li:last-child {
 #aboutus .member .memberIntro .memberSocial li a {
   display: block;
 }
-#aboutus .member .memberIntro .memberSocial li a fa-icon {
-  color: #293133;
-  border: 1px solid #838383;
-  width: 40px;
+#aboutus .member .memberIntro .memberSocial li a span {
+  color: #bd4342;
+  border: 1px solid #bd4342;
   line-height: 38px;
   height: 40px;
-  border-radius: 100%;
   text-align: center;
+  padding: 12px;
 }
-#aboutus .member .memberIntro .memberSocial li a:hover fa-icon {
+#aboutus .member .memberIntro .memberSocial li a:hover span {
   background: #bd4342;
   border-color: #bd4342;
   color: #fff;
@@ -2822,8 +2851,11 @@ header .social_nav ul li:last-child {
   text-align: center;
 }
 #aboutus .member.member3_1 .memImg img {
-  max-width: 100%;
+  max-width: 240px;
   display: inline-block;
+  width: 240px;
+  border-radius: 50%;
+  margin-bottom: 20px;
 }
 #aboutus .member.member3_1 .memberIntro {
   text-align: center;
@@ -2831,11 +2863,11 @@ header .social_nav ul li:last-child {
   color: #fff;
 }
 #aboutus .member.member3_1 .memberIntro .name {
-  line-height: 62px;
-  font-size: 22px;
-  font-weight: bold;
+  line-height: 40px;
+  font-size: 17px;
   position: relative;
   background: #bd4342;
+  padding: 15px 10px;
 }
 #aboutus .member.member3_1 .memberIntro .name:after {
   content: "";

@@ -90,6 +90,10 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     if (window.screen.width > 450) this.web = true;
+    this._dataService.fetchAPI('/userDisplay/fetchSlides').subscribe((res) => {
+      if (res.data) this.slideArray = res.data;
+      else this._dataService.errorToast(res.message);
+    });
     this._dataService
       .fetchOnlyLimit('/userDisplay/fetchTopStores', 18)
       .subscribe((res) => {
@@ -103,12 +107,11 @@ export class HomeComponent implements OnInit {
         else this._dataService.errorToast(res.message);
       });
   }
-
+  openLink(link:any) {
+    window.open(link, '_blank');
+  }
   onSwiper(swiper: any) {
     swiper.update();
-  }
-  onSlideChange() {
-    console.log('slide change');
   }
   getInnerText(el: any) {
     return el.innerText;

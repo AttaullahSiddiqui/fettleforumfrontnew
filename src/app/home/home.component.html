@@ -2,23 +2,13 @@
   [config]="config"
   class="mySwiper swiper-h"
   (swiper)="onSwiper($event)"
-  (slideChange)="onSlideChange()"
   #newSwiper
 >
-  <ng-template swiperSlide
+  <ng-template swiperSlide *ngFor="let slide of slideArray | keyvalue"
     ><img
-      src="https://firebasestorage.googleapis.com/v0/b/buymedeal-aacd9.appspot.com/o/sliderImages%2F_1650653262302?alt=media&token=26523aef-cfdf-4c34-8628-da2323b0adfa"
-      alt="slidebg1"
-  /></ng-template>
-  <ng-template swiperSlide
-    ><img
-      src="https://firebasestorage.googleapis.com/v0/b/buymedeal-aacd9.appspot.com/o/sliderImages%2F_1650476565272?alt=media&token=01e697f0-a70f-4512-9d23-c97cef147349"
-      alt="slidebg2"
-  /></ng-template>
-  <ng-template swiperSlide
-    ><img
-      src="https://firebasestorage.googleapis.com/v0/b/buymedeal-aacd9.appspot.com/o/sliderImages%2F_1650460829814?alt=media&token=123ab736-ccc1-470f-b95b-82d3de3d02bd"
-      alt="slidebg3"
+      [src]="slide.value.img"
+      alt="Random slide picture"
+      (click)="openLink(slide.value.link)"
   /></ng-template>
 </swiper>
 
@@ -207,7 +197,7 @@
     [ngClass]="{ partnerImg2: web, partnerImgMobile: !web }"
   />
 </marquee>
-<br>
+<br />
 <!--Latest Blog-->
 
 <!-- <section id="testimonials" class="row">

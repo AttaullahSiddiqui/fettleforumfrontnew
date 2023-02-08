@@ -21,6 +21,8 @@ import { BlogsComponent } from './blogs/blogs.component';
 import { SanitizeHtmlPipe } from './sanitize-html.pipe';
 import { CategoriesComponent } from './categories/categories.component';
 import { CategoryComponent } from './category/category.component';
+import { StoresComponent } from './stores/stores.component';
+import { StoreComponent } from './store/store.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { CategoryComponent } from './category/category.component';
     SanitizeHtmlPipe,
     CategoriesComponent,
     CategoryComponent,
+    StoresComponent,
+    StoreComponent,
   ],
   imports: [
     BrowserModule,

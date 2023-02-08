@@ -1,5 +1,5 @@
 <footer id="nr_footer" class="row">
-  <div class="container">
+  <div class="container" style="max-width: 82%; width: 82%">
     <div class="row goTop">
       <a (click)="scrollToTop()" class="scrollTop"
         ><fa-icon [icon]="faAngleUp"></fa-icon
@@ -19,45 +19,72 @@
             >
               <li role="presentation" class="active">
                 <a
-                  href="#contactPhone"
-                  aria-controls="contactPhone"
+                  href="#contactFb"
+                  aria-controls="contactFb"
                   role="tab"
                   data-toggle="tab"
-                  ><fa-icon [icon]="faPhone"></fa-icon
+                  ><fa-icon [icon]="faFacebook"></fa-icon
                 ></a>
               </li>
               <li role="presentation">
                 <a
-                  href="#contactEmail"
-                  aria-controls="contactEmail"
+                  href="#contactInsta"
+                  aria-controls="contactInsta"
                   role="tab"
                   data-toggle="tab"
-                  ><fa-icon [icon]="faEnvelope"></fa-icon
+                  ><fa-icon [icon]="faInstagram"></fa-icon
                 ></a>
               </li>
               <li role="presentation">
                 <a
-                  href="#contactHome"
-                  aria-controls="contactHome"
+                  href="#contactTwitter"
+                  aria-controls="contactTwitter"
                   role="tab"
                   data-toggle="tab"
-                  ><fa-icon [icon]="faHome"></fa-icon
+                  ><fa-icon [icon]="faTwitter"></fa-icon
+                ></a>
+              </li>
+              <li role="presentation">
+                <a
+                  href="#contactPinterest"
+                  aria-controls="contactPinterest"
+                  role="tab"
+                  data-toggle="tab"
+                  ><fa-icon [icon]="faPinterest"></fa-icon
                 ></a>
               </li>
             </ul>
 
             <div class="tab-content">
-              <div role="tabpanel" class="tab-pane active" id="contactPhone">
-                <fa-icon [icon]="faPhone"></fa-icon> call us at: +399 (500) 321
-                9548
+              <div role="tabpanel" class="tab-pane active" id="contactFb">
+                <fa-icon [icon]="faFacebook"></fa-icon> Contact us at our
+                official Facebook page
+                <a
+                  href="https://www.facebook.com/profile.php?id=100089821992120"
+                  target="_blank" class="socialLink"
+                  >FettleForum</a
+                >
               </div>
-              <div role="tabpanel" class="tab-pane" id="contactEmail">
-                <fa-icon [icon]="faEnvelope"></fa-icon>email us at:
-                support@construction.com
+              <div role="tabpanel" class="tab-pane" id="contactInsta">
+                <fa-icon [icon]="faInstagram"></fa-icon> Contact us at our
+                official Instagram page
+                <a href="https://www.instagram.com/fettleforum/" target="_blank" class="socialLink"
+                  >FettleForum</a
+                >
               </div>
-              <div role="tabpanel" class="tab-pane" id="contactHome">
-                <fa-icon [icon]="faHome"></fa-icon>Pawsar, Bicrompur,
-                Munshigonj.
+              <div role="tabpanel" class="tab-pane" id="contactTwitter">
+                <fa-icon [icon]="faTwitter"></fa-icon> Contact us at our
+                official Twitter page
+                <a href="https://twitter.com/fettle_forum" target="_blank" class="socialLink"
+                  >FettleForum</a
+                >
+              </div>
+              <div role="tabpanel" class="tab-pane" id="contactPinterest">
+                <fa-icon [icon]="faPinterest"></fa-icon> Contact us at our
+                official Twitter page
+                <a href="https://www.pinterest.com/fettleforum/" target="_blank" class="socialLink"
+                  >FettleForum</a
+                >
               </div>
             </div>
           </div>

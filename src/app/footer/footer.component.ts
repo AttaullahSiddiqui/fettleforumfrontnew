@@ -6,6 +6,12 @@ import {
   faPhoneAlt,
   faUser,
 } from '@fortawesome/free-solid-svg-icons';
+import {
+  faFacebook,
+  faTwitter,
+  faInstagram,
+  faPinterest,
+} from '@fortawesome/free-brands-svg-icons';
 import { DataService } from '../data.service';
 
 @Component({
@@ -14,6 +20,10 @@ import { DataService } from '../data.service';
   styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent implements OnInit {
+  faFacebook = faFacebook;
+  faTwitter = faTwitter;
+  faInstagram = faInstagram;
+  faPinterest = faPinterest;
   faEnvelope = faEnvelope;
   faHome = faHome;
   faAngleUp = faAngleUp;
@@ -22,9 +32,7 @@ export class FooterComponent implements OnInit {
   isBusy: Boolean = false;
   contactEmail: string = '';
   contactName: string = '';
-  constructor(
-    private _dataService: DataService
-  ) {}
+  constructor(private _dataService: DataService) {}
 
   ngOnInit(): void {}
 

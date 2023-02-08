@@ -1,0 +1,48 @@
+<br />
+<div class="container px-4">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="">Home</a></li>
+      <li class="breadcrumb-item"><a href="">Stores</a></li>
+      <li class="breadcrumb-item active"><a href="">Store</a></li>
+    </ol>
+  </nav>
+  <br />
+</div>
+<section id="aboutus" class="row">
+  <div class="container" style="max-width:90%;width: 90%;">
+    <div class="row" *ngIf="couponsArray">
+      <div class="col-sm-12">
+        <div class="row aboutContent">
+          <div class="row m0 members">
+            <div
+              class="col-sm-4 member3_1 member"
+              *ngFor="let coupon of couponsArray | keyvalue"
+            >
+              <div class="row m0">
+                <div class="row m0 memImg">
+                  <img [src]="storePic" alt="Store picture" />
+                </div>
+                <div class="row m0 memberIntro">
+                  <div class="row m0 name">{{ coupon.value.offerBox | slice:0:44 }}</div>
+                  <div class="row m0 pro">Active Deal</div>
+                  <div class="row m0">
+                    <ul class="list-inline memberSocial">
+                      <li>
+                        <a href="#"><span>Get Deal</span></a>
+                      </li>
+                      <!-- <li>
+                            <a href="#"><span>Copy Code</span></a>
+                        </li> -->
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<br />
