@@ -3,11 +3,13 @@ import { finalize, skip } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import Swal from 'sweetalert2';
+import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataService {
+  faThumbsUp = faThumbsUp;
   constructor(private _http: HttpClient) {}
   fetchAPI(url: any) {
     return this._http
@@ -76,5 +78,30 @@ export class DataService {
       showConfirmButton: false,
       timer: 2200,
     });
+  }
+  showCopyCodeAlert(editObj: any) {
+    Swal.fire({
+      title: `<strong>${editObj.code}</strong>`,
+      icon: 'info',
+      html: `Above code Copied <br> <br> <b>${editObj.offerBox}</b>`,
+      showCloseButton: true,
+      showCancelButton: false,
+      focusConfirm: true,
+      confirmButtonText: '<fa-icon [icon]="faThumbsUp"></fa-icon> Great!',
+      confirmButtonAriaLabel: 'Thumbs up, great!',
+    }).then((result) => {
+      if (result.isConfirmed) this.copyToClipBoard(editObj.code);
+    });
+  }
+  copyToClipBoard(code: string) {
+    const el = document.createElement('textarea');
+    el.value = code;
+    el.setAttribute('readonly', '');
+    el.style.position = 'absolute';
+    el.style.left = '-9999px';
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
   }
 }

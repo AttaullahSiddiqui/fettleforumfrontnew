@@ -53,6 +53,31 @@
         </div>
       </div> -->
     </div>
+    <div
+      class="row"
+      *ngIf="showSearchBar('/store')"
+    >
+      <div class="col-sm-2"></div>
+      <div class="col-sm-8 m0 commentForm" style="margin-bottom: 0">
+        <form class="row m0" id="searchForm">
+          <div class="col-sm-12 p0 commenterInfoInputs">
+            <div class="row m0">
+              <div class="input-group" style="margin-bottom: 0">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="name"
+                  required
+                  [(ngModel)]="searchText"
+                  placeholder="Search by Brand name or Website.."
+                  style="font-size: 1.15em"
+                />
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
 </header>
 <nav class="navbar navbar-default navbar-static-top">

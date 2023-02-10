@@ -140,7 +140,7 @@
                 ><h4>{{ blog.value.title | slice : 0 : 25 }}</h4></a
               >
               <p>
-                {{ (getInnerText(whatsNew2) | slice : 0 : 220) + "..." }}
+                {{ (getInnerText(whatsNew2) | slice : 0 : 216) + "..." }}
               </p>
               <p hidden [innerHTML]="blog.value.shortDes" #whatsNew2></p>
               <a

@@ -14,8 +14,8 @@ export class StoreComponent implements OnInit {
   storeThumb = null;
   storeDetail: any;
   longDes = null;
-  storeName:any = null;
-  storeName2:any = null;
+  storeName: any = null;
+  storeName2: any = null;
   storeURL: string = '';
   storeURLToShow: any = '';
   storeId: any;
@@ -55,6 +55,7 @@ export class StoreComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
     if (window.screen.width < 450) this.mobile = true;
     this.route.paramMap.subscribe((paramMap) => {
       this.storeURLToShow = paramMap.get('id');
@@ -77,7 +78,7 @@ export class StoreComponent implements OnInit {
     this.copyToClipBoard();
     this.codeCopied = true;
   }
-  loadCoupons(id:any) {
+  loadCoupons(id: any) {
     if (this.isBusy) return;
     this.isBusy = true;
     this._dataService
@@ -96,7 +97,7 @@ export class StoreComponent implements OnInit {
         } else this.errorHandler(res.message);
       });
   }
-  loadStoreData(id:any) {
+  loadStoreData(id: any) {
     this._dataService
       .fetchWithQuery('/userDisplay/singleStoreData', id)
       .subscribe((res) => {
@@ -132,7 +133,7 @@ export class StoreComponent implements OnInit {
         } else this.errorHandler(res.message);
       });
   }
-  loadAnotherStore(id:any) {
+  loadAnotherStore(id: any) {
     this.couponsArray = [];
     this.storeDetail = null;
     this.storeArray = [];
@@ -140,16 +141,21 @@ export class StoreComponent implements OnInit {
     this.loadStoreData(id);
     this.storeURLToShow = id;
   }
-  goToLinkFeatured(link:any, productId:any, key:any) {
+  goToLinkFeatured(link: any, productId: any, key: any) {
     this.productsArray[key]['clicks']++;
     window.open(link, '_blank');
     this._dataService
       .postAPI('/userDisplay/increaseProductClicks', { id: productId })
       .subscribe((res) => {});
   }
-  errorHandler(err:any) {
+  errorHandler(err: any) {
     this.isBusy = false;
-    this._dataService.errorToast(err)
+    this._dataService.errorToast(err);
     window.scrollTo(0, 0);
+  }
+  showCopyCodeDialog(couponNode:any) {
+    this.editObj = { ...couponNode };
+    this._dataService.showCopyCodeAlert(this.editObj);
+    window.open(this.editObj.trackingLink, '_blank');
   }
 }
