@@ -22,6 +22,9 @@ export class HeaderComponent implements OnInit {
   isBusy: Boolean = false;
   contactEmail: string = '';
   searchText: string = '';
+  noResult = false;
+  storeArray: Array<any> = [];
+  switch = false;
   constructor(private _dataService: DataService, private router: Router) {}
 
   ngOnInit(): void {
@@ -36,9 +39,26 @@ export class HeaderComponent implements OnInit {
     // console.log(this.showSearchBar('/store'));
     // console.log(this.isLinkActive('/store'));
   }
-  showSearchBar(url:string) {
+  showSearchBar(url: string) {
     var location = window.location.pathname;
     return location.includes(url);
+  }
+  searchFunc(queri:any) {
+    if (!queri) return;
+    this.noResult = false;
+    this.storeArray = [];
+    this._dataService
+      .fetchAPIWithLimit('/userDisplay/searchQuery', 10, queri, '')
+      .subscribe((res) => {
+        if (res.data) {
+          this.storeArray = res.data;
+        } else this.noResult = true;
+      });
+  }
+  focusOutFunc() {
+    setTimeout(() => {
+      this.switch = false;
+    }, 300);
   }
   // isLinkActive(url:string): boolean {
   //   const queryParamsIndex = this.router.url.indexOf('?');

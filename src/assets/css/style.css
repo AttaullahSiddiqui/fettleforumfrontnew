@@ -211,8 +211,40 @@ a:hover {
   font-weight: 400;
   overflow-wrap: anywhere;
 }
+.recentPostWidget .recentblogs .recentblogg {
+  padding: 20px 0;
+  margin: 0;
+  border-bottom: 1px solid rgba(156, 156, 156, 0.3);
+  cursor: pointer;
+}
+.recentPostWidget .recentblogs .recentblogg:first-child {
+  padding-top: 0;
+}
+.recentPostWidget .recentblogs .recentblogg:last-child {
+  border: 0;
+  padding-bottom: 0;
+}
+.recentPostWidget .recentblogs .recentblogg .media-left a {
+  width: 90px;
+  height: 90px;
+  overflow: hidden;
+  padding: 0;
+  display: block;
+  margin-right: 10px;
+}
+.recentPostWidget .recentblogs .recentblogg .media-left a img {
+  width: 100%;
+}
+.recentPostWidget .recentblogs .recentblogg .media-body h4 {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+}
 @media (max-width: 1024px) {
   .recentPostWidget .recentblogs .recentblog .media-left a {
+    width: 40px;
+    height: 40px;
+  }
+  .recentPostWidget .recentblogs .recentblogg .media-left a {
     width: 40px;
     height: 40px;
   }

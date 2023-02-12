@@ -4,12 +4,47 @@
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="">Home</a></li>
       <li class="breadcrumb-item"><a href="">Stores</a></li>
-      <li class="breadcrumb-item active"><a href="">Store</a></li>
+      <li class="breadcrumb-item active"><a href="">{{storeName}}</a></li>
     </ol>
   </nav>
   <br />
 </div>
-<section id="aboutus" class="row">
+<section id="aboutus" class="row" *ngIf="couponsArray">
+  <div class="container">
+    <div class="row">
+      <aside class="col-sm-12 sidebar">
+        <div class="row m0 recentPostWidget widgetS">
+          <br />
+          <h3 style="text-decoration: underline;">Active Coupons</h3>
+          <br />
+          <div class="row m0 recentblogs">
+            <div
+              class="media recentblogg"
+              *ngFor="let coupon of couponsArray | keyvalue"
+            >
+              <a class="dealBtn" *ngIf="coupon.value.activeStatus" (click)="getDealFunc(coupon.value)">Get Deal</a>
+              <a class="dealBtn" *ngIf="!coupon.value.activeStatus" (click)="showCopyCodeDialog(coupon.value)">Copy Code</a>
+              <div class="media-left">
+                <a>
+                  <img
+                    class="media-object"
+                    [src]="storePic"
+                    alt="Store picture"
+                  />
+                </a>
+              </div>
+              <div class="media-body">
+                <h4 class="storeName">{{ coupon.value.offerBox }}</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+<br />
+<!-- <section id="aboutus" class="row">
   <div class="container" style="max-width:90%;width: 90%;">
     <div class="row" *ngIf="couponsArray">
       <div class="col-sm-12">
@@ -45,4 +80,4 @@
     </div>
   </div>
 </section>
-<br />
+<br /> -->

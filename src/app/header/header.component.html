@@ -53,10 +53,7 @@
         </div>
       </div> -->
     </div>
-    <div
-      class="row"
-      *ngIf="showSearchBar('/store')"
-    >
+    <div class="row" *ngIf="showSearchBar('/store')">
       <div class="col-sm-2"></div>
       <div class="col-sm-8 m0 commentForm" style="margin-bottom: 0">
         <form class="row m0" id="searchForm">
@@ -71,6 +68,9 @@
                   [(ngModel)]="searchText"
                   placeholder="Search by Brand name or Website.."
                   style="font-size: 1.15em"
+                  (input)="searchFunc(searchText)"
+                  (focus)="switch = true"
+                  (focusout)="focusOutFunc()"
                 />
               </div>
             </div>
@@ -80,6 +80,46 @@
     </div>
   </div>
 </header>
+<!-- <div class="row myDropdown" *ngIf="searchText && switch"> -->
+<div class="row myDropdown" *ngIf="searchText && switch">
+  <div class="col-sm-4"></div>
+  <aside class="col-sm-4 sidebar">
+    <div class="row m0 recentPostWidget widgetS" style="margin-bottom:10px">
+      <div class="row m0 recentblogs">
+        <div class="media recentblog" *ngIf="noResult">
+          <h6 class="noResult">
+            No result found for <b>{{ searchText }}</b>
+          </h6>
+        </div>
+        <div
+          class="media recentblog"
+          *ngFor="let store of storeArray | keyvalue"
+        >
+          <div
+            class="media-left"
+            [routerLink]="['/store', store.value.storeURL]"
+          >
+            <a>
+              <img
+                class="media-object"
+                [src]="store.value.img"
+                alt="Brand image"
+              />
+            </a>
+          </div>
+          <div
+            class="media-body"
+            [routerLink]="['/store', store.value.storeURL]"
+          >
+            <a
+              ><h5 class="media-heading">{{ store.value.name }}</h5></a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+</div>
 <nav class="navbar navbar-default navbar-static-top">
   <div class="container-fluid container">
     <div class="row m04m">

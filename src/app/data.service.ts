@@ -3,13 +3,14 @@ import { finalize, skip } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import Swal from 'sweetalert2';
-import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
+import { faThumbsUp, faShoppingBag } from '@fortawesome/free-solid-svg-icons';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataService {
   faThumbsUp = faThumbsUp;
+  faShoppingIcon = faShoppingBag;
   constructor(private _http: HttpClient) {}
   fetchAPI(url: any) {
     return this._http
@@ -79,6 +80,20 @@ export class DataService {
       timer: 2200,
     });
   }
+  showGetDealAlert(editObj: any) {
+    Swal.fire({
+      title: `<strong>No code required</strong>`,
+      icon: 'info',
+      html: 'Just <b>click</b> below button to avail this deal',
+      showCloseButton: true,
+      showCancelButton: true,
+      focusConfirm: false,
+      confirmButtonText: '<fa-icon [icon]="faThumbsUp"></fa-icon> Shop Now',
+      confirmButtonAriaLabel: 'Shop Now button',
+    }).then((result) => {
+      if (result.isConfirmed) window.open(editObj.code, '_blank');
+    });
+  }
   showCopyCodeAlert(editObj: any) {
     Swal.fire({
       title: `<strong>${editObj.code}</strong>`,
@@ -87,7 +102,7 @@ export class DataService {
       showCloseButton: true,
       showCancelButton: false,
       focusConfirm: true,
-      confirmButtonText: '<fa-icon [icon]="faThumbsUp"></fa-icon> Great!',
+      confirmButtonText: '<fa-icon [icon]="faShoppingIcon"></fa-icon> Great!',
       confirmButtonAriaLabel: 'Thumbs up, great!',
     }).then((result) => {
       if (result.isConfirmed) this.copyToClipBoard(editObj.code);

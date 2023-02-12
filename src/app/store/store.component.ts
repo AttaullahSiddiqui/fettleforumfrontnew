@@ -153,9 +153,14 @@ export class StoreComponent implements OnInit {
     this._dataService.errorToast(err);
     window.scrollTo(0, 0);
   }
-  showCopyCodeDialog(couponNode:any) {
+  showCopyCodeDialog(couponNode: any) {
     this.editObj = { ...couponNode };
     this._dataService.showCopyCodeAlert(this.editObj);
+    window.open(this.editObj.trackingLink, '_blank');
+  }
+  getDealFunc(couponNode: any) {
+    this.editObj = { ...couponNode };
+    this._dataService.showGetDealAlert(this.editObj);
     window.open(this.editObj.trackingLink, '_blank');
   }
 }

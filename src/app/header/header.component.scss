@@ -1,9 +1,42 @@
-ul.navbar-nav > li:hover{
-    cursor: pointer;
+ul.navbar-nav > li:hover {
+  cursor: pointer;
 }
-ul.navbar-nav{
-    height: 50px;
+ul.navbar-nav {
+  height: 50px;
 }
-header{
-    height: auto
+header {
+  height: auto;
+}
+div.myDropdown > aside.sidebar {
+  position: absolute;
+  background: #edecec;
+  z-index: 99999;
+  margin-top: 0;
+  left: 33%;
+}
+div.myDropdown > aside.sidebar .recentblog .media-left a {
+  width: 60px !important;
+  height: 60px !important;
+}
+div.myDropdown > aside.sidebar .recentblog .media-body a h5 {
+  color: #393434 !important;
+  line-height: 54px !important;
+  font-weight: 500 !important;
+}
+div.myDropdown > aside.sidebar .recentblog:hover div.media-body > a > h5 {
+  color: #bd4342 !important;
+}
+div.myDropdown > aside.sidebar .recentblog:hover {
+  border-color: #bd4342;
+}
+div.myDropdown > aside.sidebar > .widgetS {
+  padding-left: 5px;
+  padding-right: 5px;
+  border: none;
+}
+h6.noResult {
+  text-align: center;
+  font-size: 1.15em;
+  color: #4e4949;
+  margin-bottom: 0;
 }
