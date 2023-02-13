@@ -49,26 +49,28 @@
       *ngFor="let blog of blogArray | keyvalue"
       [routerLink]="['/blog', blog.value.blogURL]"
     >
-      <a href="">
-        <img [src]="blog.value.img" class="blogImg" class="projectImg" />
-      </a>
-      <div class="projectDetails row m0">
-        <div class="fleft nameType" style="max-width: 80%">
-          <div class="row m0 projectName">
-            {{ blog.value.title | slice : 0 : 28 }}
+      <div class="blogOuter">
+        <a href="">
+          <img [src]="blog.value.img" class="blogImg" class="projectImg" />
+        </a>
+        <div class="projectDetails row m0">
+          <div class="fleft nameType" style="max-width: 80%">
+            <div class="row m0 projectName">
+              {{ blog.value.title | slice : 0 : 28 }}
+            </div>
+            <div class="row m0 projectType">
+              {{ getInnerText(whatsNew) | slice : 0 : 200 }}
+            </div>
+            <p hidden [innerHTML]="blog.value.shortDes" #whatsNew></p>
           </div>
-          <div class="row m0 projectType">
-            {{ getInnerText(whatsNew) | slice : 0 : 90 }}
+          <div class="fright projectIcons btn-group" role="group">
+            <a
+              href=""
+              class="btn btn-default"
+              [routerLink]="['/blog', blog.value.blogURL]"
+              ><fa-icon [icon]="faArrowRight"></fa-icon
+            ></a>
           </div>
-          <p hidden [innerHTML]="blog.value.shortDes" #whatsNew></p>
-        </div>
-        <div class="fright projectIcons btn-group" role="group">
-          <a
-            href=""
-            class="btn btn-default"
-            [routerLink]="['/blog', blog.value.blogURL]"
-            ><fa-icon [icon]="faArrowRight"></fa-icon
-          ></a>
         </div>
       </div>
     </div>
@@ -76,7 +78,7 @@
 </section>
 <!--Projects-->
 <br />
-<section id="nr_services" class="row">
+<!-- <section id="nr_services" class="row">
   <div class="container" style="width: 90% !important">
     <div class="row sectionTitles">
       <h2 class="sectionTitle">Stores</h2>
@@ -100,7 +102,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!--Services-->
 <br />
 

@@ -16,7 +16,7 @@
         <div class="row">
           <ul class="list-inline fright">
             <li>
-              <a [routerLink]="['/stores']" class="navBttn"
+              <a [routerLink]="['/stores']" class="navBttn" *ngIf="!showSearchBar('/store')"
                 ><span>Services</span></a
               >
             </li>

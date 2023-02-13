@@ -1411,7 +1411,6 @@ header .social_nav ul li a.navBttn {
 }
 #projectsRow .project {
   position: relative;
-  overflow: hidden;
 }
 #projectsRow .project .projectImg {
   width: 100%;
@@ -1419,16 +1418,16 @@ header .social_nav ul li a.navBttn {
   vertical-align: middle;
 }
 #projectsRow .project .projectDetails {
-  position: absolute;
-  bottom: -1px;
+  position: relative;
   left: 0;
   right: 0;
-  padding: 10px 18px;
-  background: rgba(156, 156, 156, 0.85);
-  color: #fff;
+  padding: 15px 20px;
+  background: #e5e4e2;
+  color: #23282c;
   font-family: "Raleway", sans-serif;
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
+  cursor: pointer;
 }
 #projectsRow .project .projectDetails .nameType {
   -webkit-transition: all 300ms ease-in-out;
@@ -1436,9 +1435,14 @@ header .social_nav ul li a.navBttn {
 }
 #projectsRow .project .projectDetails .nameType .projectName {
   font-size: 21px;
+  font-weight: 600;
+  text-transform: capitalize;
 }
 #projectsRow .project .projectDetails .nameType .projectType {
-  color: rgba(255, 255, 255, 0.4);
+  color: #292f32;
+  max-height: 5.2em;
+  line-height: 1.8em;
+  overflow-y: hidden;
 }
 #projectsRow .project .projectDetails .projectIcons a {
   width: 50px;
@@ -1447,23 +1451,25 @@ header .social_nav ul li a.navBttn {
   padding: 0;
   background: none;
   border-radius: 0;
-  color: #fff;
+  color: #bd4342;
   font-size: 20px;
   text-shadow: none;
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
+  margin-top: 40%;
 }
-#projectsRow .project:hover .projectDetails {
+/* #projectsRow .project:hover .projectDetails {
   background: none;
-}
-#projectsRow .project:hover .projectDetails .nameType {
+} */
+/* #projectsRow .project:hover .projectDetails .nameType {
   margin-left: -500%;
-}
+} */
 #projectsRow .project:hover .projectDetails .projectIcons {
   background: none;
 }
 #projectsRow .project:hover .projectDetails .projectIcons a {
   background: #bd4342;
+  color: white;
 }
 .fullWidth .project {
   width: 100% !important;
