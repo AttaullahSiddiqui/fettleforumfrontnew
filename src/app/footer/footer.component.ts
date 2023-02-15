@@ -45,6 +45,10 @@ export class FooterComponent implements OnInit {
       this._dataService.errorToast('Please fill out both fields');
       return;
     }
+    if(!this.validateEmail(emailId)){
+      this._dataService.errorToast('Provided Email is not valid');
+      return;
+    }
     this.isBusy = true;
     this._dataService
       .postAPI('/userDisplay/addEmailToDB', { emailId: emailId })
@@ -62,4 +66,11 @@ export class FooterComponent implements OnInit {
         }
       });
   }
+  validateEmail = (email: any) => {
+    return String(email)
+      .toLowerCase()
+      .match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
+  };
 }

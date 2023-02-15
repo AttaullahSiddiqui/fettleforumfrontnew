@@ -107,7 +107,7 @@ export class HomeComponent implements OnInit {
         else this._dataService.errorToast(res.message);
       });
   }
-  openLink(link:any) {
+  openLink(link: any) {
     window.open(link, '_blank');
   }
   onSwiper(swiper: any) {

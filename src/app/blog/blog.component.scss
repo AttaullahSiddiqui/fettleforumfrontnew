@@ -4,3 +4,13 @@
   font-weight: 700;
   font-size: 1.2em;
 }
+p a{
+  color: black;
+  font-weight: bold;
+}
+p a:hover{
+  color: #bd4342 !important;
+}
+// p, p span, p>span{
+//   font-size: 18px !important;
+// }

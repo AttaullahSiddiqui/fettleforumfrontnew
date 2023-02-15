@@ -1623,6 +1623,7 @@ header .social_nav ul li a.navBttn {
 .blog .blogInner {
   border: 1px solid rgba(156, 156, 156, 0.3);
   overflow: hidden;
+  cursor: pointer;
 }
 .blog .blogInner .blogDateTime {
   line-height: 60px;
@@ -1683,6 +1684,7 @@ header .social_nav ul li a.navBttn {
   font-family: "Raleway", sans-serif;
   background: #fff;
   position: relative;
+  text-transform: capitalize;
 }
 .blog .blogInner .postExcerpts .postExcerptInner a.postTitle h4 {
   font-size: 17px;
@@ -1691,6 +1693,17 @@ header .social_nav ul li a.navBttn {
   font-weight: bold;
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
+}
+.blog .blogInner .postExcerpts .postExcerptInner a.postTitle h2 {
+  font-size: 38px;
+  color: #bd4342;
+  margin-top: 0;
+  font-weight: bold;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  text-align: center;
+  text-transform: capitalize;
+  margin-top: 10px;
 }
 .blog .blogInner .postExcerpts .postExcerptInner p {
   font-size: 16px;
@@ -1732,7 +1745,7 @@ header .social_nav ul li a.navBttn {
   transition: all 300ms ease-in-out;
 }
 .blog.row .blogInner .postExcerpts {
-  padding: 40px;
+  padding: 30px;
 }
 .blog.row .blogInner .postExcerpts .postExcerptInner {
   margin-top: 0;

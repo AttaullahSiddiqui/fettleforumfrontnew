@@ -13,7 +13,7 @@
   <section id="blogs" class="row">
     <div class="container">
       <div class="row">
-        <div class="col-sm-9">
+        <div class="col-sm-12">
           <div class="row" *ngIf="blogNode">
             <div class="row blog sinlge-blog">
               <div class="row m0 blogInner">
@@ -32,14 +32,15 @@
                     />
                   </a>
                 </div>
-                <div class="row m0 postExcerpts">
+                <div class="row m0 postExcerpts" style="background: #e4e7ea;">
                   <div class="row m0 postExcerptInner">
                     <a  class="postTitle row m0"
-                      ><h4>{{ blogNode.title }}</h4></a
+                      ><h2>{{ blogNode.title }}</h2></a
                     >
+                    <br><br>
                     <p
                       *ngIf="blogNode.longDesFirst"
-                      [innerHTML]="blogNode.longDesFirst | sanitizeHtml"
+                      [innerHTML]="blogNode.longDesFirst | sanitizeHtml" style="padding-left:25px !important;padding-right:25px !important;line-height: 1.7em;"
                     ></p>
                   </div>
                 </div>
@@ -47,7 +48,7 @@
             </div>
           </div>
         </div>
-        <aside class="col-sm-3 sidebar">
+        <!-- <aside class="col-sm-3 sidebar">
           <div class="row m0 recentPostWidget widgetS">
             <h4>Recent Posts</h4>
             <div class="row m0 recentblogs">
@@ -126,7 +127,7 @@
               consequat ipsum, nec sagittis sem nibh id
             </p>
           </div>
-        </aside>
+        </aside> -->
       </div>
     </div>
   </section>
