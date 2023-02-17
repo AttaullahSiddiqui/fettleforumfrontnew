@@ -55,6 +55,13 @@
         </a>
         <div class="projectDetails row m0">
           <div class="fleft nameType" style="max-width: 80%">
+            <div class="authorDetail">
+              <img src="../../assets/images/author2.png"><span class="authorName">{{ blog.value.author }}</span> wrote on
+              <span class="authorDate">{{
+                blog.value.CreatedAt | date : "MMM d"
+              }}</span>
+            </div>
+            <br />
             <div class="row m0 projectName">
               {{ blog.value.title | slice : 0 : 28 }}
             </div>
@@ -106,7 +113,7 @@
 <br />
 
 <section id="latestPosts" class="row">
-  <div class="container">
+  <div class="container" style="width:84%;">
     <div class="row sectionTitles">
       <h2 class="sectionTitle">Latest Blogs</h2>
       <div class="sectionSubTitle">fresh news</div>
@@ -114,7 +121,7 @@
     <div class="row">
       <div
         class="col-sm-4 blog latest-blog"
-        *ngFor="let blog of blogArray | slice : 0 : 3 | keyvalue"
+        *ngFor="let blog of featuredBlogArray | keyvalue"
         [routerLink]="['/blog', blog.value.blogURL]"
       >
         <div class="row m0 blogInner">

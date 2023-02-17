@@ -23,7 +23,7 @@ import {
   faSlidersH,
   faArrowRight,
 } from '@fortawesome/free-solid-svg-icons';
-import { faFile, faCalendar } from '@fortawesome/free-regular-svg-icons';
+import { faFile, faCalendar,faUser,faUserCircle } from '@fortawesome/free-regular-svg-icons';
 import {
   faFacebook,
   faTwitter,
@@ -39,6 +39,7 @@ import { DataService } from '../data.service';
   encapsulation: ViewEncapsulation.None,
 })
 export class HomeComponent implements OnInit {
+  faUser = faUserCircle;
   faArrowRight = faArrowRight;
   faSlider = faSlidersH;
   faEnvelope = faEnvelope;
@@ -86,6 +87,7 @@ export class HomeComponent implements OnInit {
   storeArray = null;
   slideArray = null;
   blogArray = null;
+  featuredBlogArray = null;
   constructor(private _dataService: DataService) {}
 
   ngOnInit(): void {
@@ -101,9 +103,14 @@ export class HomeComponent implements OnInit {
         else this._dataService.errorToast(res.message);
       });
     this._dataService
-      .fetchOnlyLimit('/userDisplay/fetchTopBlogs', 9)
+      .fetchAPIWithLimit('/userDisplay/fetchBlogsWithLimit', 9, '', 0)
       .subscribe((res) => {
-        if (res.data) this.blogArray = res.data;
+        if (res.data)this.blogArray = res.data;
+      });
+    this._dataService
+      .fetchOnlyLimit('/userDisplay/fetchTopBlogs', 6)
+      .subscribe((res) => {
+        if (res.data) this.featuredBlogArray = res.data;
         else this._dataService.errorToast(res.message);
       });
   }
