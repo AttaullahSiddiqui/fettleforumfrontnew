@@ -3,6 +3,7 @@ let mongoose = require("mongoose");
 let blogSchema = mongoose.Schema({
   title: { type: String, required: true },
   blogURL: { type: String, required: true, unique: true },
+  categoryRef: { type: Array, required: true },
   shortDes: { type: String, required: true },
   longDesFirst: { type: String, required: true },
   longDesMiddle1: { type: String },

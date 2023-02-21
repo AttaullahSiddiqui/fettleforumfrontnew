@@ -472,7 +472,11 @@ function searchQuery(req, res) {
     });
 }
 function fetchBlogsWithLimit(req, res) {
-  Blog.find({}, "title img blogURL shortDes views author CreatedAt")
+  var queryObj={};
+  if(req.query.quer){
+    if (req.query.quer!='null') queryObj.categoryRef = req.query.quer;
+  }
+  Blog.find(queryObj, "title img blogURL shortDes views author CreatedAt")
     .sort({ CreatedAt: -1 })
     .skip(Number(req.query.skipNo))
     .limit(Number(req.query.limitNo))

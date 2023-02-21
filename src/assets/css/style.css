@@ -1404,7 +1404,7 @@ header .social_nav ul li a.navBttn {
 #projectsRow .filtersRow .filters > li i {
   margin-right: 10px;
 }
-#projectsRow .filtersRow .filters > li:after {
+#projectsRow .filtersRow .filters > li:not(:last-child):after {
   width: 5px;
   height: 14px;
   content: "";

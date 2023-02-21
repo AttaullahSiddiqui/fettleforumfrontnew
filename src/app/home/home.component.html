@@ -32,15 +32,55 @@
       class="list-inline text-center collapse navbar-collapse filters"
       id="filters"
     >
-      <li class="active" data-filter="*">
+      <li
+        data-filter="*"
+        [ngClass]="{ active: !blogFilter }"
+        (click)="showFilteredBlogs('all')"
+      >
         <fa-icon [icon]="faTh"></fa-icon>&nbsp;&nbsp;Show All
       </li>
-      <li data-filter=".catHospital">Hospitals</li>
-      <li data-filter=".catSchools">Schools</li>
-      <li data-filter=".catHouses">Houses</li>
-      <li data-filter=".catFlats">Flats</li>
-      <li data-filter=".catOffices">Offices</li>
-      <li data-filter=".catUniversities">Universities</li>
+      <li
+        data-filter=".catHospital"
+        [ngClass]="{ active: blogFilter == '63f5048bf27eca54345ddac9' }"
+        (click)="showFilteredBlogs('63f5048bf27eca54345ddac9')"
+      >
+        Travel
+      </li>
+      <li
+        data-filter=".catSchools"
+        [ngClass]="{ active: blogFilter == '63f50362dbc95abea20240eb' }"
+        (click)="showFilteredBlogs('63f50362dbc95abea20240eb')"
+      >
+        Food
+      </li>
+      <li
+        data-filter=".catHouses"
+        [ngClass]="{ active: blogFilter == '63f5036cdbc95abea20240ed' }"
+        (click)="showFilteredBlogs('63f5036cdbc95abea20240ed')"
+      >
+        Style
+      </li>
+      <li
+        data-filter=".catFlats"
+        [ngClass]="{ active: blogFilter == '63f50c08f27eca54345ddae2' }"
+        (click)="showFilteredBlogs('63f50c08f27eca54345ddae2')"
+      >
+        Pets
+      </li>
+      <li
+        data-filter=".catOffices"
+        [ngClass]="{ active: blogFilter == '63f50c12f27eca54345ddae4' }"
+        (click)="showFilteredBlogs('63f50c12f27eca54345ddae4')"
+      >
+        Health
+      </li>
+      <li
+        data-filter=".catUniversities"
+        [ngClass]="{ active: blogFilter == '63f50c1af27eca54345ddae6' }"
+        (click)="showFilteredBlogs('63f50c1af27eca54345ddae6')"
+      >
+        Fitness
+      </li>
     </ul>
   </div>
   <div class="row projects m0" id="container">
@@ -56,7 +96,11 @@
         <div class="projectDetails row m0">
           <div class="fleft nameType" style="max-width: 80%">
             <div class="authorDetail">
-              <img src="../../assets/images/author2.png"><span class="authorName">{{ blog.value.author }}</span> wrote on
+              <img src="../../assets/images/author2.png" /><span
+                class="authorName"
+                >{{ blog.value.author }}</span
+              >
+              wrote on
               <span class="authorDate">{{
                 blog.value.CreatedAt | date : "MMM d"
               }}</span>
@@ -113,7 +157,7 @@
 <br />
 
 <section id="latestPosts" class="row">
-  <div class="container" style="width:84%;">
+  <div class="container" style="width: 84%">
     <div class="row sectionTitles">
       <h2 class="sectionTitle">Latest Blogs</h2>
       <div class="sectionSubTitle">fresh news</div>

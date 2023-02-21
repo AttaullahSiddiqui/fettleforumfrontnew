@@ -23,7 +23,12 @@ import {
   faSlidersH,
   faArrowRight,
 } from '@fortawesome/free-solid-svg-icons';
-import { faFile, faCalendar,faUser,faUserCircle } from '@fortawesome/free-regular-svg-icons';
+import {
+  faFile,
+  faCalendar,
+  faUser,
+  faUserCircle,
+} from '@fortawesome/free-regular-svg-icons';
 import {
   faFacebook,
   faTwitter,
@@ -60,6 +65,8 @@ export class HomeComponent implements OnInit {
   faYoutubeSquare = faYoutubeSquare;
   faAngleUp = faAngleUp;
   web: boolean = false;
+  noBlogFound:boolean=false;
+  blogFilter: any = null;
   config: SwiperOptions = {
     slidesPerView: 1,
     autoplay: {
@@ -86,7 +93,7 @@ export class HomeComponent implements OnInit {
   };
   storeArray = null;
   slideArray = null;
-  blogArray = null;
+  blogArray: Array<any> = [];
   featuredBlogArray = null;
   constructor(private _dataService: DataService) {}
 
@@ -96,16 +103,12 @@ export class HomeComponent implements OnInit {
       if (res.data) this.slideArray = res.data;
       else this._dataService.errorToast(res.message);
     });
+    this.showFilteredBlogs('all');
     this._dataService
       .fetchOnlyLimit('/userDisplay/fetchTopStores', 18)
       .subscribe((res) => {
         if (res.data) this.storeArray = res.data;
         else this._dataService.errorToast(res.message);
-      });
-    this._dataService
-      .fetchAPIWithLimit('/userDisplay/fetchBlogsWithLimit', 9, '', 0)
-      .subscribe((res) => {
-        if (res.data)this.blogArray = res.data;
       });
     this._dataService
       .fetchOnlyLimit('/userDisplay/fetchTopBlogs', 6)
@@ -122,5 +125,23 @@ export class HomeComponent implements OnInit {
   }
   getInnerText(el: any) {
     return el.innerText;
+  }
+  showFilteredBlogs(arg: string) {
+    if (arg != 'all') this.blogFilter = arg;
+    else this.blogFilter = null;
+    this._dataService
+      .fetchAPIWithLimit(
+        '/userDisplay/fetchBlogsWithLimit',
+        9,
+        this.blogFilter,
+        0
+      )
+      .subscribe((res) => {
+        if (res.data) this.blogArray = res.data;
+        if (res.message == 'Unable to fetch more Blogs') {
+          this.blogArray = [];
+          this.noBlogFound = true;
+        }
+      });
   }
 }
