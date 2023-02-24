@@ -108,13 +108,13 @@ export class HomeComponent implements OnInit {
       .fetchOnlyLimit('/userDisplay/fetchTopStores', 18)
       .subscribe((res) => {
         if (res.data) this.storeArray = res.data;
-        else this._dataService.errorToast(res.message);
+        // else this._dataService.errorToast(res.message);
       });
     this._dataService
       .fetchOnlyLimit('/userDisplay/fetchTopBlogs', 6)
       .subscribe((res) => {
         if (res.data) this.featuredBlogArray = res.data;
-        else this._dataService.errorToast(res.message);
+        // else this._dataService.errorToast(res.message);
       });
   }
   openLink(link: any) {

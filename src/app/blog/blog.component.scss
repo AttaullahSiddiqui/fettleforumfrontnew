@@ -4,13 +4,49 @@
   font-weight: 700;
   font-size: 1.2em;
 }
-p a{
+p a {
   color: black;
   font-weight: bold;
 }
-p a:hover{
+p a:hover {
   color: #bd4342 !important;
 }
 // p, p span, p>span{
 //   font-size: 18px !important;
 // }
+.buyBtn {
+  height: auto;
+  font-size: 1.02em;
+  text-transform: capitalize;
+  background-color: #bd4342;
+  margin-top: 10px;
+  padding: 10px 16px;
+}
+div.gridView {
+  padding: 10px 50px;
+}
+div.gridView > div > img {
+  width: 100%;
+}
+div.prosParent a.collapsed > fa-icon > svg > path {
+  color: #4fa24f !important;
+}
+div.consParent a.collapsed > fa-icon > svg > path {
+  color: #bd4342 !important;
+}
+h4.panel-title > a.prosHead{
+  background: #4fa24f;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: 700 !important;
+  color: white !important;
+  margin-bottom: 15px;
+}
+h4.panel-title > a.consHead{
+  background: #bd4342;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: 700 !important;
+  color: white !important;
+  margin-bottom: 15px;
+}

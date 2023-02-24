@@ -1,61 +1,543 @@
 <br />
-  <nav aria-label="breadcrumb" style="margin-left: 6vw;max-width: 80vw;">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a>Home</a></li>
-      <li class="breadcrumb-item"><a>Blogs</a></li>
-      <li class="breadcrumb-item active"><a>Blog</a></li>
-    </ol>
-  </nav>
+<nav aria-label="breadcrumb" style="margin-left: 6vw; max-width: 80vw">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a>Home</a></li>
+    <li class="breadcrumb-item"><a>Blogs</a></li>
+    <li class="breadcrumb-item active"><a>Blog</a></li>
+  </ol>
+</nav>
 
-  <section id="blogs" class="row">
-    <div
-      class="container"
-      style="
-        width: 100%;
-      "
-    >
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="row" *ngIf="blogNode">
-            <div class="row blog sinlge-blog">
-              <div class="row m0 blogInner">
-                <div class="row m0 blogDateTime">
-                  <fa-icon [icon]="faCalendar"></fa-icon>
-                  <span class="authorName">{{ blogNode.author }}</span>
-                  wrote on
-                  {{ blogNode.CreatedAt | date : "medium" }}
-                </div>
-                <div class="row m0 featureImg">
-                  <a>
-                    <img
-                      [src]="blogNode.img"
-                      alt="blogImg"
-                      class="img-responsive"
-                    />
-                  </a>
-                </div>
-                <div class="row m0 postExcerpts" style="background: #e4e7ea">
-                  <div class="row m0 postExcerptInner">
-                    <a class="postTitle row m0"
-                      ><h2>{{ blogNode.title }}</h2></a
-                    >
-                    <br /><br />
-                    <p
-                      *ngIf="blogNode.longDesFirst"
-                      [innerHTML]="blogNode.longDesFirst | sanitizeHtml"
-                      style="
-                        padding-left: 25px !important;
-                        padding-right: 25px !important;
-                        line-height: 1.7em;
-                      "
-                    ></p>
+<section id="blogs" class="row">
+  <div class="container" style="width: 100%">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="row" *ngIf="blogNode">
+          <div class="row blog sinlge-blog">
+            <div class="row m0 blogInner" *ngIf="!blogNode.showVertically">
+              <div class="row m0 blogDateTime">
+                <fa-icon [icon]="faCalendar"></fa-icon>
+                <span class="authorName">{{ blogNode.author }}</span>
+                wrote on
+                {{ blogNode.CreatedAt | date : "medium" }}
+              </div>
+              <div class="row m0 featureImg">
+                <a>
+                  <img
+                    [src]="blogNode.img"
+                    alt="blogImg"
+                    class="img-responsive"
+                  />
+                </a>
+              </div>
+              <div class="row m0 postExcerpts" style="background: #e4e7ea">
+                <div class="row m0 postExcerptInner">
+                  <a class="postTitle row m0"
+                    ><h2>{{ blogNode.title }}</h2></a
+                  >
+                  <br /><br />
+                  <p
+                    *ngIf="blogNode.longDesFirst"
+                    [innerHTML]="blogNode.longDesFirst | sanitizeHtml"
+                    style="
+                      padding-left: 25px !important;
+                      padding-right: 25px !important;
+                      line-height: 1.65em;
+                    "
+                  ></p>
+                  <br />
+                  <div class="row gridView" *ngIf="blogNode.longDesMiddle1">
+                    <div class="col-sm-8">
+                      <div
+                        [innerHTML]="blogNode.longDesMiddle1 | sanitizeHtml"
+                      ></div>
+                      <br />
+                      <div class="row" *ngIf="blogNode.pros1.length && blogNode.cons1.length">
+                        <div class="col-sm-6 prosParent">
+                          <div
+                            class="panel-group"
+                            id="hAccordion"
+                            role="tablist"
+                            aria-multiselectable="true"
+                          >
+                            <div class="panel panel-default">
+                              <div
+                                class="panel-heading"
+                                role="tab"
+                                id="headingOne"
+                              >
+                                <h4 class="panel-title">
+                                  <a
+                                    class="prosHead"
+                                    data-toggle="collapse"
+                                    data-parent="#hAccordion"
+                                    aria-expanded="true"
+                                    aria-controls="collapse1"
+                                  >
+                                    Pros
+                                  </a>
+                                </h4>
+                              </div>
+                            </div>
+                            <div class="panel panel-default" *ngFor="let data of blogNode.pros1 | keyvalue">
+                              <div
+                                class="panel-heading"
+                                role="tab"
+                                id="heading2"
+                              >
+                                <h4 class="panel-title">
+                                  <a
+                                    class="collapsed"
+                                    data-toggle="collapse"
+                                    data-parent="#hAccordion"
+                                    aria-expanded="false"
+                                    aria-controls="collapse2"
+                                  >
+                                    <fa-icon [icon]="faCheck"></fa-icon>{{ data.value }}
+                                  </a>
+                                </h4>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6 consParent">
+                          <div
+                            class="panel-group"
+                            id="hAccordion"
+                            role="tablist"
+                            aria-multiselectable="true"
+                          >
+                            <div class="panel panel-default">
+                              <div
+                                class="panel-heading"
+                                role="tab"
+                                id="headingOne"
+                              >
+                                <h4 class="panel-title">
+                                  <a
+                                    class="consHead"
+                                    data-toggle="collapse"
+                                    data-parent="#hAccordion"
+                                    aria-expanded="true"
+                                    aria-controls="collapse1"
+                                  >
+                                    Cons
+                                  </a>
+                                </h4>
+                              </div>
+                            </div>
+                            <div class="panel panel-default" *ngFor="let data of blogNode.cons1 | keyvalue">
+                              <div
+                                class="panel-heading"
+                                role="tab"
+                                id="heading2"
+                              >
+                                <h4 class="panel-title">
+                                  <a
+                                    class="collapsed"
+                                    data-toggle="collapse"
+                                    data-parent="#hAccordion"
+                                    aria-expanded="false"
+                                    aria-controls="collapse2"
+                                  >
+                                    <fa-icon [icon]="faBan"></fa-icon>{{ data.value }}
+                                  </a>
+                                </h4>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-xs-4 text-center" *ngIf="blogNode.imgGrid1">
+                      <img
+                        [src]="blogNode.imgGrid1"
+                        alt="xyz"
+                        class="rounded mx-3 w100m"
+                      />
+                      <button
+                        type="button"
+                        *ngIf="blogNode.buttonTxt"
+                        (click)="openLink(blogNode.amazonLink1)"
+                        class="mt-4 btn btn-danger rounded buyBtn"
+                      >
+                        {{ blogNode.buttonTxt }}
+                      </button>
+                    </div>
                   </div>
+                  <div class="row gridView" *ngIf="blogNode.longDesMiddle2">
+                    <div class="col-sm-8">
+                      <div
+                        [innerHTML]="blogNode.longDesMiddle2 | sanitizeHtml"
+                      ></div>
+                      <br />
+                      <div class="row" *ngIf="blogNode.pros2.length && blogNode.cons2.length">
+                        <div class="col-sm-6 prosParent">
+                          <div
+                            class="panel-group"
+                            id="hAccordion"
+                            role="tablist"
+                            aria-multiselectable="true"
+                          >
+                            <div class="panel panel-default">
+                              <div
+                                class="panel-heading"
+                                role="tab"
+                                id="headingOne"
+                              >
+                                <h4 class="panel-title">
+                                  <a
+                                    class="prosHead"
+                                    data-toggle="collapse"
+                                    data-parent="#hAccordion"
+                                    aria-expanded="true"
+                                    aria-controls="collapse1"
+                                  >
+                                    Pros
+                                  </a>
+                                </h4>
+                              </div>
+                            </div>
+                            <div class="panel panel-default" *ngFor="let data of blogNode.pros2 | keyvalue">
+                              <div
+                                class="panel-heading"
+                                role="tab"
+                                id="heading2"
+                              >
+                                <h4 class="panel-title">
+                                  <a
+                                    class="collapsed"
+                                    data-toggle="collapse"
+                                    data-parent="#hAccordion"
+                                    aria-expanded="false"
+                                    aria-controls="collapse2"
+                                  >
+                                    <fa-icon [icon]="faCheck"></fa-icon>{{ data.value }}
+                                  </a>
+                                </h4>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6 consParent">
+                          <div
+                            class="panel-group"
+                            id="hAccordion"
+                            role="tablist"
+                            aria-multiselectable="true"
+                          >
+                            <div class="panel panel-default">
+                              <div
+                                class="panel-heading"
+                                role="tab"
+                                id="headingOne"
+                              >
+                                <h4 class="panel-title">
+                                  <a
+                                    class="consHead"
+                                    data-toggle="collapse"
+                                    data-parent="#hAccordion"
+                                    aria-expanded="true"
+                                    aria-controls="collapse1"
+                                  >
+                                    Cons
+                                  </a>
+                                </h4>
+                              </div>
+                            </div>
+                            <div class="panel panel-default" *ngFor="let data of blogNode.cons2 | keyvalue">
+                              <div
+                                class="panel-heading"
+                                role="tab"
+                                id="heading2"
+                              >
+                                <h4 class="panel-title">
+                                  <a
+                                    class="collapsed"
+                                    data-toggle="collapse"
+                                    data-parent="#hAccordion"
+                                    aria-expanded="false"
+                                    aria-controls="collapse2"
+                                  >
+                                    <fa-icon [icon]="faBan"></fa-icon>{{ data.value }}
+                                  </a>
+                                </h4>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-xs-4 text-center" *ngIf="blogNode.imgGrid2">
+                      <img
+                        [src]="blogNode.imgGrid2"
+                        alt="xyz"
+                        class="rounded mx-3 w100m"
+                      />
+                      <button
+                        type="button"
+                        *ngIf="blogNode.buttonTxt"
+                        (click)="openLink(blogNode.amazonLink2)"
+                        class="mt-4 btn btn-danger rounded buyBtn"
+                      >
+                        {{ blogNode.buttonTxt }}
+                      </button>
+                    </div>
+                  </div>
+                  <div class="row gridView" *ngIf="blogNode.longDesMiddle3">
+                    <div class="col-sm-8">
+                      <div
+                        [innerHTML]="blogNode.longDesMiddle3 | sanitizeHtml"
+                      ></div>
+                      <br />
+                      <div class="row" *ngIf="blogNode.pros3.length && blogNode.cons3.length">
+                        <div class="col-sm-6 prosParent">
+                          <div
+                            class="panel-group"
+                            id="hAccordion"
+                            role="tablist"
+                            aria-multiselectable="true"
+                          >
+                            <div class="panel panel-default">
+                              <div
+                                class="panel-heading"
+                                role="tab"
+                                id="headingOne"
+                              >
+                                <h4 class="panel-title">
+                                  <a
+                                    class="prosHead"
+                                    data-toggle="collapse"
+                                    data-parent="#hAccordion"
+                                    aria-expanded="true"
+                                    aria-controls="collapse1"
+                                  >
+                                    Pros
+                                  </a>
+                                </h4>
+                              </div>
+                            </div>
+                            <div class="panel panel-default" *ngFor="let data of blogNode.pros3 | keyvalue">
+                              <div
+                                class="panel-heading"
+                                role="tab"
+                                id="heading2"
+                              >
+                                <h4 class="panel-title">
+                                  <a
+                                    class="collapsed"
+                                    data-toggle="collapse"
+                                    data-parent="#hAccordion"
+                                    aria-expanded="false"
+                                    aria-controls="collapse2"
+                                  >
+                                    <fa-icon [icon]="faCheck"></fa-icon>{{ data.value }}
+                                  </a>
+                                </h4>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6 consParent">
+                          <div
+                            class="panel-group"
+                            id="hAccordion"
+                            role="tablist"
+                            aria-multiselectable="true"
+                          >
+                            <div class="panel panel-default">
+                              <div
+                                class="panel-heading"
+                                role="tab"
+                                id="headingOne"
+                              >
+                                <h4 class="panel-title">
+                                  <a
+                                    class="consHead"
+                                    data-toggle="collapse"
+                                    data-parent="#hAccordion"
+                                    aria-expanded="true"
+                                    aria-controls="collapse1"
+                                  >
+                                    Cons
+                                  </a>
+                                </h4>
+                              </div>
+                            </div>
+                            <div class="panel panel-default" *ngFor="let data of blogNode.cons3 | keyvalue">
+                              <div
+                                class="panel-heading"
+                                role="tab"
+                                id="heading2"
+                              >
+                                <h4 class="panel-title">
+                                  <a
+                                    class="collapsed"
+                                    data-toggle="collapse"
+                                    data-parent="#hAccordion"
+                                    aria-expanded="false"
+                                    aria-controls="collapse2"
+                                  >
+                                    <fa-icon [icon]="faBan"></fa-icon>{{ data.value }}
+                                  </a>
+                                </h4>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-xs-4 text-center" *ngIf="blogNode.imgGrid3">
+                      <img
+                        [src]="blogNode.imgGrid3"
+                        alt="xyz"
+                        class="rounded mx-3 w100m"
+                      />
+                      <button
+                        type="button"
+                        *ngIf="blogNode.buttonTxt"
+                        (click)="openLink(blogNode.amazonLink3)"
+                        class="mt-4 btn btn-danger rounded buyBtn"
+                      >
+                        {{ blogNode.buttonTxt }}
+                      </button>
+                    </div>
+                  </div>
+                  <div class="row gridView" *ngIf="blogNode.longDesMiddle4">
+                    <div class="col-sm-8">
+                      <div
+                        [innerHTML]="blogNode.longDesMiddle4 | sanitizeHtml"
+                      ></div>
+                      <br />
+                      <div class="row" *ngIf="blogNode.pros4.length && blogNode.cons4.length">
+                        <div class="col-sm-6 prosParent">
+                          <div
+                            class="panel-group"
+                            id="hAccordion"
+                            role="tablist"
+                            aria-multiselectable="true"
+                          >
+                            <div class="panel panel-default">
+                              <div
+                                class="panel-heading"
+                                role="tab"
+                                id="headingOne"
+                              >
+                                <h4 class="panel-title">
+                                  <a
+                                    class="prosHead"
+                                    data-toggle="collapse"
+                                    data-parent="#hAccordion"
+                                    aria-expanded="true"
+                                    aria-controls="collapse1"
+                                  >
+                                    Pros
+                                  </a>
+                                </h4>
+                              </div>
+                            </div>
+                            <div class="panel panel-default" *ngFor="let data of blogNode.pros4 | keyvalue">
+                              <div
+                                class="panel-heading"
+                                role="tab"
+                                id="heading2"
+                              >
+                                <h4 class="panel-title">
+                                  <a
+                                    class="collapsed"
+                                    data-toggle="collapse"
+                                    data-parent="#hAccordion"
+                                    aria-expanded="false"
+                                    aria-controls="collapse2"
+                                  >
+                                    <fa-icon [icon]="faCheck"></fa-icon>{{ data.value }}
+                                  </a>
+                                </h4>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6 consParent">
+                          <div
+                            class="panel-group"
+                            id="hAccordion"
+                            role="tablist"
+                            aria-multiselectable="true"
+                          >
+                            <div class="panel panel-default">
+                              <div
+                                class="panel-heading"
+                                role="tab"
+                                id="headingOne"
+                              >
+                                <h4 class="panel-title">
+                                  <a
+                                    class="consHead"
+                                    data-toggle="collapse"
+                                    data-parent="#hAccordion"
+                                    aria-expanded="true"
+                                    aria-controls="collapse1"
+                                  >
+                                    Cons
+                                  </a>
+                                </h4>
+                              </div>
+                            </div>
+                            <div class="panel panel-default" *ngFor="let data of blogNode.cons4 | keyvalue">
+                              <div
+                                class="panel-heading"
+                                role="tab"
+                                id="heading2"
+                              >
+                                <h4 class="panel-title">
+                                  <a
+                                    class="collapsed"
+                                    data-toggle="collapse"
+                                    data-parent="#hAccordion"
+                                    aria-expanded="false"
+                                    aria-controls="collapse2"
+                                  >
+                                    <fa-icon [icon]="faBan"></fa-icon>{{ data.value }}
+                                  </a>
+                                </h4>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-xs-4 text-center" *ngIf="blogNode.imgGrid4">
+                      <img
+                        [src]="blogNode.imgGrid4"
+                        alt="xyz"
+                        class="rounded mx-3 w100m"
+                      />
+                      <button
+                        type="button"
+                        *ngIf="blogNode.buttonTxt"
+                        (click)="openLink(blogNode.amazonLink4)"
+                        class="mt-4 btn btn-danger rounded buyBtn"
+                      >
+                        {{ blogNode.buttonTxt }}
+                      </button>
+                    </div>
+                  </div>
+                  <br /><br />
+                  <p
+                    [innerHTML]="blogNode.longDesLast | sanitizeHtml"
+                    *ngIf="blogNode.longDesLast"
+                    style="
+                      padding-left: 25px !important;
+                      padding-right: 25px !important;
+                      line-height: 1.65em;
+                    "
+                  ></p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <!-- <aside class="col-sm-3 sidebar">
+      </div>
+      <!-- <aside class="col-sm-3 sidebar">
           <div class="row m0 recentPostWidget widgetS">
             <h4>Recent Posts</h4>
             <div class="row m0 recentblogs">
@@ -135,6 +617,6 @@
             </p>
           </div>
         </aside> -->
-      </div>
     </div>
-  </section>
+  </div>
+</section>

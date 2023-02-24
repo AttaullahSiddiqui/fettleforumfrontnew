@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../data.service';
@@ -7,14 +7,19 @@ import {
   faEnvelope,
   faHome,
   faPhoneAlt,
+  faCheckDouble,
+  faBan,
 } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class BlogComponent implements OnInit {
+  faCheck = faCheckDouble;
+  faBan = faBan;
   iFrameObj = null;
   responseError = '';
   blogNode: any = [];
@@ -33,6 +38,7 @@ export class BlogComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    window.scrollTo(0, 0);
     if (window.screen.width < 450) this.mobile = true;
     this.route.paramMap.subscribe((paramMap: any) => {
       this.blogURL = paramMap.get('id');
@@ -42,19 +48,13 @@ export class BlogComponent implements OnInit {
         .subscribe((res: any) => {
           if (res.data) {
             this.titleService.setTitle(res.data['metaTitle']);
-            // document
-            //   .querySelector('meta[name="description"]')
-            //   .setAttribute("content", res.data["metaDes"]);
-            // document
-            //   .querySelector('meta[property="og:description"]')
-            //   .setAttribute("content", res.data["metaDes"]);
             this.blogNode = res.data;
             this.isFetching = false;
           } else this.errorHandler(res.message);
         });
-      // this._dataService
-      //   .postAPI('/userDisplay/increaseBlogViews', { id: this.blogURL })
-      //   .subscribe((res: any) => {});
+      this._dataService
+        .postAPI('/userDisplay/increaseBlogViews', { id: this.blogURL })
+        .subscribe((res: any) => {});
     });
   }
   // loadBlogImages(id) {
@@ -82,7 +82,7 @@ export class BlogComponent implements OnInit {
   }
   errorHandler(err: any) {
     this.isFetching = false;
-    this._dataService.errorToast(err)
+    this._dataService.errorToast(err);
     window.scrollTo(0, 0);
   }
   openLink(link: any) {

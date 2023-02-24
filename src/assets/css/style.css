@@ -1,9 +1,10 @@
 @font-face {
-    font-family: 'Raleway';
-    src: url('../fonts/Raleway-Medium.ttf');
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-Medium.ttf");
 }
 
-body,*{
+body,
+* {
   font-family: Raleway !important;
 }
 .m0 {
@@ -1803,9 +1804,10 @@ header .social_nav ul li a.navBttn {
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
 }
-.blog.sinlge-blog .blogInner .postExcerpts .postExcerptInner p {
-  font-size: 16px;
-  color: #9c9c9c;
+.blog.sinlge-blog .blogInner .postExcerpts .postExcerptInner *:not(button) {
+  /* font-size: 16px; */
+  line-height: 1.65em !important;
+  color: #4c4444;
 }
 .blog.sinlge-blog .blogInner .postExcerpts .postExcerptInner a.readMore {
   display: inline-block;
@@ -2128,18 +2130,22 @@ header .social_nav ul li a.navBttn {
   padding: 0;
   background: none;
 }
+#hAccordion .panel .panel-heading:first-child {
+  border-top: none;
+}
 #hAccordion .panel .panel-heading .panel-title a {
   display: block;
-  line-height: 47px;
+  line-height: 1.65em;
   font-family: "Raleway", sans-serif;
   color: #414141;
   font-weight: 300;
+  padding: 8px 15px;
 }
 #hAccordion .panel .panel-heading .panel-title a fa-icon {
-  color: #bd4342;
   display: inline-block;
   width: 38px;
   text-align: center;
+  margin-right: 10px;
 }
 #hAccordion .panel .panel-heading .panel-title a .sign {
   text-align: center;
