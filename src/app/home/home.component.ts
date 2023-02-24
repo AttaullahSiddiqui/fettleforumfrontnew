@@ -65,7 +65,7 @@ export class HomeComponent implements OnInit {
   faYoutubeSquare = faYoutubeSquare;
   faAngleUp = faAngleUp;
   web: boolean = false;
-  noBlogFound:boolean=false;
+  noBlogFound: boolean = false;
   blogFilter: any = null;
   config: SwiperOptions = {
     slidesPerView: 1,
@@ -77,7 +77,7 @@ export class HomeComponent implements OnInit {
     pagination: { clickable: true },
     scrollbar: { draggable: true },
     direction: 'horizontal',
-    loop: true,
+    loop: false,
     loopFillGroupWithBlank: true,
     grabCursor: true,
     effect: 'creative',
