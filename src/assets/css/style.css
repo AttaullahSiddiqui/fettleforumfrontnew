@@ -2556,7 +2556,7 @@ header .social_nav ul li a.navBttn {
   }
   .footerWidget .widget .getInTouch_widget ul.nav-tabs li {
     width: -webkit-calc(100% / 3);
-    width: calc(100% / 3);
+    width: calc(100% / 4);
     float: left;
   }
   .footerWidget .widget .getInTouch_widget ul.nav-tabs li a {
