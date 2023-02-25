@@ -141,7 +141,7 @@ a:hover {
   font-weight: bold;
   margin: 0 0 5px;
 }
-.widgetS h3 {
+.widgetS h3,.widgetS h2 {
   color: #bd4342;
   font-weight: bold;
   margin: 0 0 5px;
@@ -208,6 +208,7 @@ a:hover {
   padding: 0;
   display: block;
   margin-right: 10px;
+  cursor: pointer;
 }
 .recentPostWidget .recentblogs .recentblog .media-left a img {
   width: 100%;
@@ -1678,8 +1679,8 @@ header .social_nav ul li a.navBttn {
 }
 .blog .blogInner .featureImg a img {
   width: 100%;
-  -webkit-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out;
+  /* -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out; */
 }
 .blog .blogInner .postExcerpts {
   background: #f2eded;
@@ -1732,11 +1733,11 @@ header .social_nav ul li a.navBttn {
 .blog .blogInner:hover .blogDateTime fa-icon:after {
   border-left-color: #bd4342;
 }
-.blog .blogInner:hover .featureImg a img {
+/* .blog .blogInner:hover .featureImg a img {
   -webkit-transform: scale(1.3);
   -ms-transform: scale(1.3);
   transform: scale(1.3);
-}
+} */
 .blog .blogInner:hover .postExcerpts {
   background: #bd4342;
 }

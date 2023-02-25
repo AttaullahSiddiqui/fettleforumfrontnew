@@ -1925,35 +1925,35 @@
     }
    
 // modified by MDN https://developer.mozilla.org/en-US/docs/DOM/Mozilla_event_reference/wheel
-    function _modernWheelEvent(dom,name,fn,bubble) {      
-      self._bind(dom,name,function(e){
-        var  e = (e) ? e : window.event;
-        var event = {
-          original: e,
-          target: e.target || e.srcElement,
-          type: "wheel",
-          deltaMode: e.type == "MozMousePixelScroll" ? 0 : 1,
-          deltaX: 0,
-          deltaZ: 0,
-          preventDefault: function() {
-            e.preventDefault ? e.preventDefault() : e.returnValue = false;
-            return false;
-          },
-          stopImmediatePropagation: function() {
-            (e.stopImmediatePropagation) ? e.stopImmediatePropagation() : e.cancelBubble = true;
-          }
-        };
+    // function _modernWheelEvent(dom,name,fn,bubble) {      
+    //   self._bind(dom,name,function(e){
+    //     var  e = (e) ? e : window.event;
+    //     var event = {
+    //       original: e,
+    //       target: e.target || e.srcElement,
+    //       type: "wheel",
+    //       deltaMode: e.type == "MozMousePixelScroll" ? 0 : 1,
+    //       deltaX: 0,
+    //       deltaZ: 0,
+    //       preventDefault: function() {
+    //         e.preventDefault ? e.preventDefault() : e.returnValue = false;
+    //         return false;
+    //       },
+    //       stopImmediatePropagation: function() {
+    //         (e.stopImmediatePropagation) ? e.stopImmediatePropagation() : e.cancelBubble = true;
+    //       }
+    //     };
             
-        if (name=="mousewheel") {
-          event.deltaY = - 1/40 * e.wheelDelta;
-          e.wheelDeltaX && (event.deltaX = - 1/40 * e.wheelDeltaX);
-        } else {
-          event.deltaY = e.detail;
-        }
+    //     if (name=="mousewheel") {
+    //       event.deltaY = - 1/40 * e.wheelDelta;
+    //       e.wheelDeltaX && (event.deltaX = - 1/40 * e.wheelDeltaX);
+    //     } else {
+    //       event.deltaY = e.detail;
+    //     }
 
-        return fn.call(dom,event);      
-      },bubble);
-    };     
+    //     return fn.call(dom,event);      
+    //   },bubble);
+    // };     
    
     this._bind = function(el,name,fn,bubble) {  // primitive bind
       self.events.push({e:el,n:name,f:fn,b:bubble,q:false});
@@ -1973,45 +1973,45 @@
       $(dom).bind(name,fn);
     }
    
-    this.bind = function(dom,name,fn,bubble) {  // touch-oriented & fixing jquery bind
-      var el = ("jquery" in dom) ? dom[0] : dom;
+    // this.bind = function(dom,name,fn,bubble) { 
+    //   var el = ("jquery" in dom) ? dom[0] : dom;
       
-      if (name=='mousewheel') {
-        if ("onwheel" in self.win) {            
-          self._bind(el,"wheel",fn,bubble||false);
-        } else {            
-          var wname = (typeof document.onmousewheel != "undefined") ? "mousewheel" : "DOMMouseScroll";  // older IE/Firefox
-          _modernWheelEvent(el,wname,fn,bubble||false);
-          if (wname=="DOMMouseScroll") _modernWheelEvent(el,"MozMousePixelScroll",fn,bubble||false);  // Firefox legacy
-        }
-      } 
-      else if (el.addEventListener) {
-        if (cap.cantouch && /mouseup|mousedown|mousemove/.test(name)) {  // touch device support
-          var tt=(name=='mousedown')?'touchstart':(name=='mouseup')?'touchend':'touchmove';
-          self._bind(el,tt,function(e){
-            if (e.touches) {
-              if (e.touches.length<2) {var ev=(e.touches.length)?e.touches[0]:e;ev.original=e;fn.call(this,ev);}
-            } 
-            else if (e.changedTouches) {var ev=e.changedTouches[0];ev.original=e;fn.call(this,ev);}  //blackberry
-          },bubble||false);
-        }
-        self._bind(el,name,fn,bubble||false);
-        if (cap.cantouch && name=="mouseup") self._bind(el,"touchcancel",fn,bubble||false);
-      }
-      else {
-        self._bind(el,name,function(e) {
-          e = e||window.event||false;
-          if (e) {
-            if (e.srcElement) e.target=e.srcElement;
-          }
-          if (!("pageY" in e)) {
-            e.pageX = e.clientX + document.documentElement.scrollLeft;
-            e.pageY = e.clientY + document.documentElement.scrollTop; 
-          }
-          return ((fn.call(el,e)===false)||bubble===false) ? self.cancelEvent(e) : true;
-        });
-      } 
-    };
+    //   if (name=='mousewheel') {
+    //     if ("onwheel" in self.win) {            
+    //       self._bind(el,"wheel",fn,bubble||false);
+    //     } else {            
+    //       var wname = (typeof document.onmousewheel != "undefined") ? "mousewheel" : "DOMMouseScroll";  // older IE/Firefox
+    //       _modernWheelEvent(el,wname,fn,bubble||false);
+    //       if (wname=="DOMMouseScroll") _modernWheelEvent(el,"MozMousePixelScroll",fn,bubble||false); 
+    //     }
+    //   } 
+    //   else if (el.addEventListener) {
+    //     if (cap.cantouch && /mouseup|mousedown|mousemove/.test(name)) {
+    //       var tt=(name=='mousedown')?'touchstart':(name=='mouseup')?'touchend':'touchmove';
+    //       self._bind(el,tt,function(e){
+    //         if (e.touches) {
+    //           if (e.touches.length<2) {var ev=(e.touches.length)?e.touches[0]:e;ev.original=e;fn.call(this,ev);}
+    //         } 
+    //         else if (e.changedTouches) {var ev=e.changedTouches[0];ev.original=e;fn.call(this,ev);}  //blackberry
+    //       },bubble||false);
+    //     }
+    //     self._bind(el,name,fn,bubble||false);
+    //     if (cap.cantouch && name=="mouseup") self._bind(el,"touchcancel",fn,bubble||false);
+    //   }
+    //   else {
+    //     self._bind(el,name,function(e) {
+    //       e = e||window.event||false;
+    //       if (e) {
+    //         if (e.srcElement) e.target=e.srcElement;
+    //       }
+    //       if (!("pageY" in e)) {
+    //         e.pageX = e.clientX + document.documentElement.scrollLeft;
+    //         e.pageY = e.clientY + document.documentElement.scrollTop; 
+    //       }
+    //       return ((fn.call(el,e)===false)||bubble===false) ? self.cancelEvent(e) : true;
+    //     });
+    //   } 
+    // };
     
     this._unbind = function(el,name,fn,bub) {  // primitive unbind
       if (el.removeEventListener) {

@@ -48,6 +48,7 @@ module.exports = {
   addEmailToDB: addEmailToDB,
   submitReview: submitReview,
   fetchFeaturedCategories: fetchFeaturedCategories,
+  fetchFeaturedCoupons: fetchFeaturedCoupons,
 };
 
 function fetchSlides(req, res) {
@@ -178,6 +179,24 @@ function fetchCoupons(req, res) {
     }
   });
 }
+function fetchFeaturedCoupons(req, res) {
+  Coupon.find({ featuredForHome: true })
+    .populate("storeId", "img")
+    .exec(function (err, coupons) {
+      if (err) res.json(resHandler.respondError(err[0], err[1] || -1));
+      else {
+        if (coupons)
+          res.json(
+            resHandler.respondSuccess(
+              coupons,
+              "Coupons fetched successfully",
+              2
+            )
+          );
+        else res.json(resHandler.respondError("No featured coupons found", -3));
+      }
+    });
+}
 function singleStoreData(req, res) {
   Store.find({ storeURL: req.query._id }, function (err, store) {
     if (err) res.json(resHandler.respondError(err[0], err[1] || -1));
@@ -272,21 +291,28 @@ function fetchFeaturedCategories(req, res) {
   );
 }
 function fetchCategories(req, res) {
-  Category.find({}, "name categoryURL", function (err, categories) {
-    if (err) res.json(resHandler.respondError(err[0], err[1] || -1));
-    else if (!categories)
-      res.json(
-        resHandler.respondError("Unable to fetch categories at the moment", -3)
-      );
-    else
-      res.json(
-        resHandler.respondSuccess(
-          categories,
-          "Categories fetched successfully",
-          2
-        )
-      );
-  });
+  Category.find(
+    { forBlogs: false },
+    "name categoryURL",
+    function (err, categories) {
+      if (err) res.json(resHandler.respondError(err[0], err[1] || -1));
+      else if (!categories)
+        res.json(
+          resHandler.respondError(
+            "Unable to fetch categories at the moment",
+            -3
+          )
+        );
+      else
+        res.json(
+          resHandler.respondSuccess(
+            categories,
+            "Categories fetched successfully",
+            2
+          )
+        );
+    }
+  );
 }
 function featuredProducts(req, res) {
   req.query["featured"] = true;
@@ -472,9 +498,9 @@ function searchQuery(req, res) {
     });
 }
 function fetchBlogsWithLimit(req, res) {
-  var queryObj={};
-  if(req.query.quer){
-    if (req.query.quer!='null') queryObj.categoryRef = req.query.quer;
+  var queryObj = {};
+  if (req.query.quer) {
+    if (req.query.quer != "null") queryObj.categoryRef = req.query.quer;
   }
   Blog.find(queryObj, "title img blogURL shortDes views author CreatedAt")
     .sort({ CreatedAt: -1 })

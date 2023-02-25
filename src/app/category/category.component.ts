@@ -43,6 +43,7 @@ export class CategoryComponent implements OnInit {
   switchTab(catNode: any) {
     this.activeNode = catNode.name;
     this.loadStores(catNode, catNode.categoryURL);
+    window.scrollTo(0,0)
   }
   loadStores(catNode: any, slctdURL: any) {
     if (this.isLoading) return;

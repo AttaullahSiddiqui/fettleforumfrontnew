@@ -11,12 +11,23 @@
           /></a>
         </div>
       </div>
-      <div class="social_nav col-sm-6" *ngIf="false">
+      <div class="social_nav col-sm-6">
         <br />
-        <div class="row">
+        <br />
+        <div class="row" style="float: right" *ngIf="showSearchBarArray(['store', 'services', 'category'])">
+          <a [routerLink]="['/services']" class="tempNav">Home</a>
+          <a [routerLink]="['/stores']" class="tempNav">All Stores</a>
+          <a [routerLink]="['/category', 'electronics']" class="tempNav"
+            >Categories</a
+          >
+        </div>
+        <div class="row" *ngIf="false">
           <ul class="list-inline fright">
             <li>
-              <a [routerLink]="['/stores']" class="navBttn" *ngIf="!showSearchBar('/store')"
+              <a
+                [routerLink]="['/stores']"
+                class="navBttn"
+                *ngIf="!showSearchBar('/store')"
                 ><span>Services</span></a
               >
             </li>
@@ -84,7 +95,7 @@
 <div class="row myDropdown" *ngIf="searchText && switch">
   <div class="col-sm-4"></div>
   <aside class="col-sm-4 sidebar">
-    <div class="row m0 recentPostWidget widgetS" style="margin-bottom:10px">
+    <div class="row m0 recentPostWidget widgetS" style="margin-bottom: 10px">
       <div class="row m0 recentblogs">
         <div class="media recentblog" *ngIf="noResult">
           <h6 class="noResult">
@@ -120,7 +131,10 @@
     </div>
   </aside>
 </div>
-<nav class="navbar navbar-default navbar-static-top">
+<nav
+  class="navbar navbar-default navbar-static-top"
+  *ngIf="!showSearchBarArray(['store', 'services', 'category']) && categoryArr"
+>
   <div class="container-fluid container">
     <div class="row m04m">
       <div class="navbar-header">
@@ -147,7 +161,7 @@
           >
             <a>Home</a>
           </li>
-          <li class="dropdown" *ngIf="categoryArr">
+          <li class="dropdown" *ngIf="showSearchBar('/store') && categoryArr">
             <a
               class="dropdown-toggle"
               data-toggle="dropdown"

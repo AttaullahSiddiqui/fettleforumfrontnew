@@ -1,6 +1,6 @@
 <br />
 <div class="container px-4">
-  <nav aria-label="breadcrumb">
+  <!-- <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="">Home</a></li>
       <li class="breadcrumb-item"><a href="">Categories</a></li>
@@ -8,12 +8,12 @@
         <a href="">{{ activeNode }}</a>
       </li>
     </ol>
-  </nav>
+  </nav> -->
   <br />
   <div class="container" *ngIf="categoryArr">
     <div class="row">
       <div class="col-sm-12">
-        <div class="row m0 leftAlignedTap" style="border:none">
+        <div class="row m0 leftAlignedTap" style="border: none">
           <ul
             class="nav nav-tabs"
             role="tablist"
@@ -52,7 +52,10 @@
                       class="col-sm-12 col-md-2"
                       *ngFor="let store of storeArr | keyvalue"
                     >
-                      <div class="row m0 service">
+                      <div
+                        class="row m0 service"
+                        [routerLink]="['/stores', store.value.storeURL]"
+                      >
                         <div class="row m0 innerRow">
                           <img [src]="store.value.img" alt="Store Image" />
                         </div>

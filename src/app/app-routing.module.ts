@@ -8,6 +8,7 @@ import { CategoriesComponent } from './categories/categories.component';
 import { CategoryComponent } from './category/category.component';
 import { HomeComponent } from './home/home.component';
 import { PrivacyComponent } from './privacy/privacy.component';
+import { ServicesComponent } from './services/services.component';
 import { StoreComponent } from './store/store.component';
 import { StoresComponent } from './stores/stores.component';
 import { TermsComponent } from './terms/terms.component';
@@ -25,12 +26,17 @@ const routes: Routes = [
     canActivate: [AuthService],
   },
   {
+    path: 'services',
+    component: ServicesComponent,
+    canActivate: [AuthService],
+  },
+  {
     path: 'stores',
     component: StoresComponent,
     canActivate: [AuthService],
   },
   {
-    path: 'store/:id',
+    path: 'stores/:id',
     component: StoreComponent,
     canActivate: [AuthService],
   },

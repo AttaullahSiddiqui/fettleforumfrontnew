@@ -1,5 +1,5 @@
 <br />
-<div class="container px-4">
+<!-- <div class="container px-4">
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="">Home</a></li>
@@ -7,23 +7,26 @@
     </ol>
   </nav>
   <br />
-</div>
+</div> -->
 <section id="aboutus" class="row">
   <div class="container">
     <div class="row">
       <aside class="col-sm-12 sidebar">
         <div class="row m0 recentPostWidget widgetS">
           <br />
-          <h3>Latest Stores</h3>
+          <h2>Browse Stores for exciting deals</h2>
+          <br />
           <br />
           <div class="row m0 recentblogs" *ngIf="storeArray.length">
             <div
               class="media recentblog"
               *ngFor="let store of storeArray | keyvalue"
-              [routerLink]="['/store', store.value.storeURL]"
             >
-              <div class="media-left">
-                <a >
+              <div
+                class="media-left"
+                [routerLink]="['/stores', store.value.storeURL]"
+              >
+                <a>
                   <img
                     class="media-object"
                     [src]="store.value.img"
@@ -31,9 +34,12 @@
                   />
                 </a>
               </div>
-              <div class="media-body">
+              <div
+                class="media-body"
+                [routerLink]="['/stores', store.value.storeURL]"
+              >
                 <h4 class="storeName">{{ store.value.name }}</h4>
-                <a 
+                <a
                   ><h5
                     class="media-heading"
                     [innerHTML]="store.value.shortDes"
@@ -47,4 +53,4 @@
     </div>
   </div>
 </section>
-<br>
+<br />

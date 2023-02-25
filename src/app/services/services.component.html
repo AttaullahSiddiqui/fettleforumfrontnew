@@ -1,25 +1,12 @@
 <br />
-<!-- <div class="container px-4">
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="">Home</a></li>
-      <li class="breadcrumb-item"><a href="">Stores</a></li>
-      <li class="breadcrumb-item active"><a href="">{{storeName}}</a></li>
-    </ol>
-  </nav>
-  <br />
-</div> -->
 <section id="aboutus" class="row" *ngIf="couponsArray">
-  <div class="container" style="width: 90%">
-    <h1 class="mainTitle">
-      {{ storeName }} <br />
-      {{ storeDate }}
-    </h1>
+  <div class="container">
     <div class="row">
-      <aside class="col-sm-9 sidebar">
+      <aside class="col-sm-12 sidebar">
         <div class="row m0 recentPostWidget widgetS">
           <br />
-          <h3 style="text-decoration: underline">Active Coupons</h3>
+          <h2 style="text-decoration: underline">Featured Deals</h2>
+          <br />
           <br />
           <div class="row m0 recentblogs">
             <div
@@ -42,7 +29,7 @@
                 <a>
                   <img
                     class="media-object"
-                    [src]="storePic"
+                    [src]="coupon.value.storeId.img"
                     alt="Store picture"
                   />
                 </a>
@@ -54,12 +41,6 @@
           </div>
         </div>
       </aside>
-      <div class="col-sm-3 rightSide">
-        <br>
-        <h2>About</h2>
-        <br />
-        <p [innerHTML]="longDes"></p>
-      </div>
     </div>
   </div>
 </section>

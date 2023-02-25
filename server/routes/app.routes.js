@@ -29,6 +29,7 @@ router.get("/fetchReviews", fetchCtrl.fetchReviews);
 router.get("/fetchProductsByCategory", fetchCtrl.fetchProductsByCategory);
 router.get("/fetchStoresDropDown", fetchCtrl.fetchStoresDropDown);
 router.get("/fetchFeaturedCategories", fetchCtrl.fetchFeaturedCategories);
+router.get("/fetchFeaturedCoupons", fetchCtrl.fetchFeaturedCoupons);
 
 router.get("/storesForSiteMap", fetchCtrl.storesForSiteMap);
 router.get("/blogsForSiteMap", fetchCtrl.blogsForSiteMap);

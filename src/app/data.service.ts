@@ -95,6 +95,7 @@ export class DataService {
     });
   }
   showCopyCodeAlert(editObj: any) {
+    this.copyToClipBoard(editObj.code);
     Swal.fire({
       title: `<strong>${editObj.code}</strong>`,
       icon: 'info',

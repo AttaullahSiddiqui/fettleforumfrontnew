@@ -43,7 +43,14 @@ export class HeaderComponent implements OnInit {
     var location = window.location.pathname;
     return location.includes(url);
   }
-  searchFunc(queri:any) {
+  showSearchBarArray(url: Array<string>) {
+    var location = window.location.pathname;
+    for (var i = 0; i < url.length; i++) {
+      if (location.includes(url[i])) return true;
+    }
+    return false;
+  }
+  searchFunc(queri: any) {
     if (!queri) return;
     this.noResult = false;
     this.storeArray = [];
