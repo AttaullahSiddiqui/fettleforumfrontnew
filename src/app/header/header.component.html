@@ -14,10 +14,30 @@
       <div class="social_nav col-sm-6">
         <br />
         <br />
-        <div class="row" style="float: right" *ngIf="showSearchBarArray(['store', 'services', 'category'])">
-          <a [routerLink]="['/services']" class="tempNav">Home</a>
-          <a [routerLink]="['/stores']" class="tempNav">All Stores</a>
-          <a [routerLink]="['/category', 'electronics']" class="tempNav"
+        <div
+          class="row"
+          style="float: right"
+          *ngIf="showSearchBarArray(['store', 'services', 'category'])"
+        >
+          <a
+            [routerLink]="['/services']"
+            class="tempNav"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Home</a
+          >
+          <a
+            [routerLink]="['/stores']"
+            class="tempNav"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >All Stores</a
+          >
+          <a
+            [routerLink]="['/category', 'electronics']"
+            class="tempNav"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
             >Categories</a
           >
         </div>
@@ -64,7 +84,10 @@
         </div>
       </div> -->
     </div>
-    <div class="row" *ngIf="showSearchBarArray(['store','services','category'])">
+    <div
+      class="row"
+      *ngIf="showSearchBarArray(['store', 'services', 'category'])"
+    >
       <div class="col-sm-2"></div>
       <div class="col-sm-8 m0 commentForm" style="margin-bottom: 0">
         <form class="row m0" id="searchForm">
