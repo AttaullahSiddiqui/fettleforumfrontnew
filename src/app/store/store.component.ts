@@ -10,7 +10,7 @@ import { DataService } from '../data.service';
 })
 export class StoreComponent implements OnInit {
   couponsArray: Array<any> = [];
-  storePic: any;
+  storePic: any=null;
   storeThumb = null;
   storeDetail: any;
   longDes = null;

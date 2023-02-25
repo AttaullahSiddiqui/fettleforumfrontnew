@@ -56,6 +56,8 @@
       </aside>
       <div class="col-sm-3 rightSide">
         <br>
+        <img *ngIf="storePic" [src]="storePic" class="storeImage">
+        <br>
         <h2>About</h2>
         <br />
         <p [innerHTML]="longDes"></p>
