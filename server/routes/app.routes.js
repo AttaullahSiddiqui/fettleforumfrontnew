@@ -30,6 +30,7 @@ router.get("/fetchProductsByCategory", fetchCtrl.fetchProductsByCategory);
 router.get("/fetchStoresDropDown", fetchCtrl.fetchStoresDropDown);
 router.get("/fetchFeaturedCategories", fetchCtrl.fetchFeaturedCategories);
 router.get("/fetchFeaturedCoupons", fetchCtrl.fetchFeaturedCoupons);
+router.get("/fetchForBlogCategories", fetchCtrl.fetchForBlogCategories);
 
 router.get("/storesForSiteMap", fetchCtrl.storesForSiteMap);
 router.get("/blogsForSiteMap", fetchCtrl.blogsForSiteMap);

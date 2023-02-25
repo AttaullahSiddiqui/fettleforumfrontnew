@@ -41,19 +41,20 @@
       </li>
       <li
         data-filter=".catHospital"
-        [ngClass]="{ active: blogFilter == '63f5048bf27eca54345ddac9' }"
-        (click)="showFilteredBlogs('63f5048bf27eca54345ddac9')"
+        [ngClass]="{ active: blogFilter == cat.value._id }"
+        (click)="showFilteredBlogs(cat.value._id)"
+        *ngFor="let cat of forBlogCategories | keyvalue"
       >
-        Travel
+        {{ cat.value.name }}
       </li>
-      <li
+      <!-- <li
         data-filter=".catSchools"
-        [ngClass]="{ active: blogFilter == '63f50362dbc95abea20240eb' }"
-        (click)="showFilteredBlogs('63f50362dbc95abea20240eb')"
+        [ngClass]="{ active: blogFilter == cat.value._id }"
+        (click)="showFilteredBlogs(cat.value._id)"
       >
-        Food
-      </li>
-      <li
+        {{ cat.value.name }}
+      </li> -->
+      <!-- <li
         data-filter=".catHouses"
         [ngClass]="{ active: blogFilter == '63f5036cdbc95abea20240ed' }"
         (click)="showFilteredBlogs('63f5036cdbc95abea20240ed')"
@@ -80,7 +81,7 @@
         (click)="showFilteredBlogs('63f50c1af27eca54345ddae6')"
       >
         Fitness
-      </li>
+      </li> -->
     </ul>
   </div>
   <div class="row projects m0" id="container">

@@ -67,6 +67,7 @@ export class HomeComponent implements OnInit {
   web: boolean = false;
   noBlogFound: boolean = false;
   blogFilter: any = null;
+  forBlogCategories:Array<any>=[];
   config: SwiperOptions = {
     slidesPerView: 1,
     autoplay: {
@@ -105,11 +106,15 @@ export class HomeComponent implements OnInit {
     });
     this.showFilteredBlogs('all');
     this._dataService
-      .fetchOnlyLimit('/userDisplay/fetchTopStores', 18)
+      .fetchAPI('/userDisplay/fetchForBlogCategories')
       .subscribe((res) => {
-        if (res.data) this.storeArray = res.data;
-        // else this._dataService.errorToast(res.message);
+        if (res.data) this.forBlogCategories = res.data;
       });
+    // this._dataService
+    //   .fetchOnlyLimit('/userDisplay/fetchTopStores', 18)
+    //   .subscribe((res) => {
+    //     if (res.data) this.storeArray = res.data;
+    //   });
     this._dataService
       .fetchOnlyLimit('/userDisplay/fetchTopBlogs', 6)
       .subscribe((res) => {
