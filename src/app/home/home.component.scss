@@ -60,6 +60,9 @@ div.blogOuter {
   border-radius: 20px;
   overflow: hidden;
 }
+div.blogOuter > a > img {
+  cursor: pointer;
+}
 div.authorDetail{
   font-size: 1.2em;
 }
@@ -80,4 +83,7 @@ div.authorDetail{
   height: 40px;
   border-radius: 50%;
   margin-right: 15px;
+}
+img.sliderImg{
+  cursor: pointer;
 }

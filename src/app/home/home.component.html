@@ -6,7 +6,7 @@
 >
   <ng-template swiperSlide *ngFor="let slide of slideArray | keyvalue"
     ><img
-      [src]="slide.value.img"
+      [src]="slide.value.img" class="sliderImg"
       alt="Random slide picture"
       (click)="openLink(slide.value.link)"
   /></ng-template>

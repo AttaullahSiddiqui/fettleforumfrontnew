@@ -64,7 +64,7 @@
         </div>
       </div> -->
     </div>
-    <div class="row" *ngIf="showSearchBar('/store')">
+    <div class="row" *ngIf="showSearchBarArray(['store','services','category'])">
       <div class="col-sm-2"></div>
       <div class="col-sm-8 m0 commentForm" style="margin-bottom: 0">
         <form class="row m0" id="searchForm">
@@ -108,7 +108,7 @@
         >
           <div
             class="media-left"
-            [routerLink]="['/store', store.value.storeURL]"
+            [routerLink]="['/stores', store.value.storeURL]"
           >
             <a>
               <img
@@ -120,7 +120,7 @@
           </div>
           <div
             class="media-body"
-            [routerLink]="['/store', store.value.storeURL]"
+            [routerLink]="['/stores', store.value.storeURL]"
           >
             <a
               ><h5 class="media-heading">{{ store.value.name }}</h5></a
