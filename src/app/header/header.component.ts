@@ -25,9 +25,11 @@ export class HeaderComponent implements OnInit {
   noResult = false;
   storeArray: Array<any> = [];
   switch = false;
+  smallScreen: Boolean = false;
   constructor(private _dataService: DataService, private router: Router) {}
 
   ngOnInit(): void {
+    if (window.screen.width < 830) this.smallScreen = true;
     this._dataService
       .fetchAPI('/userDisplay/fetchFeaturedCategories')
       .subscribe((res) => {

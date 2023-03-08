@@ -1,5 +1,5 @@
 .storeName {
-  margin-top: 25px;
+  margin-top: 35px;
   text-transform: capitalize;
 }
 a.dealBtn {
@@ -35,4 +35,11 @@ img.storeImage {
   border-radius: 50%;
   border: 2px solid;
   overflow: hidden;
+}
+a.biggerAvatar{
+  width: 100px !important;
+  height: 100px !important;
+}
+div.tableCellFalse{
+  display: inline !important;
 }

@@ -36,7 +36,7 @@ export class ServicesComponent implements OnInit {
     'Nov',
     'Dec',
   ];
-
+  smallScreen: Boolean = false;
   currentDate = Date.now();
   constructor(
     private route: ActivatedRoute,
@@ -47,6 +47,7 @@ export class ServicesComponent implements OnInit {
 
   ngOnInit(): void {
     window.scrollTo(0, 0);
+    if (window.screen.width < 830) this.smallScreen = true;
     if (window.screen.width < 450) this.mobile = true;
     this.loadFeaturedCoupons();
   }
@@ -58,7 +59,6 @@ export class ServicesComponent implements OnInit {
       .subscribe((res) => {
         if (res.data) {
           this.couponsArray = res.data;
-          console.log(this.couponsArray)
           for (var i = 0; i < res.data.length; i++) {
             var orginalDate = this.couponsArray[i]['expDate'];
             var singleObj = this.couponsArray[i];

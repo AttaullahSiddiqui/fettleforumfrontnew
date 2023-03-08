@@ -10,7 +10,7 @@ import { DataService } from '../data.service';
 })
 export class StoreComponent implements OnInit {
   couponsArray: Array<any> = [];
-  storePic: any=null;
+  storePic: any = null;
   storeThumb = null;
   storeDetail: any;
   longDes = null;
@@ -45,7 +45,7 @@ export class StoreComponent implements OnInit {
     'Nov',
     'Dec',
   ];
-
+  smallScreen: Boolean = false;
   currentDate = Date.now();
   constructor(
     private route: ActivatedRoute,
@@ -57,6 +57,7 @@ export class StoreComponent implements OnInit {
   ngOnInit(): void {
     window.scrollTo(0, 0);
     if (window.screen.width < 450) this.mobile = true;
+    if (window.screen.width < 830) this.smallScreen = true;
     this.route.paramMap.subscribe((paramMap) => {
       this.storeURLToShow = paramMap.get('id');
       this.loadStoreData(this.storeURLToShow);

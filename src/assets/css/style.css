@@ -141,7 +141,8 @@ a:hover {
   font-weight: bold;
   margin: 0 0 5px;
 }
-.widgetS h3,.widgetS h2 {
+.widgetS h3,
+.widgetS h2 {
   color: #bd4342;
   font-weight: bold;
   margin: 0 0 5px;
@@ -235,12 +236,14 @@ a:hover {
   padding-bottom: 0;
 }
 .recentPostWidget .recentblogs .recentblogg .media-left a {
-  width: 90px;
-  height: 90px;
+  width: 110px;
+  height: 110px;
   overflow: hidden;
   padding: 0;
   display: block;
   margin-right: 10px;
+  border-radius: 50%;
+  border: 2px solid #bd4342;
 }
 .recentPostWidget .recentblogs .recentblogg .media-left a img {
   width: 100%;

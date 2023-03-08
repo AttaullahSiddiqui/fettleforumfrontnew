@@ -12,11 +12,12 @@
         </div>
       </div>
       <div class="social_nav col-sm-6">
-        <br />
+        <br *ngIf="!smallScreen" />
         <br />
         <div
           class="row"
           style="float: right"
+          [ngClass]="{ navDivAdjust: smallScreen }"
           *ngIf="showSearchBarArray(['store', 'services', 'category'])"
         >
           <a
@@ -41,6 +42,7 @@
             >Categories</a
           >
         </div>
+        <br />
         <div class="row" *ngIf="false">
           <ul class="list-inline fright">
             <li>
@@ -117,7 +119,7 @@
 <!-- <div class="row myDropdown" *ngIf="searchText && switch"> -->
 <div class="row myDropdown" *ngIf="searchText && switch">
   <div class="col-sm-4"></div>
-  <aside class="col-sm-4 sidebar">
+  <aside class="col-sm-4 sidebar" [ngClass]="{ searchResultAdjust: smallScreen }">
     <div class="row m0 recentPostWidget widgetS" style="margin-bottom: 10px">
       <div class="row m0 recentblogs">
         <div class="media recentblog" *ngIf="noResult">

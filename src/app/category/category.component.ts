@@ -13,6 +13,7 @@ export class CategoryComponent implements OnInit {
   storeArr: Array<any> = [];
   isLoading = false;
   activeNode: string = '';
+  smallScreen: Boolean = false;
   constructor(
     private _dataService: DataService,
     private titleService: Title,
@@ -21,6 +22,7 @@ export class CategoryComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    if (window.screen.width < 830) this.smallScreen = true;
     this.route.paramMap.subscribe((paramMap) => {
       var targetCategoryId = paramMap.get('id');
       var targetCategoryName: string;
@@ -43,7 +45,7 @@ export class CategoryComponent implements OnInit {
   switchTab(catNode: any) {
     this.activeNode = catNode.name;
     this.loadStores(catNode, catNode.categoryURL);
-    window.scrollTo(0,0)
+    window.scrollTo(0, 0);
   }
   loadStores(catNode: any, slctdURL: any) {
     if (this.isLoading) return;
