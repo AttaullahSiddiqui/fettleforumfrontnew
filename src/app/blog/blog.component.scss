@@ -26,6 +26,9 @@ div.gridView,
 div.verticalView {
   padding: 10px 50px;
 }
+div.verticalViewOverWrite {
+  padding: 5px 10px;
+}
 div.gridView > div > img {
   width: 100%;
 }
@@ -35,6 +38,13 @@ div.verticalView > div > div > img {
 div.verticalView > div > div.prosCons{
   max-width: 70%;
   margin-left: 15%;
+}
+div.verticalViewOverWrite > div > div > img {
+  width: 76vw;
+}
+div.verticalViewOverWrite > div > div.prosCons{
+  max-width: 96%;
+  margin-left: 2%;
 }
 div.prosParent a.collapsed > fa-icon > svg > path {
   color: #4fa24f !important;
@@ -57,4 +67,17 @@ h4.panel-title > a.consHead {
   font-weight: 700 !important;
   color: white !important;
   margin-bottom: 15px;
+}
+div.width90Per{
+  width: 90% !important;
+}
+p.paddingX25{
+  padding-left: 25px;
+  padding-right: 25px;
+  line-height: 1.65em;
+}
+p.paddingX10{
+  padding-left: 10px;
+  padding-right: 10px;
+  line-height: 1.65em;
 }

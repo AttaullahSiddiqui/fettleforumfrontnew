@@ -8,7 +8,7 @@
 </nav>
 
 <section id="blogs" class="row">
-  <div class="container" style="width: 90%">
+  <div class="container" [ngClass]="{ width90Per: !smallScreen }">
     <div class="row">
       <div class="col-sm-12">
         <div class="row" *ngIf="blogNode">
@@ -34,15 +34,14 @@
                   <a class="postTitle row m0"
                     ><h2>{{ blogNode.title }}</h2></a
                   >
-                  <br /><br />
+                  <br *ngIf="!smallScreen" /><br />
                   <p
                     *ngIf="blogNode.longDesFirst"
                     [innerHTML]="blogNode.longDesFirst | sanitizeHtml"
-                    style="
-                      padding-left: 25px !important;
-                      padding-right: 25px !important;
-                      line-height: 1.65em;
-                    "
+                    [ngClass]="{
+                      paddingX25: !smallScreen,
+                      paddingX10: smallScreen
+                    }"
                   ></p>
                   <br />
                   <div class="row gridView" *ngIf="blogNode.longDesMiddle1">
@@ -569,11 +568,10 @@
                   <p
                     [innerHTML]="blogNode.longDesLast | sanitizeHtml"
                     *ngIf="blogNode.longDesLast"
-                    style="
-                      padding-left: 25px !important;
-                      padding-right: 25px !important;
-                      line-height: 1.65em;
-                    "
+                    [ngClass]="{
+                      paddingX25: !smallScreen,
+                      paddingX10: smallScreen
+                    }"
                   ></p>
                 </div>
               </div>
@@ -603,14 +601,17 @@
                   <p
                     *ngIf="blogNode.longDesFirst"
                     [innerHTML]="blogNode.longDesFirst | sanitizeHtml"
-                    style="
-                      padding-left: 25px !important;
-                      padding-right: 25px !important;
-                      line-height: 1.65em;
-                    "
+                    [ngClass]="{
+                      paddingX25: !smallScreen,
+                      paddingX10: smallScreen
+                    }"
                   ></p>
                   <br />
-                  <div class="row verticalView" *ngIf="blogNode.longDesMiddle1">
+                  <div
+                    class="row verticalView"
+                    [ngClass]="{ verticalViewOverWrite: smallScreen }"
+                    *ngIf="blogNode.longDesMiddle1"
+                  >
                     <div class="col-sm-12">
                       <div
                         [innerHTML]="blogNode.longDesMiddle1 | sanitizeHtml"
@@ -742,7 +743,11 @@
                       </div>
                     </div>
                   </div>
-                  <div class="row verticalView" *ngIf="blogNode.longDesMiddle2">
+                  <div
+                    class="row verticalView"
+                    [ngClass]="{ verticalViewOverWrite: smallScreen }"
+                    *ngIf="blogNode.longDesMiddle2"
+                  >
                     <div class="col-sm-12">
                       <div
                         [innerHTML]="blogNode.longDesMiddle2 | sanitizeHtml"
@@ -874,7 +879,11 @@
                       </div>
                     </div>
                   </div>
-                  <div class="row verticalView" *ngIf="blogNode.longDesMiddle3">
+                  <div
+                    class="row verticalView"
+                    [ngClass]="{ verticalViewOverWrite: smallScreen }"
+                    *ngIf="blogNode.longDesMiddle3"
+                  >
                     <div class="col-sm-12">
                       <div
                         [innerHTML]="blogNode.longDesMiddle3 | sanitizeHtml"
@@ -1006,7 +1015,11 @@
                       </div>
                     </div>
                   </div>
-                  <div class="row verticalView" *ngIf="blogNode.longDesMiddle4">
+                  <div
+                    class="row verticalView"
+                    [ngClass]="{ verticalViewOverWrite: smallScreen }"
+                    *ngIf="blogNode.longDesMiddle4"
+                  >
                     <div class="col-sm-12">
                       <div
                         [innerHTML]="blogNode.longDesMiddle4 | sanitizeHtml"
@@ -1532,11 +1545,10 @@
                   <p
                     [innerHTML]="blogNode.longDesLast | sanitizeHtml"
                     *ngIf="blogNode.longDesLast"
-                    style="
-                      padding-left: 25px !important;
-                      padding-right: 25px !important;
-                      line-height: 1.65em;
-                    "
+                    [ngClass]="{
+                      paddingX25: !smallScreen,
+                      paddingX10: smallScreen
+                    }"
                   ></p>
                 </div>
               </div>

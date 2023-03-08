@@ -67,7 +67,7 @@ export class HomeComponent implements OnInit {
   web: boolean = false;
   noBlogFound: boolean = false;
   blogFilter: any = null;
-  forBlogCategories:Array<any>=[];
+  forBlogCategories: Array<any> = [];
   config: SwiperOptions = {
     slidesPerView: 1,
     autoplay: {
@@ -96,10 +96,12 @@ export class HomeComponent implements OnInit {
   slideArray = null;
   blogArray: Array<any> = [];
   featuredBlogArray = null;
+  smallScreen: Boolean = false;
   constructor(private _dataService: DataService) {}
 
   ngOnInit(): void {
     if (window.screen.width > 450) this.web = true;
+    if (window.screen.width < 830) this.smallScreen = true;
     this._dataService.fetchAPI('/userDisplay/fetchSlides').subscribe((res) => {
       if (res.data) this.slideArray = res.data;
       else this._dataService.errorToast(res.message);

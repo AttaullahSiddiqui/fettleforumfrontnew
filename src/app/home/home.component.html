@@ -1,6 +1,6 @@
 <swiper
   [config]="config"
-  class="mySwiper swiper-h"
+  class="swiper-h" [ngClass]="{ mySwiper: !smallScreen }"
   (swiper)="onSwiper($event)"
   #newSwiper
 >

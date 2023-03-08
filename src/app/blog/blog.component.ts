@@ -30,6 +30,7 @@ export class BlogComponent implements OnInit {
   faEnvelope = faEnvelope;
   faHome = faHome;
   faPhone = faPhoneAlt;
+  smallScreen: Boolean = false;
   constructor(
     private route: ActivatedRoute,
     private _dataService: DataService,
@@ -40,6 +41,7 @@ export class BlogComponent implements OnInit {
   ngOnInit() {
     window.scrollTo(0, 0);
     if (window.screen.width < 450) this.mobile = true;
+    if (window.screen.width < 830) this.smallScreen = true;
     this.route.paramMap.subscribe((paramMap: any) => {
       this.blogURL = paramMap.get('id');
       this.isFetching = true;
@@ -50,6 +52,7 @@ export class BlogComponent implements OnInit {
             this.titleService.setTitle(res.data['metaTitle']);
             this.blogNode = res.data;
             this.isFetching = false;
+            console.log(this.blogNode)
           } else this.errorHandler(res.message);
         });
       this._dataService

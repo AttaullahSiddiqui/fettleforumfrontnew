@@ -13,9 +13,11 @@ export class BlogsComponent implements OnInit {
   isFetching = false;
   limitVar: Number = 980;
   faCalendar = faCalendar;
+  smallScreen: Boolean = false;
   constructor(private _dataService: DataService) {}
 
   ngOnInit(): void {
+    if (window.screen.width < 830) this.smallScreen = true;
     this.fetchBlogs();
   }
   fetchBlogs() {
