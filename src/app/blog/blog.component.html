@@ -597,7 +597,7 @@
                   <a class="postTitle row m0"
                     ><h2>{{ blogNode.title }}</h2></a
                   >
-                  <br /><br />
+                  <br *ngIf="!smallScreen" /><br />
                   <p
                     *ngIf="blogNode.longDesFirst"
                     [innerHTML]="blogNode.longDesFirst | sanitizeHtml"
