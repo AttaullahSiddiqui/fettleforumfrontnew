@@ -26,11 +26,17 @@ div.gridView,
 div.verticalView {
   padding: 10px 50px;
 }
-div.verticalViewOverWrite {
+div.verticalViewOverWrite, div.gridViewOverWrite {
   padding: 5px 10px;
+}
+div.gridViewOverWrite>div.col-xs-4{
+  width: 100vw;
 }
 div.gridView > div > img {
   width: 100%;
+}
+div.gridViewOverWrite > div > img {
+  width: 75vw;
 }
 div.verticalView > div > div > img {
   width: 45vw;

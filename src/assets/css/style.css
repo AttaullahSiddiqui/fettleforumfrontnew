@@ -102,7 +102,7 @@ a:hover {
 }
 @media (max-width: 767px) {
   .container {
-    padding: 0 25px;
+    padding: 0 15px;
   }
 }
 /*MixitUp*/
@@ -360,6 +360,9 @@ header .social_nav ul li:last-child {
   padding-right: 0;
 }
 @media (max-width: 767px) {
+  .widgetS {
+  padding: 5px 15px;
+}
   header {
     height: auto;
   }
@@ -1851,7 +1854,8 @@ header .social_nav ul li a.navBttn {
     margin-bottom: 0;
   }
   .blog .blogInner .postExcerpts .postExcerptInner a.readMore {
-    font-size: 13px;
+    font-size: 14px;
+    padding: 10px;
   }
   .blog.row {
     padding: 0 15px;

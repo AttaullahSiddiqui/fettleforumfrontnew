@@ -44,7 +44,7 @@
                     }"
                   ></p>
                   <br />
-                  <div class="row gridView" *ngIf="blogNode.longDesMiddle1">
+                  <div class="row gridView" *ngIf="blogNode.longDesMiddle1" [ngClass]="{ gridViewOverWrite: smallScreen }">
                     <div class="col-sm-8">
                       <div
                         [innerHTML]="blogNode.longDesMiddle1 | sanitizeHtml"
@@ -174,7 +174,7 @@
                       </button>
                     </div>
                   </div>
-                  <div class="row gridView" *ngIf="blogNode.longDesMiddle2">
+                  <div class="row gridView" *ngIf="blogNode.longDesMiddle2" [ngClass]="{ gridViewOverWrite: smallScreen }">
                     <div class="col-sm-8">
                       <div
                         [innerHTML]="blogNode.longDesMiddle2 | sanitizeHtml"
@@ -304,7 +304,7 @@
                       </button>
                     </div>
                   </div>
-                  <div class="row gridView" *ngIf="blogNode.longDesMiddle3">
+                  <div class="row gridView" *ngIf="blogNode.longDesMiddle3" [ngClass]="{ gridViewOverWrite: smallScreen }">
                     <div class="col-sm-8">
                       <div
                         [innerHTML]="blogNode.longDesMiddle3 | sanitizeHtml"
@@ -434,7 +434,7 @@
                       </button>
                     </div>
                   </div>
-                  <div class="row gridView" *ngIf="blogNode.longDesMiddle4">
+                  <div class="row gridView" *ngIf="blogNode.longDesMiddle4" [ngClass]="{ gridViewOverWrite: smallScreen }">
                     <div class="col-sm-8">
                       <div
                         [innerHTML]="blogNode.longDesMiddle4 | sanitizeHtml"

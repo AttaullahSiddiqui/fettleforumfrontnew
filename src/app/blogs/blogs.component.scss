@@ -4,7 +4,16 @@
   font-weight: 700;
   font-size: 1.2em;
 }
-div.removeXPadding{
+div.removeXPadding {
   padding-left: 0;
   padding-right: 0;
+}
+h4.headForMobile {
+  padding: 10px 10px;
+  margin-bottom: 0;
+}
+p.paddingX{
+  font-size: 15px !important;
+  padding-left: 10px;
+  padding-right: 10px;
 }
