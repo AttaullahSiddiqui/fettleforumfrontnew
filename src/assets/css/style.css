@@ -1701,7 +1701,7 @@ header .social_nav ul li a.navBttn {
   font-family: "Raleway", sans-serif;
   background: #fff;
   position: relative;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
 }
 .blog .blogInner .postExcerpts .postExcerptInner a.postTitle h4 {
   font-size: 17px;
