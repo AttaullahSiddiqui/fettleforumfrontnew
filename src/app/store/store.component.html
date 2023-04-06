@@ -24,7 +24,7 @@
           <div class="row m0 recentblogs">
             <div
               class="media recentblogg"
-              *ngFor="let coupon of couponsArray | keyvalue"
+              *ngFor="let coupon of couponsArray | keyvalue | sortby"
             >
               <a
                 class="dealBtn"
@@ -47,7 +47,10 @@
                   />
                 </a>
               </div>
-              <div class="media-body" [ngClass]="{ tableCellFalse: smallScreen }">
+              <div
+                class="media-body"
+                [ngClass]="{ tableCellFalse: smallScreen }"
+              >
                 <h4 class="storeName">{{ coupon.value.offerBox }}</h4>
               </div>
             </div>

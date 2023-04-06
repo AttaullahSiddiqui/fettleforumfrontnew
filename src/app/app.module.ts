@@ -24,6 +24,7 @@ import { CategoryComponent } from './category/category.component';
 import { StoresComponent } from './stores/stores.component';
 import { StoreComponent } from './store/store.component';
 import { ServicesComponent } from './services/services.component';
+import { SortbyPipe } from './sortby.pipe';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { ServicesComponent } from './services/services.component';
     StoresComponent,
     StoreComponent,
     ServicesComponent,
+    SortbyPipe,
   ],
   imports: [
     BrowserModule,

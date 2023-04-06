@@ -52,7 +52,6 @@ export class BlogComponent implements OnInit {
             this.titleService.setTitle(res.data['metaTitle']);
             this.blogNode = res.data;
             this.isFetching = false;
-            console.log(this.blogNode)
           } else this.errorHandler(res.message);
         });
       this._dataService
