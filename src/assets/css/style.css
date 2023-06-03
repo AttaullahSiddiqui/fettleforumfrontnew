@@ -1457,9 +1457,10 @@ header .social_nav ul li a.navBttn {
 }
 #projectsRow .project .projectDetails .nameType .projectType {
   color: #292f32;
-  max-height: 5.2em;
+  max-height: 3.6em;
   line-height: 1.8em;
   overflow-y: hidden;
+  font-size: 16px;
 }
 #projectsRow .project .projectDetails .projectIcons a {
   width: 50px;
