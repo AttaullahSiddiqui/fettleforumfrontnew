@@ -111,7 +111,7 @@
               {{ blog.value.title | slice : 0 : 28 }}
             </div>
             <div class="row m0 projectType">
-              {{ getInnerText(whatsNew) | slice : 0 : 800 }}
+              {{ getInnerText(whatsNew) | slice : 0 : 200 }}
             </div>
             <p hidden [innerHTML]="blog.value.shortDes" #whatsNew></p>
           </div>
