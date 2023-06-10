@@ -42,12 +42,18 @@
                   <div class="row m0 postExcerpts">
                     <div class="row m0 postExcerptInner">
                       <a class="postTitle row m0"
-                        ><h4 style="font-size:1.4em;" [ngClass]="{ headForMobile: smallScreen }">{{ blog.value.title | slice : 0 : 40 }}</h4></a
+                        ><h4
+                          style="font-size: 1.4em"
+                          [ngClass]="{ headForMobile: smallScreen }"
+                        >
+                          {{ blog.value.title | slice : 0 : 40 }}
+                        </h4></a
                       >
-                      <br>
-                      <p [ngClass]="{ paddingX: smallScreen }">{{ getInnerText(whatsNew2) | slice : 0 : 500 }}</p>
+                      <br />
+                      <p [ngClass]="{ paddingX: smallScreen }">
+                        {{ getInnerText(whatsNew2) | slice : 0 : 500 }}
+                      </p>
                       <a
-                      
                         class="readMore"
                         [routerLink]="['/blog', blog.value.blogURL]"
                         >Read more</a
@@ -58,14 +64,23 @@
               </div>
             </div>
           </div>
-          <div class="row paginationRow m0">
+          <br>
+          <a
+            class="nxtprvBtn fleft" (click)="loadPrev()"
+            >Previous</a
+          >
+          <a
+            class="nxtprvBtn fright" (click)="loadNext()"
+            >Next</a
+          >
+          <!-- <div class="row paginationRow m0 container">
             <div class="paginationInner m0 row">
-              <ul class="pagination fleft">
-                <li class="active"><a>Previous</a></li>
-                <li><a>Next</a></li>
+              <ul class="pagination" style="width: 100%">
+                <li class="active cursor-pointer fleft"><a>Previous</a></li>
+                <li class="active cursor-pointer fright"><a>Next</a></li>
               </ul>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

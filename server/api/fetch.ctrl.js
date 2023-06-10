@@ -534,10 +534,11 @@ function fetchBlogsWithLimit(req, res) {
     .exec(function (err, blogs) {
       if (err) res.json(resHandler.respondError(err[0], err[1] || -1));
       else {
-        if (blogs.length)
+        if (blogs.length){
           res.json(
             resHandler.respondSuccess(blogs, "Blogs fetched successfully", 2)
           );
+        }
         else
           res.json(resHandler.respondError("Unable to fetch more Blogs", -3));
       }

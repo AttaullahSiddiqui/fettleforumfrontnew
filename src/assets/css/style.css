@@ -1,3 +1,6 @@
+.cursor-pointer:hover{
+  cursor: grab !important;
+}
 @font-face {
   font-family: "Raleway";
   src: url("../fonts/Raleway-Medium.ttf");
