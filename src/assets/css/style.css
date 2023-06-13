@@ -1,4 +1,4 @@
-.cursor-pointer:hover{
+.cursor-pointer:hover {
   cursor: grab !important;
 }
 @font-face {
@@ -364,8 +364,8 @@ header .social_nav ul li:last-child {
 }
 @media (max-width: 767px) {
   .widgetS {
-  padding: 5px 15px;
-}
+    padding: 5px 15px;
+  }
   header {
     height: auto;
   }
@@ -1217,11 +1217,12 @@ header .social_nav ul li a.navBttn {
     float: none;
   }
   #nr_services .service {
-    height: 200px;
-    width: 200px;
+    height: 180px;
+    width: 180px;
     border: 7px solid #bd4342;
     padding: 8px;
     margin: 15px auto;
+    margin-bottom: 40px;
   }
   #nr_services .service .innerRow .fa {
     font-size: 28px;
@@ -1978,7 +1979,7 @@ header .social_nav ul li a.navBttn {
     padding: 0;
     padding-top: 0;
   }
-  .blog .blogInner .postExcerpts .postExcerptInner a.postTitle h2{
+  .blog .blogInner .postExcerpts .postExcerptInner a.postTitle h2 {
     font-size: 26px !important;
   }
   .blog.sinlge-blog .blogInner .postExcerpts .postExcerptInner {
