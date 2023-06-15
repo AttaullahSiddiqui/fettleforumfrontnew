@@ -36,6 +36,9 @@ app.use(express.static(path.join(__dirname, "dist")));
 
 // APIs location
 app.use("/userDisplay", appRoutes);
+app.get("/1m5vgawu.html", (req, res) => {
+  res.sendFile(path.join(__dirname, "/1m5vgawu.html"));
+});
 
 // mongoose.connect(CONFIG.local['url'], { useNewUrlParser: true, useCreateIndex: true });
 mongoose.connect(CONFIG.db["production"], {
