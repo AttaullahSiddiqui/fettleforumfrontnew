@@ -26,10 +26,11 @@ div.gridView,
 div.verticalView {
   padding: 10px 50px;
 }
-div.verticalViewOverWrite, div.gridViewOverWrite {
+div.verticalViewOverWrite,
+div.gridViewOverWrite {
   padding: 5px 10px;
 }
-div.gridViewOverWrite>div.col-xs-4{
+div.gridViewOverWrite > div.col-xs-4 {
   width: 100vw;
 }
 div.gridView > div > img {
@@ -41,14 +42,14 @@ div.gridViewOverWrite > div > img {
 div.verticalView > div > div > img {
   width: 45vw;
 }
-div.verticalView > div > div.prosCons{
+div.verticalView > div > div.prosCons {
   max-width: 70%;
   margin-left: 15%;
 }
 div.verticalViewOverWrite > div > div > img {
   width: 76vw;
 }
-div.verticalViewOverWrite > div > div.prosCons{
+div.verticalViewOverWrite > div > div.prosCons {
   max-width: 96%;
   margin-left: 2%;
 }
@@ -74,16 +75,19 @@ h4.panel-title > a.consHead {
   color: white !important;
   margin-bottom: 15px;
 }
-div.width90Per{
+div.width90Per {
   width: 90% !important;
 }
-p.paddingX25{
+p.paddingX25 {
   padding-left: 25px;
   padding-right: 25px;
   line-height: 1.65em;
 }
-p.paddingX10{
+p.paddingX10 {
   padding-left: 10px;
   padding-right: 10px;
   line-height: 1.65em;
+}
+section#blogs p, section#blogs div{
+  cursor: default !important;
 }

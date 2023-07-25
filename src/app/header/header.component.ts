@@ -65,9 +65,9 @@ export class HeaderComponent implements OnInit {
       });
   }
   focusOutFunc() {
-    setTimeout(() => {
-      this.switch = false;
-    }, 300);
+    // setTimeout(() => {
+    //   this.switch = false;
+    // }, 300);
   }
   // isLinkActive(url:string): boolean {
   //   const queryParamsIndex = this.router.url.indexOf('?');

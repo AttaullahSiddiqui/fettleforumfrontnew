@@ -120,7 +120,7 @@
 <div class="row myDropdown" *ngIf="searchText && switch">
   <div class="col-sm-4"></div>
   <aside class="col-sm-4 sidebar" [ngClass]="{ searchResultAdjust: smallScreen }">
-    <div class="row m0 recentPostWidget widgetS" style="margin-bottom: 10px">
+    <div class="row m0 recentPostWidget widgetS" style="margin-bottom: 10px;max-height: 65vh;overflow-y: auto">
       <div class="row m0 recentblogs">
         <div class="media recentblog" *ngIf="noResult">
           <h6 class="noResult">

@@ -50,7 +50,7 @@
                 >
                   <div class="row m0 text-center justify-content-md-around">
                     <div
-                      class="col-sm-12 col-md-2"
+                      class="col-sm-12 col-md-2 pb-4"
                       *ngFor="let store of storeArr | keyvalue"
                     >
                       <div
@@ -61,7 +61,7 @@
                           <img [src]="store.value.img" alt="Store Image" />
                         </div>
                         <div class="serviceName" data-hover="House Rebuilding">
-                          {{ store.value.name }}
+                          {{ store.value.name | slice:0:16 }}
                         </div>
                       </div>
                     </div>
