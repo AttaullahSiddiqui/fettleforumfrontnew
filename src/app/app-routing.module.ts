@@ -12,6 +12,7 @@ import { ServicesComponent } from './services/services.component';
 import { StoreComponent } from './store/store.component';
 import { StoresComponent } from './stores/stores.component';
 import { TermsComponent } from './terms/terms.component';
+import { TermsofuseComponent } from './termsofuse/termsofuse.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, canActivate: [AuthService] },
@@ -47,6 +48,11 @@ const routes: Routes = [
   {
     path: 'termsandconditions',
     component: TermsComponent,
+    canActivate: [AuthService],
+  },
+  {
+    path: 'termsofuse',
+    component: TermsofuseComponent,
     canActivate: [AuthService],
   },
   // {
